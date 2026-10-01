@@ -1,0 +1,246 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  --orb-hue: 168;
+  --orb-bg: #070b10;
+  background: var(--orb-bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #d8eee6;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, color-mix(in srgb, var(--orb-color, #2ee6a6) 14%, transparent), transparent 60%),
+    var(--orb-bg);
+  font: 15px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  color: color-mix(in srgb, var(--orb-color, #5ee0b5) 80%, white);
+}
+
+.hero,
+.section-head,
+.foot {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.hero {
+  padding: 56px 0 12px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: color-mix(in srgb, var(--orb-color, #5ee0b5) 70%, #8aa);
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  letter-spacing: -0.04em;
+  font-weight: 620;
+}
+
+.lede {
+  margin: 0;
+  max-width: 42rem;
+  color: #9bb8ae;
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0 0;
+}
+
+.links a,
+.foot a {
+  color: var(--orb-color, #5ee0b5);
+}
+
+.playground {
+  width: min(1120px, calc(100% - 40px));
+  margin: 36px auto;
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(280px, 0.9fr);
+  gap: 28px;
+  align-items: center;
+  padding: 28px;
+  border: 1px solid color-mix(in srgb, var(--orb-color, #2ee6a6) 18%, #1a2422);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 35% 45%, color-mix(in srgb, var(--orb-color, #2ee6a6) 16%, transparent), transparent 46%),
+    #080d11;
+}
+
+.stage {
+  display: grid;
+  place-items: center;
+  min-height: 280px;
+}
+
+.controls h2 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8aa69c;
+}
+
+.control-block + .control-block {
+  margin-top: 18px;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pills button {
+  appearance: none;
+  border: 1px solid #2a3d38;
+  background: #10181a;
+  color: #d8eee6;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.pills button.is-active {
+  border-color: var(--orb-color, #5ee0b5);
+  color: var(--orb-color, #5ee0b5);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--orb-color, #5ee0b5) 35%, transparent);
+}
+
+.hint {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #7f9a90;
+}
+
+.hue {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.hue input {
+  width: 100%;
+  accent-color: var(--orb-color, #5ee0b5);
+}
+
+.swatches {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.swatches button {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #1c2a28;
+  background: hsl(var(--sw) 88% 56%);
+  cursor: pointer;
+  padding: 0;
+}
+
+.swatches button:focus-visible,
+.pills button:focus-visible {
+  outline: 2px solid var(--orb-color, #5ee0b5);
+  outline-offset: 2px;
+}
+
+.section-head {
+  padding: 12px 0 8px;
+}
+
+.section-head h2 {
+  margin: 0 0 4px;
+  letter-spacing: -0.03em;
+}
+
+.section-head p {
+  margin: 0;
+  color: #8aa69c;
+}
+
+.grid {
+  width: min(1120px, calc(100% - 40px));
+  margin: 18px auto 64px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.cell {
+  margin: 0;
+  padding: 18px 10px 14px;
+  border-radius: 16px;
+  border: 1px solid #16221f;
+  background: #080d11;
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+}
+
+.cell figcaption {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  text-align: center;
+}
+
+.cell__var {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7f9a90;
+}
+
+.cell__state {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  color: var(--orb-color, #5ee0b5);
+}
+
+.cell__note {
+  font-size: 11px;
+  color: #6d8680;
+}
+
+.foot {
+  padding: 0 0 48px;
+  color: #6d8680;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .playground {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

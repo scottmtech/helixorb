@@ -1,0 +1,128 @@
+/**
+ * orb--crystal — faceted / crystalline shard sphere.
+ *
+ * Markup:
+ *   .orb.orb--crystal > .orb__glow + .orb__gem > .orb__facet* + .orb__core + .orb__scan
+ */
+
+.orb--crystal .orb__gem {
+  position: absolute;
+  inset: 14%;
+  transform-style: preserve-3d;
+  z-index: 2;
+}
+
+.orb--crystal .orb__facet {
+  position: absolute;
+  inset: 12%;
+  background:
+    linear-gradient(
+      var(--tilt, 140deg),
+      color-mix(in srgb, var(--_c2) 70%, white) 0%,
+      color-mix(in srgb, var(--_c) 80%, transparent) 42%,
+      color-mix(in srgb, var(--_c) 20%, #041014) 100%
+    );
+  clip-path: polygon(var(--poly));
+  opacity: 0.78;
+  filter: saturate(1.15);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--_c) 30%, transparent);
+  transform: rotate(var(--rot, 0deg)) scale(var(--s, 1));
+}
+
+.orb--crystal .orb__facet:nth-child(even) {
+  mix-blend-mode: screen;
+  opacity: 0.65;
+}
+
+.orb--crystal .orb__core {
+  inset: 34%;
+  background:
+    radial-gradient(circle at 38% 32%,
+      color-mix(in srgb, var(--_c2) 90%, white),
+      var(--_c) 50%,
+      transparent 72%);
+  clip-path: polygon(50% 0%, 92% 25%, 92% 75%, 50% 100%, 8% 75%, 8% 25%);
+  box-shadow: 0 0 24px var(--_g);
+  z-index: 3;
+}
+
+.orb--crystal .orb__gem {
+  animation: orb-crystal-drift var(--orb-spin) linear infinite;
+}
+
+.orb--crystal .orb__core {
+  animation: orb-breathe var(--orb-period) ease-in-out infinite;
+}
+
+.orb--crystal .orb__facet {
+  animation: orb-crystal-shimmer 5.2s ease-in-out infinite;
+  animation-delay: calc(var(--s, 1) * 0.35s);
+}
+
+.orb--crystal[data-state="thinking"] .orb__gem {
+  animation: orb-crystal-search 4.2s ease-in-out infinite;
+}
+
+.orb--crystal[data-state="thinking"] .orb__facet {
+  animation: orb-crystal-shift calc(1.4s + var(--s) * 0.4s) ease-in-out infinite;
+}
+
+.orb--crystal[data-state="thinking"] .orb__core {
+  animation: orb-breathe var(--orb-period) ease-in-out infinite;
+}
+
+.orb--crystal[data-state="listening"] .orb__gem {
+  animation: orb-crystal-listen var(--orb-period) ease-in-out infinite;
+}
+
+.orb--crystal[data-state="listening"] .orb__core {
+  animation: orb-listen var(--orb-period) ease-in-out infinite;
+}
+
+.orb--crystal[data-state="talking"] .orb__gem,
+.orb--crystal[data-state="writing"] .orb__gem {
+  animation: orb-crystal-drift calc(var(--orb-spin) * 0.35) linear infinite;
+}
+
+.orb--crystal[data-state="talking"] .orb__facet,
+.orb--crystal[data-state="writing"] .orb__facet {
+  animation: orb-crystal-flash var(--orb-period) ease-in-out infinite;
+}
+
+.orb--crystal[data-state="talking"] .orb__core,
+.orb--crystal[data-state="writing"] .orb__core {
+  animation: orb-speak var(--orb-period) ease-in-out infinite;
+}
+
+@keyframes orb-crystal-drift {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orb-crystal-search {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  35% { transform: rotate(28deg) scale(1.04); }
+  70% { transform: rotate(-18deg) scale(0.97); }
+}
+
+@keyframes orb-crystal-listen {
+  0%, 100% { transform: scale(0.94); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes orb-crystal-shimmer {
+  0%, 100% { opacity: 0.55; filter: brightness(1) saturate(1.1); }
+  50% { opacity: 0.9; filter: brightness(1.25) saturate(1.3); }
+}
+
+@keyframes orb-crystal-shift {
+  0%, 100% { transform: rotate(var(--rot, 0deg)) scale(var(--s, 1)) translate(0, 0); }
+  50% { transform: rotate(calc(var(--rot, 0deg) + 12deg)) scale(calc(var(--s, 1) * 1.06)) translate(2%, -2%); }
+}
+
+@keyframes orb-crystal-flash {
+  0%, 100% { opacity: 0.45; filter: brightness(1); }
+  18% { opacity: 1; filter: brightness(1.45); }
+  32% { opacity: 0.55; }
+  54% { opacity: 0.95; filter: brightness(1.3); }
+  70% { opacity: 0.5; }
+}

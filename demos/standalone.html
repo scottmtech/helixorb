@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matrix Orb — standalone drop-in</title>
+  <link rel="stylesheet" href="../css/orbs.css">
+  <style>
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: #070b10;
+      color: #d7efe6;
+      font: 15px/1.5 ui-sans-serif, system-ui, sans-serif;
+    }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+    h1 { font-weight: 600; letter-spacing: -0.03em; }
+    .preview {
+      display: grid;
+      place-items: center;
+      min-height: 280px;
+      margin: 28px 0;
+      border: 1px solid #1c2a28;
+      border-radius: 16px;
+      background: radial-gradient(circle at 50% 40%, #0d1816, #070b10 70%);
+    }
+    pre {
+      overflow: auto;
+      padding: 16px;
+      border-radius: 12px;
+      background: #0b1114;
+      border: 1px solid #1c2a28;
+      font: 12.5px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: #b8e6d4;
+    }
+    a { color: #5ee0b5; }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 0; }
+    button {
+      background: #12201c;
+      color: #d7efe6;
+      border: 1px solid #2a443c;
+      border-radius: 999px;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+    button.is-on { border-color: #5ee0b5; color: #5ee0b5; }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="./index.html">← Gallery</a></p>
+    <h1>Standalone drop-in</h1>
+    <p>Copy the markup below into any HTML or PHP page. Link <code>css/orbs.css</code> once. No build step, no CDN.</p>
+    <div class="preview">
+      <div class="orb orb--soft" data-state="thinking" role="img" aria-label="Soft glow orb, thinking" style="--orb-hue: 168; --orb-size: 200px;">
+  <span class="orb__glow"></span>
+  <span class="orb__core"></span>
+  <span class="orb__ring" style="--i:1"></span>
+  <span class="orb__ring" style="--i:2"></span>
+  <span class="orb__ring" style="--i:3"></span>
+  <span class="orb__scan"></span>
+</div>
+    </div>
+    <div class="row" id="states">
+      <button type="button" data-state="idle">idle</button>
+      <button type="button" data-state="thinking" class="is-on">thinking</button>
+      <button type="button" data-state="listening">listening</button>
+      <button type="button" data-state="talking">talking</button>
+    </div>
+    <h2>Minimal HTML</h2>
+    <pre id="snippet"></pre>
+    <h2>PHP include</h2>
+    <pre>&lt;link rel="stylesheet" href="/css/orbs.css"&gt;
+&lt;?php
+$orbVariant = 'soft';
+$orbState = 'thinking';
+$orbHue = 168;
+include __DIR__ . '/../snippets/orb.php';
+?&gt;</pre>
+  </main>
+  <script src="../js/orb.js"></script>
+  <script>
+    var orb = document.querySelector('.orb');
+    var snippet = document.getElementById('snippet');
+    function show() {
+      snippet.textContent = orb.outerHTML;
+    }
+    show();
+    document.getElementById('states').addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-state]');
+      if (!btn) return;
+      MatrixOrb.setState(orb, btn.getAttribute('data-state'));
+      document.querySelectorAll('#states button').forEach(function (b) {
+        b.classList.toggle('is-on', b === btn);
+      });
+      show();
+    });
+  </script>
+</body>
+</html>
