@@ -14,7 +14,8 @@ python3 -m http.server 8080
 
 Then open:
 
-- [http://localhost:8080/demos/index.html](http://localhost:8080/demos/index.html) — all **5 variations × 4 states**, plus live state and hue controls
+- [http://localhost:8080/demos/index.html](http://localhost:8080/demos/index.html) — original 5 + Lattice family × 4 states, plus live controls
+- [http://localhost:8080/demos/lattice-family.html](http://localhost:8080/demos/lattice-family.html) — focused particle-shell explorer
 - [http://localhost:8080/demos/standalone.html](http://localhost:8080/demos/standalone.html) — one orb and the copy-paste snippet
 
 You can also open the HTML files directly in a browser (`file://`). A local server is nicer for path resolution.
@@ -72,7 +73,12 @@ Ready-made fragments:
 | Variation | Class | Snippet |
 | --- | --- | --- |
 | Soft glow + rings | `orb orb--soft` | `snippets/soft.html` |
-| Dot-lattice shell | `orb orb--lattice` | `snippets/lattice.html` |
+| Dot lattice (baseline) | `orb orb--lattice` | `snippets/lattice.html` |
+| Dense lattice | `orb orb--lattice-dense` | `snippets/lattice-dense.html` |
+| Airy lattice | `orb orb--lattice-air` | `snippets/lattice-air.html` |
+| Nested shells | `orb orb--lattice-nested` | `snippets/lattice-nested.html` |
+| Orbit rings | `orb orb--lattice-orbit` | `snippets/lattice-orbit.html` |
+| Spiral scatter | `orb orb--lattice-spiral` | `snippets/lattice-spiral.html` |
 | Wireframe meridians | `orb orb--wire` | `snippets/wire.html` |
 | Ripple / pulse rings | `orb orb--ripple` | `snippets/ripple.html` |
 | Faceted crystal | `orb orb--crystal` | `snippets/crystal.html` |
@@ -85,7 +91,9 @@ Link the stylesheet once in the layout head, then include the fragment:
 <link rel="stylesheet" href="/css/orbs.css">
 
 <?php
-$orbVariant = 'soft';   // soft | lattice | wire | ripple | crystal
+$orbVariant = 'lattice'; // soft | lattice | lattice-dense | lattice-air |
+                         // lattice-nested | lattice-orbit | lattice-spiral |
+                         // wire | ripple | crystal
 $orbState   = 'idle';   // idle | thinking | listening | talking | writing
 $orbHue     = 168;
 include __DIR__ . '/snippets/orb.php';
@@ -136,7 +144,8 @@ Vanilla JS is optional and only for toggling that attribute.
 css/tokens.css          shared variables + state timing
 css/orb.css             shared shell, reduced-motion
 css/orb-soft.css
-css/orb-lattice.css
+css/orb-lattice.css           baseline + shared particle DNA
+css/orb-lattice-family.css    dense / air / nested / orbit / spiral
 css/orb-wire.css
 css/orb-ripple.css
 css/orb-crystal.css
@@ -144,9 +153,10 @@ css/orbs.css            @import bundle (all of the above)
 js/orb.js               optional MatrixOrb.setState / setHue
 snippets/*.html         copy-paste markup per variation
 snippets/orb.php        PHP include
-demos/index.html        gallery + live controls
-demos/standalone.html   single-orb drop-in page
-demos/php-example.php   PHP page that includes the fragment
+demos/index.html            gallery + live controls
+demos/lattice-family.html   focused particle-shell explorer
+demos/standalone.html       single-orb drop-in page
+demos/php-example.php       PHP page that includes the fragment
 ```
 
 `prefers-reduced-motion: reduce` stops looping motion.

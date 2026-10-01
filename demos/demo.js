@@ -2,7 +2,7 @@
   var stage = document.getElementById("stage");
   var hueInput = document.getElementById("hue");
   var hueOut = document.getElementById("hue-out");
-  var currentVariant = "soft";
+  var currentVariant = "lattice";
   var currentState = "idle";
 
   function stageOrb() {
