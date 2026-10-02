@@ -16,7 +16,7 @@ Then open:
 
 - [http://localhost:8080/demos/index.html](http://localhost:8080/demos/index.html) — original 5 + Lattice family × 4 states, plus live controls
 - [http://localhost:8080/demos/lattice-family.html](http://localhost:8080/demos/lattice-family.html) — focused particle-shell explorer
-- [http://localhost:8080/demos/standalone.html](http://localhost:8080/demos/standalone.html) — one orb and the copy-paste snippet
+- [http://localhost:8080/demos/standalone.html](http://localhost:8080/demos/standalone.html) — orbit + spiral drop-in, `data-state` only
 
 You can also open the HTML files directly in a browser (`file://`). A local server is nicer for path resolution.
 

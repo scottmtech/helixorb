@@ -120,34 +120,83 @@
   50% { transform: rotateX(-10deg) rotateY(-16deg) scale3d(0.88, 0.88, 0.88); }
 }
 
-/* --- orbit ----------------------------------------------------------- */
+/* --- orbit / spiral: shell-first -------------------------------------
+ * Shared lattice DNA paints a solid core + soft halo. These two keep
+ * the particle shell as the read: tiny nucleus, almost no bloom,
+ * sharper dots. States stay distinct via motion, not --orb-bright.
+ * Selectors are extra-specific so they beat orb-lattice.css.
+ */
 
-.orb.orb--lattice-orbit,
-.orb.orb--lattice-orbit[data-state] {
+.orb[class*="orb--lattice"].orb--lattice-orbit,
+.orb[class*="orb--lattice"].orb--lattice-orbit[data-state],
+.orb[class*="orb--lattice"].orb--lattice-spiral,
+.orb[class*="orb--lattice"].orb--lattice-spiral[data-state] {
   --orb-bright: 1;
+  overflow: visible;
 }
 
-.orb--lattice-orbit .orb__glow {
-  opacity: 0.12;
-  inset: 8%;
-  filter: blur(6px);
+.orb[class*="orb--lattice"].orb--lattice-orbit .orb__glow,
+.orb[class*="orb--lattice"].orb--lattice-spiral .orb__glow {
+  inset: 22%;
+  opacity: 0.05;
+  filter: blur(3px);
+  background:
+    radial-gradient(circle at 50% 50%,
+      color-mix(in srgb, var(--_c) 22%, transparent) 0%,
+      transparent 62%);
 }
 
-.orb.orb--lattice-orbit .orb__core,
-.orb.orb--lattice-orbit[data-state] .orb__core {
-  inset: 48%;
-  opacity: 0.1;
+.orb[class*="orb--lattice"].orb--lattice-orbit .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-orbit[data-state] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-orbit[data-state="idle"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-orbit[data-state="thinking"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-orbit[data-state="listening"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-orbit[data-state="talking"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-orbit[data-state="writing"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-spiral .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-spiral[data-state] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-spiral[data-state="idle"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-spiral[data-state="thinking"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-spiral[data-state="listening"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-spiral[data-state="talking"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-spiral[data-state="writing"] .orb__core {
+  inset: 47%;
+  opacity: 0.18;
   box-shadow: none;
-  background: radial-gradient(circle, color-mix(in srgb, var(--_c) 28%, transparent), transparent 72%);
-  animation: none;
   filter: none;
+  animation: none;
+  background:
+    radial-gradient(circle at 50% 45%,
+      color-mix(in srgb, var(--_c2) 40%, white),
+      color-mix(in srgb, var(--_c) 35%, transparent) 42%,
+      transparent 70%);
 }
 
-.orb--lattice-orbit .orb__scan,
-.orb--lattice-orbit[data-state="thinking"] .orb__scan {
+.orb[class*="orb--lattice"].orb--lattice-orbit .orb__scan,
+.orb[class*="orb--lattice"].orb--lattice-orbit[data-state="thinking"] .orb__scan,
+.orb[class*="orb--lattice"].orb--lattice-spiral .orb__scan,
+.orb[class*="orb--lattice"].orb--lattice-spiral[data-state="thinking"] .orb__scan {
   opacity: 0;
   animation: none;
 }
+
+.orb[class*="orb--lattice"].orb--lattice-orbit .orb__shell,
+.orb[class*="orb--lattice"].orb--lattice-spiral .orb__shell {
+  overflow: visible;
+  will-change: transform;
+}
+
+.orb[class*="orb--lattice"].orb--lattice-orbit .orb__shell i,
+.orb[class*="orb--lattice"].orb--lattice-orbit .orb__band i,
+.orb[class*="orb--lattice"].orb--lattice-spiral .orb__shell i {
+  --r: 0.43;
+  --dot: 6px;
+  background: color-mix(in srgb, var(--_c2) 18%, white);
+  box-shadow: 0 0 1.5px color-mix(in srgb, var(--_c) 75%, white);
+  opacity: calc(0.58 + (var(--z) + 1) * 0.38);
+}
+
+/* --- orbit motion ---------------------------------------------------- */
 
 .orb--lattice-orbit .orb__shell {
   animation: orb-lattice-tumble calc(var(--orb-spin) * 1.35) linear infinite;
@@ -157,13 +206,8 @@
   position: absolute;
   inset: 0;
   transform-style: preserve-3d;
+  will-change: transform;
   animation: orb-orbit-spin calc(10s + var(--band) * 2.4s) linear infinite;
-}
-
-.orb--lattice-orbit .orb__band i {
-  --r: 0.41;
-  --dot: 4.5px;
-  box-shadow: 0 0 2px color-mix(in srgb, var(--_c) 70%, transparent);
 }
 
 .orb--lattice-orbit[data-state="thinking"] .orb__shell {
@@ -210,43 +254,10 @@
   50% { transform: rotateY(32deg) scale3d(1.14, 1, 1.14); }
 }
 
-/* --- spiral ---------------------------------------------------------- */
-
-.orb.orb--lattice-spiral,
-.orb.orb--lattice-spiral[data-state] {
-  --orb-bright: 1;
-}
-
-.orb--lattice-spiral .orb__glow {
-  opacity: 0.12;
-  inset: 8%;
-  filter: blur(6px);
-}
-
-.orb.orb--lattice-spiral .orb__core,
-.orb.orb--lattice-spiral[data-state] .orb__core {
-  inset: 48%;
-  opacity: 0.1;
-  box-shadow: none;
-  background: radial-gradient(circle, color-mix(in srgb, var(--_c) 28%, transparent), transparent 72%);
-  animation: none;
-  filter: none;
-}
-
-.orb--lattice-spiral .orb__scan,
-.orb--lattice-spiral[data-state="thinking"] .orb__scan {
-  opacity: 0;
-  animation: none;
-}
+/* --- spiral motion --------------------------------------------------- */
 
 .orb--lattice-spiral .orb__shell {
   animation: orb-spiral-swirl var(--orb-spin) linear infinite;
-}
-
-.orb--lattice-spiral .orb__shell i {
-  --r: 0.41;
-  --dot: 4.5px;
-  box-shadow: 0 0 2px color-mix(in srgb, var(--_c) 70%, transparent);
 }
 
 .orb--lattice-spiral[data-state="thinking"] .orb__shell {
