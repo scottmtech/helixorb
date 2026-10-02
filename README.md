@@ -4,7 +4,7 @@
 
 Open-source **pure CSS** presence orbs — particle shells, rings, meridians, ripples, facets. Four motion states, one attribute. No build, no CDN, no frameworks, no images.
 
-Public entry: **`css/orbs.css`**. Recommended variants: **`orb--lattice-orbit`** and **`orb--lattice-spiral`** (shell-first: sharp dots, minimal core/halo).
+Public entry: **`css/orbs.css`**. Every variant is **shell-first** (dots, rings, meridians, waves, or facets — not a bright core). Recommended: **`orb--lattice-orbit`** and **`orb--lattice-spiral`**.
 
 Repo: [github.com/scottmtech/helixorb](https://github.com/scottmtech/helixorb). Class names (`orb`, `orb--lattice-orbit`, `data-state`, …) stay stable.
 
@@ -51,7 +51,7 @@ CSS reads **`data-state`** on `.orb`:
 | `talking` | Faster speaking cadence |
 | `writing` | Alias of `talking` |
 
-Orbit and spiral keep states distinct through **motion**, not a brighter core.
+Every variant keeps states distinct through **motion**, not a brighter core.
 
 ## Change state (JS)
 
@@ -91,7 +91,7 @@ Helixorb.setHue(orb, 272);
 | `orb orb--lattice-dense` | Packed cloud | `snippets/lattice-dense.html` |
 | `orb orb--lattice-air` | Sparse constellation | `snippets/lattice-air.html` |
 | `orb orb--lattice-nested` | Dual concentric shells | `snippets/lattice-nested.html` |
-| `orb orb--soft` | Soft glow + rings | `snippets/soft.html` |
+| `orb orb--soft` | Translucent sphere + rings | `snippets/soft.html` |
 | `orb orb--wire` | Wireframe meridians | `snippets/wire.html` |
 | `orb orb--ripple` | Pulse rings | `snippets/ripple.html` |
 | `orb orb--crystal` | Faceted crystal | `snippets/crystal.html` |
@@ -179,4 +179,4 @@ demos/                       samples, not required at runtime
 
 ## Contribute
 
-Issues and PRs are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). Keep the drop-in API unchanged: `.orb` + variant class + `data-state`, and `css/orbs.css` as the public entry. Visual tweaks to orbit/spiral should stay shell-first (minimal core/halo). No new runtime dependencies.
+Issues and PRs are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). Keep the drop-in API unchanged: `.orb` + variant class + `data-state`, and `css/orbs.css` as the public entry. Visual tweaks should stay shell-first (minimal core/halo; states via motion). No new runtime dependencies.

@@ -4,6 +4,9 @@
  * Baseline:        .orb.orb--lattice
  * Family siblings: .orb--lattice-dense | -air | -nested | -orbit | -spiral
  *
+ * Shell-first: tiny nucleus, almost no bloom. Dots are the read.
+ * States stay distinct via motion, not --orb-bright.
+ *
  * Markup (classic):
  *   .orb.orb--lattice[data-state] > .orb__glow + .orb__shell > i[--x --y --z] + .orb__core + .orb__scan
  */
@@ -15,9 +18,24 @@
   z-index: 2;
 }
 
+.orb[class*="orb--lattice"],
+.orb[class*="orb--lattice"][data-state] {
+  --orb-bright: 1;
+}
+
+.orb[class*="orb--lattice"] .orb__glow {
+  inset: 22%;
+  opacity: 0.05;
+  filter: blur(3px);
+  background:
+    radial-gradient(circle at 50% 50%,
+      color-mix(in srgb, var(--_c) 22%, transparent) 0%,
+      transparent 62%);
+}
+
 .orb[class*="orb--lattice"] .orb__shell i {
-  --r: 0.38;
-  --dot: 5px;
+  --r: 0.40;
+  --dot: 5.5px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -25,34 +43,45 @@
   height: var(--dot);
   margin: calc(var(--dot) / -2) 0 0 calc(var(--dot) / -2);
   border-radius: 50%;
-  background: color-mix(in srgb, var(--_c2) 55%, white);
-  box-shadow: 0 0 6px var(--_c);
+  background-color: #c8f8e6;
+  background-color: color-mix(in srgb, var(--_c, #2ee6a6) 42%, #fff);
+  box-shadow: 0 0 2px var(--_c, #2ee6a6);
   transform:
     translate3d(
       calc(var(--x) * var(--orb-size) * var(--r)),
       calc(var(--y) * var(--orb-size) * var(--r)),
       calc(var(--z) * var(--orb-size) * var(--r))
     );
-  opacity: calc(0.28 + (var(--z) + 1) * 0.36);
+  opacity: calc(0.52 + (var(--z) + 1) * 0.38);
 }
 
-.orb[class*="orb--lattice"] .orb__core {
-  inset: 36%;
+.orb[class*="orb--lattice"] .orb__core,
+.orb[class*="orb--lattice"][data-state] .orb__core,
+.orb[class*="orb--lattice"][data-state="idle"] .orb__core,
+.orb[class*="orb--lattice"][data-state="thinking"] .orb__core,
+.orb[class*="orb--lattice"][data-state="listening"] .orb__core,
+.orb[class*="orb--lattice"][data-state="talking"] .orb__core,
+.orb[class*="orb--lattice"][data-state="writing"] .orb__core {
+  inset: 47%;
+  opacity: 0.16;
+  box-shadow: none;
+  filter: none;
+  animation: none;
   background:
-    radial-gradient(circle at 35% 32%,
-      color-mix(in srgb, var(--_c2) 80%, white),
-      var(--_c) 46%,
-      transparent 74%);
-  box-shadow: 0 0 22px var(--_g);
-  opacity: 0.85;
+    radial-gradient(circle at 50% 45%,
+      color-mix(in srgb, var(--_c2) 40%, white),
+      color-mix(in srgb, var(--_c) 35%, transparent) 42%,
+      transparent 70%);
+}
+
+.orb[class*="orb--lattice"] .orb__scan,
+.orb[class*="orb--lattice"][data-state="thinking"] .orb__scan {
+  opacity: 0;
+  animation: none;
 }
 
 .orb[class*="orb--lattice"] .orb__shell {
   animation: orb-lattice-tumble var(--orb-spin) linear infinite;
-}
-
-.orb[class*="orb--lattice"] .orb__core {
-  animation: orb-breathe var(--orb-period) ease-in-out infinite;
 }
 
 .orb[class*="orb--lattice"][data-state="thinking"] .orb__shell {
@@ -67,10 +96,6 @@
   animation: orb-lattice-listen var(--orb-period) ease-in-out infinite;
 }
 
-.orb[class*="orb--lattice"][data-state="listening"] .orb__core {
-  animation: orb-listen var(--orb-period) ease-in-out infinite;
-}
-
 .orb[class*="orb--lattice"][data-state="talking"] .orb__shell,
 .orb[class*="orb--lattice"][data-state="writing"] .orb__shell {
   animation: orb-lattice-tumble calc(var(--orb-spin) * 0.45) linear infinite;
@@ -79,11 +104,6 @@
 .orb[class*="orb--lattice"][data-state="talking"] .orb__shell i,
 .orb[class*="orb--lattice"][data-state="writing"] .orb__shell i {
   animation: orb-lattice-speak calc(var(--orb-period) + var(--y) * 0.15s) ease-in-out infinite;
-}
-
-.orb[class*="orb--lattice"][data-state="talking"] .orb__core,
-.orb[class*="orb--lattice"][data-state="writing"] .orb__core {
-  animation: orb-speak var(--orb-period) ease-in-out infinite;
 }
 
 @keyframes orb-lattice-tumble {
@@ -110,16 +130,16 @@
 @keyframes orb-lattice-speak {
   0%, 100% {
     transform: translate3d(
-      calc(var(--x) * var(--orb-size) * var(--r, 0.38)),
-      calc(var(--y) * var(--orb-size) * var(--r, 0.38)),
-      calc(var(--z) * var(--orb-size) * var(--r, 0.38))
+      calc(var(--x) * var(--orb-size) * var(--r, 0.40)),
+      calc(var(--y) * var(--orb-size) * var(--r, 0.40)),
+      calc(var(--z) * var(--orb-size) * var(--r, 0.40))
     ) scale(1);
   }
   35% {
     transform: translate3d(
-      calc(var(--x) * var(--orb-size) * var(--r, 0.38) * 1.16),
-      calc(var(--y) * var(--orb-size) * var(--r, 0.38) * 1.16),
-      calc(var(--z) * var(--orb-size) * var(--r, 0.38) * 1.16)
+      calc(var(--x) * var(--orb-size) * var(--r, 0.40) * 1.16),
+      calc(var(--y) * var(--orb-size) * var(--r, 0.40) * 1.16),
+      calc(var(--z) * var(--orb-size) * var(--r, 0.40) * 1.16)
     ) scale(1.35);
   }
 }
