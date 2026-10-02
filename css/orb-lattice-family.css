@@ -122,6 +122,33 @@
 
 /* --- orbit ----------------------------------------------------------- */
 
+.orb.orb--lattice-orbit,
+.orb.orb--lattice-orbit[data-state] {
+  --orb-bright: 1;
+}
+
+.orb--lattice-orbit .orb__glow {
+  opacity: 0.12;
+  inset: 8%;
+  filter: blur(6px);
+}
+
+.orb.orb--lattice-orbit .orb__core,
+.orb.orb--lattice-orbit[data-state] .orb__core {
+  inset: 48%;
+  opacity: 0.1;
+  box-shadow: none;
+  background: radial-gradient(circle, color-mix(in srgb, var(--_c) 28%, transparent), transparent 72%);
+  animation: none;
+  filter: none;
+}
+
+.orb--lattice-orbit .orb__scan,
+.orb--lattice-orbit[data-state="thinking"] .orb__scan {
+  opacity: 0;
+  animation: none;
+}
+
 .orb--lattice-orbit .orb__shell {
   animation: orb-lattice-tumble calc(var(--orb-spin) * 1.35) linear infinite;
 }
@@ -134,8 +161,9 @@
 }
 
 .orb--lattice-orbit .orb__band i {
-  --r: 0.40;
+  --r: 0.41;
   --dot: 4.5px;
+  box-shadow: 0 0 2px color-mix(in srgb, var(--_c) 70%, transparent);
 }
 
 .orb--lattice-orbit[data-state="thinking"] .orb__shell {
@@ -168,24 +196,57 @@
   animation: orb-orbit-spin calc(2.4s + var(--band) * 0.35s) linear infinite;
 }
 
+.orb--lattice-orbit[data-state="talking"] .orb__shell i,
+.orb--lattice-orbit[data-state="writing"] .orb__shell i {
+  animation: orb-lattice-speak calc(var(--orb-period) + var(--y) * 0.12s) ease-in-out infinite;
+}
+
 @keyframes orb-orbit-spin {
   to { transform: rotateY(360deg); }
 }
 
 @keyframes orb-orbit-breathe {
-  0%, 100% { transform: rotateY(0deg) scale3d(0.92, 1, 0.92); }
-  50% { transform: rotateY(28deg) scale3d(1.1, 1, 1.1); }
+  0%, 100% { transform: rotateY(0deg) scale3d(0.88, 1, 0.88); }
+  50% { transform: rotateY(32deg) scale3d(1.14, 1, 1.14); }
 }
 
 /* --- spiral ---------------------------------------------------------- */
+
+.orb.orb--lattice-spiral,
+.orb.orb--lattice-spiral[data-state] {
+  --orb-bright: 1;
+}
+
+.orb--lattice-spiral .orb__glow {
+  opacity: 0.12;
+  inset: 8%;
+  filter: blur(6px);
+}
+
+.orb.orb--lattice-spiral .orb__core,
+.orb.orb--lattice-spiral[data-state] .orb__core {
+  inset: 48%;
+  opacity: 0.1;
+  box-shadow: none;
+  background: radial-gradient(circle, color-mix(in srgb, var(--_c) 28%, transparent), transparent 72%);
+  animation: none;
+  filter: none;
+}
+
+.orb--lattice-spiral .orb__scan,
+.orb--lattice-spiral[data-state="thinking"] .orb__scan {
+  opacity: 0;
+  animation: none;
+}
 
 .orb--lattice-spiral .orb__shell {
   animation: orb-spiral-swirl var(--orb-spin) linear infinite;
 }
 
 .orb--lattice-spiral .orb__shell i {
-  --r: 0.40;
+  --r: 0.41;
   --dot: 4.5px;
+  box-shadow: 0 0 2px color-mix(in srgb, var(--_c) 70%, transparent);
 }
 
 .orb--lattice-spiral[data-state="thinking"] .orb__shell {
@@ -201,6 +262,11 @@
   animation: orb-spiral-swirl calc(var(--orb-spin) * 0.32) linear infinite;
 }
 
+.orb--lattice-spiral[data-state="talking"] .orb__shell i,
+.orb--lattice-spiral[data-state="writing"] .orb__shell i {
+  animation: orb-lattice-speak calc(var(--orb-period) + var(--y) * 0.12s) ease-in-out infinite;
+}
+
 @keyframes orb-spiral-swirl {
   0% { transform: rotateX(-22deg) rotateY(0deg) rotateZ(0deg); }
   100% { transform: rotateX(-22deg) rotateY(360deg) rotateZ(360deg); }
@@ -213,6 +279,6 @@
 }
 
 @keyframes orb-spiral-listen {
-  0%, 100% { transform: rotateX(-18deg) rotateY(-20deg) rotateZ(-12deg) scale3d(0.92, 0.92, 0.92); }
-  50% { transform: rotateX(14deg) rotateY(24deg) rotateZ(16deg) scale3d(1.12, 1.12, 1.12); }
+  0%, 100% { transform: rotateX(-18deg) rotateY(-20deg) rotateZ(-12deg) scale3d(0.86, 0.86, 0.86); }
+  50% { transform: rotateX(14deg) rotateY(24deg) rotateZ(16deg) scale3d(1.16, 1.16, 1.16); }
 }

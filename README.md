@@ -20,10 +20,31 @@ Then open:
 
 You can also open the HTML files directly in a browser (`file://`). A local server is nicer for path resolution.
 
+## Drop-in (orbit / spiral)
+
+Link one stylesheet, paste a snippet, flip one attribute. No helper JS required.
+
+```html
+<link rel="stylesheet" href="css/orbs.css">
+```
+
+Paste `snippets/lattice-orbit.html` or `snippets/lattice-spiral.html`, then:
+
+```js
+const orb = document.querySelector(".orb");
+orb.dataset.state = "listening";
+```
+
+`data-state` values: `idle` | `thinking` | `listening` | `talking` (`writing` = talking). Theme with `style="--orb-hue: 272"` on the orb or any ancestor.
+
+`js/orb.js` is optional (`MatrixOrb.setState(orb, "thinking")`). CSS already watches `data-state`.
+
+See `demos/standalone.html` for a live copy-paste page.
+
 ## Theme in one line
 
 ```html
-<div class="orb orb--soft" data-state="idle" style="--orb-hue: 272;">
+<div class="orb orb--lattice-orbit" data-state="idle" style="--orb-hue: 272;">
 ```
 
 `--orb-color`, `--orb-glow`, and `--orb-color-secondary` follow `--orb-hue` unless you set them yourself:
@@ -91,9 +112,7 @@ Link the stylesheet once in the layout head, then include the fragment:
 <link rel="stylesheet" href="/css/orbs.css">
 
 <?php
-$orbVariant = 'lattice'; // soft | lattice | lattice-dense | lattice-air |
-                         // lattice-nested | lattice-orbit | lattice-spiral |
-                         // wire | ripple | crystal
+$orbVariant = 'lattice-orbit'; // lattice-orbit | lattice-spiral | lattice | ...
 $orbState   = 'idle';   // idle | thinking | listening | talking | writing
 $orbHue     = 168;
 include __DIR__ . '/snippets/orb.php';
@@ -102,16 +121,11 @@ include __DIR__ . '/snippets/orb.php';
 
 Optional: `$orbColor`, `$orbSize` (`'180px'`), `$orbLabel`.
 
-Switch state later with a class/attribute — no PHP required:
+Switch state later in JS — no PHP and no helper library required:
 
-```html
-<script src="/js/orb.js"></script>
-<script>
-  MatrixOrb.setState(document.querySelector('.orb'), 'thinking');
-</script>
+```js
+document.querySelector(".orb").dataset.state = "listening";
 ```
-
-Or set it yourself: `element.dataset.state = 'listening'`.
 
 ## States
 
@@ -122,7 +136,7 @@ Use `data-state` on `.orb` (one pattern, everywhere):
 | `idle` | Calm, slow breathe / drift |
 | `thinking` | Faster, scanning / searching |
 | `listening` | Receptive expand–contract or inward waves |
-| `talking` | Brighter, speaking cadence |
+| `talking` | Faster speaking cadence (orbit/spiral: shell motion, not a brighter core) |
 | `writing` | Alias of `talking` (same CSS) |
 
 Vanilla JS is optional and only for toggling that attribute.

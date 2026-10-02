@@ -15,14 +15,14 @@
 </head>
 <body>
   <main>
-    <p><a href="./index.html">← Gallery</a></p>
+    <p><a href="./index.html">← Gallery</a> · <a href="./standalone.html">Standalone</a></p>
     <h1>PHP include</h1>
     <p>This page is <code>demos/php-example.php</code>. Serve with <code>php -S localhost:8080</code>.</p>
     <div class="preview">
 <?php
-$orbVariant = 'soft';
-$orbState = 'listening';
-$orbHue = 196;
+$orbVariant = 'lattice-orbit';
+$orbState = 'idle';
+$orbHue = 168;
 $orbSize = '200px';
 include __DIR__ . '/../snippets/orb.php';
 ?>
