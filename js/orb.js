@@ -1,8 +1,8 @@
 /**
- * Optional helper. Not required — CSS already reads data-state.
- *   MatrixOrb.setState(orb, "listening");
- *   MatrixOrb.setHue(orb, 272);
- * writing is stored as talking.
+ * Optional Helixorb helper. Not required — CSS already reads data-state.
+ *   Helixorb.setState(orb, "listening");
+ *   Helixorb.setHue(orb, 272);
+ * MatrixOrb is a compatibility alias. writing is stored as talking.
  */
 (function (root) {
   var VALID = { idle: 1, thinking: 1, listening: 1, talking: 1, writing: 1 };
@@ -22,5 +22,7 @@
     el.style.setProperty("--orb-hue", String(hue));
   }
 
-  root.MatrixOrb = { setState: setState, setHue: setHue, normalize: normalize };
+  var api = { setState: setState, setHue: setHue, normalize: normalize };
+  root.Helixorb = api;
+  root.MatrixOrb = api;
 })(typeof window !== "undefined" ? window : this);

@@ -1,7 +1,7 @@
 {
-  "name": "css-matrix-orbs",
+  "name": "helixorb",
   "version": "1.0.0",
-  "description": "Drop-in pure CSS matrix-style presence orbs with idle, thinking, listening, and talking states.",
+  "description": "Helixorb — drop-in pure CSS presence orbs with idle, thinking, listening, and talking states.",
   "license": "MIT",
   "style": "css/orbs.css",
   "files": [
@@ -15,11 +15,17 @@
     "type": "git",
     "url": "git+https://github.com/scottmtech/css-matrix-orbs.git"
   },
+  "homepage": "https://github.com/scottmtech/css-matrix-orbs#readme",
+  "bugs": {
+    "url": "https://github.com/scottmtech/css-matrix-orbs/issues"
+  },
   "keywords": [
+    "helixorb",
     "css",
     "orb",
     "presence",
     "ui",
-    "animation"
+    "animation",
+    "mit"
   ]
 }
