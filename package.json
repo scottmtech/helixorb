@@ -13,11 +13,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/scottmtech/css-matrix-orbs.git"
+    "url": "git+https://github.com/scottmtech/helixorb.git"
   },
-  "homepage": "https://github.com/scottmtech/css-matrix-orbs#readme",
+  "homepage": "https://github.com/scottmtech/helixorb#readme",
   "bugs": {
-    "url": "https://github.com/scottmtech/css-matrix-orbs/issues"
+    "url": "https://github.com/scottmtech/helixorb/issues"
   },
   "keywords": [
     "helixorb",
