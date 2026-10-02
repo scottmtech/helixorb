@@ -12,7 +12,7 @@ Helixorb is MIT-licensed. Issues and PRs are welcome.
 
 ## Visual notes
 
-Orbit and spiral are shell-first: sharp particle dots, minimal core and halo. States should stay distinct through motion, not a brighter center.
+Every variant is shell-first: dots, rings, meridians, waves, or facets are the read. Minimal core and halo. States stay distinct through motion, not a brighter center. `--orb-bright` stays at `1`.
 
 ## No new runtime dependencies
 

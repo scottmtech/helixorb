@@ -1,5 +1,5 @@
 /**
- * orb--soft — glowing sphere with concentric 3D rings.
+ * orb--soft — translucent sphere with concentric 3D rings.
  *
  * Markup:
  *   <div class="orb orb--soft" data-state="idle">
@@ -12,58 +12,68 @@
  *   </div>
  */
 
+.orb--soft,
+.orb--soft[data-state] {
+  --orb-bright: 1;
+}
+
+.orb--soft .orb__glow {
+  inset: 16%;
+  opacity: 0.1;
+  filter: blur(5px);
+  background:
+    radial-gradient(circle at 50% 50%,
+      color-mix(in srgb, var(--_c) 20%, transparent) 0%,
+      transparent 64%);
+}
+
 .orb--soft .orb__core {
-  inset: 22%;
+  inset: 28%;
+  opacity: 0.42;
+  filter: none;
+  animation: none;
   background:
     radial-gradient(circle at 32% 28%,
-      color-mix(in srgb, var(--_c2) 70%, white) 0 10%,
-      transparent 28%),
+      color-mix(in srgb, var(--_c2) 28%, white) 0 6%,
+      transparent 22%),
     repeating-radial-gradient(circle at 48% 52%,
-      color-mix(in srgb, var(--_c) 28%, transparent) 0 1px,
+      color-mix(in srgb, var(--_c) 22%, transparent) 0 1px,
       transparent 1px 5px),
     radial-gradient(circle at 50% 46%,
-      color-mix(in srgb, var(--_c2) 85%, white) 0%,
-      var(--_c) 38%,
-      color-mix(in srgb, var(--_c) 45%, #020406) 72%,
-      color-mix(in srgb, var(--_c) 15%, #000) 100%);
+      color-mix(in srgb, var(--_c2) 22%, transparent) 0%,
+      color-mix(in srgb, var(--_c) 18%, transparent) 40%,
+      color-mix(in srgb, var(--_c) 10%, transparent) 72%,
+      transparent 100%);
   box-shadow:
-    0 0 18px color-mix(in srgb, var(--_c) 70%, transparent),
-    0 0 42px var(--_g),
-    inset 0 -12px 22px color-mix(in srgb, #000 35%, transparent),
-    inset 8px 10px 16px color-mix(in srgb, white 18%, transparent);
+    0 0 8px color-mix(in srgb, var(--_c) 22%, transparent),
+    inset 0 -10px 16px color-mix(in srgb, #000 22%, transparent);
+}
+
+.orb--soft .orb__scan,
+.orb--soft[data-state="thinking"] .orb__scan {
+  opacity: 0;
+  animation: none;
 }
 
 .orb--soft .orb__ring {
   position: absolute;
   inset: calc(4% + (var(--i) - 1) * 7%);
   border-radius: 50%;
-  border: 1.5px solid color-mix(in srgb, var(--_c) 42%, transparent);
+  border: 1.75px solid color-mix(in srgb, var(--_c) 62%, transparent);
   box-shadow:
-    0 0 10px color-mix(in srgb, var(--_c) 25%, transparent),
-    inset 0 0 8px color-mix(in srgb, var(--_c2) 18%, transparent);
+    0 0 4px color-mix(in srgb, var(--_c) 18%, transparent),
+    inset 0 0 4px color-mix(in srgb, var(--_c2) 14%, transparent);
   transform: rotateX(68deg) rotateZ(calc(var(--i) * 24deg));
   z-index: 2;
-  opacity: 0.85;
+  opacity: 0.95;
 }
 
 .orb--soft .orb__ring:nth-of-type(even) {
   border-color: color-mix(in srgb, var(--_c2) 50%, transparent);
 }
 
-.orb--soft .orb__core {
-  animation: orb-breathe var(--orb-period) ease-in-out infinite;
-}
-
-.orb--soft .orb__glow {
-  animation: orb-pulse-opacity calc(var(--orb-period) * 1.1) ease-in-out infinite;
-}
-
 .orb--soft .orb__ring {
   animation: orb-soft-ring-drift calc(var(--orb-spin) + var(--i) * 3s) linear infinite;
-}
-
-.orb--soft[data-state="thinking"] .orb__core {
-  animation: orb-breathe var(--orb-period) ease-in-out infinite;
 }
 
 .orb--soft[data-state="thinking"] .orb__ring {
@@ -71,17 +81,8 @@
   opacity: 1;
 }
 
-.orb--soft[data-state="listening"] .orb__core {
-  animation: orb-listen var(--orb-period) ease-in-out infinite;
-}
-
 .orb--soft[data-state="listening"] .orb__ring {
   animation: orb-soft-ring-listen calc(var(--orb-period) + var(--i) * 0.25s) ease-in-out infinite;
-}
-
-.orb--soft[data-state="talking"] .orb__core,
-.orb--soft[data-state="writing"] .orb__core {
-  animation: orb-speak var(--orb-period) ease-in-out infinite;
 }
 
 .orb--soft[data-state="talking"] .orb__ring,

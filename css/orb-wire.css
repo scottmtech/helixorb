@@ -12,13 +12,28 @@
   z-index: 2;
 }
 
+.orb--wire,
+.orb--wire[data-state] {
+  --orb-bright: 1;
+}
+
+.orb--wire .orb__glow {
+  inset: 20%;
+  opacity: 0.06;
+  filter: blur(4px);
+  background:
+    radial-gradient(circle at 50% 50%,
+      color-mix(in srgb, var(--_c) 18%, transparent) 0%,
+      transparent 64%);
+}
+
 .orb--wire .orb__meridian,
 .orb--wire .orb__lat {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 1.25px solid color-mix(in srgb, var(--_c) 48%, transparent);
-  box-shadow: 0 0 8px color-mix(in srgb, var(--_c) 22%, transparent);
+  border: 1.35px solid color-mix(in srgb, var(--_c) 68%, transparent);
+  box-shadow: 0 0 3px color-mix(in srgb, var(--_c) 18%, transparent);
 }
 
 .orb--wire .orb__meridian {
@@ -30,14 +45,24 @@
   transform: rotateX(var(--a));
 }
 
-.orb--wire .orb__core {
-  inset: 38%;
+.orb--wire .orb__core,
+.orb--wire[data-state] .orb__core {
+  inset: 46%;
+  opacity: 0.2;
+  filter: none;
+  animation: none;
   background:
-    radial-gradient(circle at 34% 30%,
-      color-mix(in srgb, var(--_c2) 75%, white),
-      color-mix(in srgb, var(--_c) 70%, transparent) 55%,
-      transparent 72%);
-  box-shadow: 0 0 20px var(--_g);
+    radial-gradient(circle at 50% 45%,
+      color-mix(in srgb, var(--_c2) 36%, white),
+      color-mix(in srgb, var(--_c) 28%, transparent) 48%,
+      transparent 70%);
+  box-shadow: none;
+}
+
+.orb--wire .orb__scan,
+.orb--wire[data-state="thinking"] .orb__scan {
+  opacity: 0;
+  animation: none;
 }
 
 .orb--wire::after {
@@ -45,17 +70,13 @@
   position: absolute;
   inset: 8%;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--_c) 28%, transparent);
-  box-shadow: inset 0 0 18px color-mix(in srgb, var(--_c) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--_c) 22%, transparent);
+  box-shadow: none;
   z-index: 1;
 }
 
 .orb--wire .orb__globe {
   animation: orb-wire-spin var(--orb-spin) linear infinite;
-}
-
-.orb--wire .orb__core {
-  animation: orb-breathe var(--orb-period) ease-in-out infinite;
 }
 
 .orb--wire[data-state="thinking"] .orb__globe {
@@ -66,16 +87,8 @@
   animation: orb-wire-flash calc(1.1s + var(--a) / 80) ease-in-out infinite;
 }
 
-.orb--wire[data-state="thinking"] .orb__core {
-  animation: orb-breathe var(--orb-period) ease-in-out infinite;
-}
-
 .orb--wire[data-state="listening"] .orb__globe {
   animation: orb-wire-listen var(--orb-period) ease-in-out infinite;
-}
-
-.orb--wire[data-state="listening"] .orb__core {
-  animation: orb-listen var(--orb-period) ease-in-out infinite;
 }
 
 .orb--wire[data-state="talking"] .orb__globe,
@@ -88,11 +101,6 @@
 .orb--wire[data-state="talking"] .orb__lat,
 .orb--wire[data-state="writing"] .orb__lat {
   animation: orb-wire-speak var(--orb-period) ease-in-out infinite;
-}
-
-.orb--wire[data-state="talking"] .orb__core,
-.orb--wire[data-state="writing"] .orb__core {
-  animation: orb-speak var(--orb-period) ease-in-out infinite;
 }
 
 @keyframes orb-wire-spin {

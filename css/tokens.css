@@ -36,6 +36,7 @@
   --orb-scale: 1;
 }
 
+/* States are motion-only: timing changes, brightness stays put. */
 .orb[data-state="idle"] {
   --orb-period: 4.2s;
   --orb-spin: 22s;
@@ -45,18 +46,18 @@
 .orb[data-state="thinking"] {
   --orb-period: 1.55s;
   --orb-spin: 6s;
-  --orb-bright: 1.18;
+  --orb-bright: 1;
 }
 
 .orb[data-state="listening"] {
   --orb-period: 2.35s;
   --orb-spin: 14s;
-  --orb-bright: 1.06;
+  --orb-bright: 1;
 }
 
 .orb[data-state="talking"],
 .orb[data-state="writing"] {
   --orb-period: 0.72s;
   --orb-spin: 8s;
-  --orb-bright: 1.28;
+  --orb-bright: 1;
 }

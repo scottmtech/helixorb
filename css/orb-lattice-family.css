@@ -12,8 +12,8 @@
 
 .orb--lattice-dense .orb__shell i {
   --r: 0.37;
-  --dot: 3px;
-  box-shadow: 0 0 4px var(--_c);
+  --dot: 3.5px;
+  box-shadow: 0 0 2px var(--_c);
 }
 
 .orb--lattice-dense[data-state="thinking"] .orb__shell {
@@ -34,13 +34,8 @@
 .orb--lattice-air .orb__shell i {
   --r: 0.44;
   --dot: 7px;
-  box-shadow: 0 0 11px var(--_c);
-  opacity: calc(0.34 + (var(--z) + 1) * 0.4);
-}
-
-.orb--lattice-air .orb__core {
-  inset: 38%;
-  opacity: 0.78;
+  box-shadow: 0 0 2px var(--_c);
+  opacity: calc(0.52 + (var(--z) + 1) * 0.4);
 }
 
 .orb--lattice-air[data-state="listening"] .orb__shell {
@@ -120,11 +115,9 @@
   50% { transform: rotateX(-10deg) rotateY(-16deg) scale3d(0.88, 0.88, 0.88); }
 }
 
-/* --- orbit / spiral: shell-first -------------------------------------
- * Shared lattice DNA paints a solid core + soft halo. These two keep
- * the particle shell as the read: tiny nucleus, almost no bloom,
- * sharper dots. States stay distinct via motion, not --orb-bright.
- * Selectors are extra-specific so they beat orb-lattice.css.
+/* --- orbit / spiral --------------------------------------------------
+ * Same shell-first DNA as the rest of the lattice family. Extra-
+ * specific selectors keep band/swirl motion from being overridden.
  */
 
 .orb[class*="orb--lattice"].orb--lattice-orbit,
