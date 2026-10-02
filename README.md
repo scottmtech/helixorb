@@ -8,6 +8,14 @@ Public entry: **`css/orbs.css`**. Recommended variants: **`orb--lattice-orbit`**
 
 Repo: [github.com/scottmtech/helixorb](https://github.com/scottmtech/helixorb). Class names (`orb`, `orb--lattice-orbit`, `data-state`, …) stay stable.
 
+## Look
+
+Recommended — shell-first particle clouds. GIFs are ~2.4s idle loops.
+
+| `orb--lattice-orbit` | `orb--lattice-spiral` |
+| :---: | :---: |
+| ![Orbit idle](docs/screenshots/lattice-orbit.gif) | ![Spiral idle](docs/screenshots/lattice-spiral.gif) |
+
 ## Install
 
 Copy `css/` into the project, or clone/vendor this repo, then link the bundle:
@@ -64,6 +72,16 @@ Helixorb.setHue(orb, 272);
 `MatrixOrb` is kept as an alias of `Helixorb` so existing demos keep working.
 
 ## Variants
+
+| Orbit | Spiral | Lattice | Dense | Air |
+| :---: | :---: | :---: | :---: | :---: |
+| ![orbit](docs/screenshots/lattice-orbit.gif) | ![spiral](docs/screenshots/lattice-spiral.gif) | ![lattice](docs/screenshots/lattice.gif) | ![dense](docs/screenshots/lattice-dense.gif) | ![air](docs/screenshots/lattice-air.gif) |
+| `orb--lattice-orbit` | `orb--lattice-spiral` | `orb--lattice` | `orb--lattice-dense` | `orb--lattice-air` |
+
+| Nested | Soft | Wire | Ripple | Crystal |
+| :---: | :---: | :---: | :---: | :---: |
+| ![nested](docs/screenshots/lattice-nested.gif) | ![soft](docs/screenshots/soft.gif) | ![wire](docs/screenshots/wire.gif) | ![ripple](docs/screenshots/ripple.gif) | ![crystal](docs/screenshots/crystal.gif) |
+| `orb--lattice-nested` | `orb--soft` | `orb--wire` | `orb--ripple` | `orb--crystal` |
 
 | Class | Look | Snippet |
 | --- | --- | --- |
@@ -151,6 +169,7 @@ css/orb-crystal.css
 js/orb.js                    optional Helixorb helper (MatrixOrb alias)
 snippets/*.html              copy-paste markup
 snippets/orb.php             optional PHP include
+docs/screenshots/            idle GIFs + PNG stills for this README
 demos/                       samples, not required at runtime
 ```
 
