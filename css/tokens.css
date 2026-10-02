@@ -24,8 +24,8 @@
 
 :root,
 .orb {
-  --orb-color: hsl(var(--orb-hue) var(--orb-sat, 88%) var(--orb-lit, 56%));
-  --orb-color-secondary: hsl(calc(var(--orb-hue) + 42) 82% 66%);
+  --orb-color: hsl(var(--orb-hue, 168) var(--orb-sat, 88%) var(--orb-lit, 56%));
+  --orb-color-secondary: hsl(calc(var(--orb-hue, 168) + 42) 82% 66%);
   --orb-glow: color-mix(in srgb, var(--orb-color) 52%, transparent);
 }
 

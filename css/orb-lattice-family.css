@@ -132,6 +132,8 @@
 .orb[class*="orb--lattice"].orb--lattice-spiral,
 .orb[class*="orb--lattice"].orb--lattice-spiral[data-state] {
   --orb-bright: 1;
+  --_c: var(--orb-color, hsl(168 88% 56%));
+  --_c2: var(--orb-color-secondary, hsl(210 82% 66%));
   overflow: visible;
 }
 
@@ -191,8 +193,9 @@
 .orb[class*="orb--lattice"].orb--lattice-spiral .orb__shell i {
   --r: 0.43;
   --dot: 6px;
-  background: color-mix(in srgb, var(--_c2) 18%, white);
-  box-shadow: 0 0 1.5px color-mix(in srgb, var(--_c) 75%, white);
+  background-color: #c8f8e6;
+  background-color: color-mix(in srgb, var(--_c, #2ee6a6) 42%, #fff);
+  box-shadow: 0 0 2px var(--_c, #2ee6a6);
   opacity: calc(0.58 + (var(--z) + 1) * 0.38);
 }
 

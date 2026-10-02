@@ -31,4 +31,17 @@
     show(current, state);
     syncPills(current);
   });
+
+  var params = new URLSearchParams(location.search);
+  var want = params.get("variant");
+  if (want && select.querySelector('option[value="' + want + '"]')) {
+    select.value = want;
+    current = want;
+    var state = params.get("state") || "idle";
+    document.querySelectorAll(".pills [data-state]").forEach(function (b) {
+      b.classList.toggle("is-active", b.getAttribute("data-state") === state);
+    });
+    show(current, state);
+    syncPills(current);
+  }
 })();
