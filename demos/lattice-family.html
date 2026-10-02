@@ -9,12 +9,13 @@
 </head>
 <body>
   <header class="hero">
-    <p class="eyebrow">CSS Matrix Orbs / Playground</p>
-    <h1>Presence orb variations</h1>
-    <p class="lede">Lattice-family particle shells. Same four states. Pure CSS.</p>
+    <p class="eyebrow">CSS Matrix Orbs / library sample</p>
+    <h1>Lattice family</h1>
+    <p class="lede">Particle shells, same <code>data-state</code> API. Recommended: <code>orb--lattice-orbit</code> and <code>orb--lattice-spiral</code> (shell-first). Copy markup from <code>snippets/</code>.</p>
     <p class="links">
       <a href="./index.html">← Full gallery</a>
-      <a href="./standalone.html">Standalone snippet</a>
+      <a href="./standalone.html">Drop-in sample</a>
+      <a href="../README.md">README</a>
     </p>
   </header>
 
@@ -105,15 +106,15 @@
         <h2>Variation</h2>
         <label class="select">
           <select id="variant-select" aria-label="Lattice variation">
-            <option value="lattice" selected>Dot lattice — orb--lattice</option>
+            <option value="lattice-orbit" selected>Orbit — orb--lattice-orbit (recommended)</option>
+            <option value="lattice-spiral">Spiral — orb--lattice-spiral (recommended)</option>
+            <option value="lattice">Dot lattice — orb--lattice</option>
             <option value="lattice-dense">Dense lattice — orb--lattice-dense</option>
             <option value="lattice-air">Airy lattice — orb--lattice-air</option>
             <option value="lattice-nested">Nested lattice — orb--lattice-nested</option>
-            <option value="lattice-orbit">Orbit lattice — orb--lattice-orbit</option>
-            <option value="lattice-spiral">Spiral lattice — orb--lattice-spiral</option>
           </select>
         </label>
-        <p class="hint" id="class-badge"><code>orb--lattice</code></p>
+        <p class="hint" id="class-badge"><code>orb--lattice-orbit</code></p>
       </div>
       <div class="control-block">
         <h2>State</h2>

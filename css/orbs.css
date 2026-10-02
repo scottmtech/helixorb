@@ -1,9 +1,12 @@
 /**
- * Drop-in bundle. One stylesheet for every variation.
+ * css-matrix-orbs — public stylesheet.
+ *
  *   <link rel="stylesheet" href="css/orbs.css">
  *
- * Or import only what you need:
- *   tokens.css + orb.css + orb-soft.css (etc.)
+ * Then paste a snippet (prefer orb--lattice-orbit or orb--lattice-spiral)
+ * and set data-state="idle|thinking|listening|talking".
+ *
+ * Tree-shake by linking tokens.css + orb.css + one variant file instead.
  */
 
 @import url("./tokens.css");

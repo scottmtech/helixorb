@@ -3,7 +3,7 @@
   var badge = document.getElementById("class-badge");
   if (!select) return;
 
-  var current = select.value || "lattice";
+  var current = select.value || "lattice-orbit";
 
   function syncPills(variant) {
     document.querySelectorAll(".pills [data-variant]").forEach(function (b) {
@@ -37,11 +37,11 @@
   if (want && select.querySelector('option[value="' + want + '"]')) {
     select.value = want;
     current = want;
-    var state = params.get("state") || "idle";
-    document.querySelectorAll(".pills [data-state]").forEach(function (b) {
-      b.classList.toggle("is-active", b.getAttribute("data-state") === state);
-    });
-    show(current, state);
-    syncPills(current);
   }
+  var state = params.get("state") || "idle";
+  document.querySelectorAll(".pills [data-state]").forEach(function (b) {
+    b.classList.toggle("is-active", b.getAttribute("data-state") === state);
+  });
+  show(current, state);
+  syncPills(current);
 })();

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Matrix Orb — standalone drop-in</title>
+  <title>Matrix Orbs — drop-in sample</title>
   <link rel="stylesheet" href="../css/orbs.css">
   <style>
     html, body {
@@ -78,9 +78,9 @@
 </head>
 <body>
   <main>
-    <p><a href="./index.html">← Gallery</a> · <a href="./lattice-family.html">Lattice family</a></p>
-    <h1>Standalone drop-in</h1>
-    <p>Link one stylesheet, paste an orb snippet, flip <code>data-state</code>. No build, no CDN, no required JS helper.</p>
+    <p><a href="./index.html">← Gallery</a> · <a href="./lattice-family.html">Lattice family</a> · <a href="../README.md">README</a></p>
+    <h1>Drop-in sample</h1>
+    <p>Public entry is <code>css/orbs.css</code>. These two are the recommended variants — orbit and spiral, shell-first. Markup matches <code>snippets/lattice-orbit.html</code> and <code>snippets/lattice-spiral.html</code>. No build, no CDN, no required JS.</p>
     <div class="preview">
       <figure>
         <div class="orb orb--lattice-orbit" data-state="idle" style="--orb-size: 200px; --orb-hue: 168;" role="img" aria-label="Orbit lattice orb, idle">
@@ -268,10 +268,10 @@
       <button type="button" data-state="talking">talking</button>
     </div>
 
-    <h2>Happy path</h2>
+    <h2>Copy-paste</h2>
     <pre>&lt;link rel="stylesheet" href="css/orbs.css"&gt;
 
-&lt;!-- paste snippets/lattice-orbit.html (or lattice-spiral.html) --&gt;
+&lt;!-- paste snippets/lattice-orbit.html or snippets/lattice-spiral.html --&gt;
 
 &lt;script&gt;
   const orb = document.querySelector(".orb");
@@ -279,12 +279,12 @@
 &lt;/script&gt;</pre>
 
     <h2>State API</h2>
-    <p>CSS reads <code>data-state</code> on the orb. Values: <code>idle</code>, <code>thinking</code>, <code>listening</code>, <code>talking</code>. <code>writing</code> is an alias of <code>talking</code>.</p>
+    <p><code>data-state</code> on the orb: <code>idle</code> · <code>thinking</code> · <code>listening</code> · <code>talking</code>. <code>writing</code> is a talking alias. The buttons above only do <code>orb.dataset.state = '…'</code>.</p>
     <pre>const orb = document.querySelector(".orb");
 orb.dataset.state = "listening";</pre>
-    <p><code>js/orb.js</code> is optional. If you include it: <code>MatrixOrb.setState(orb, "thinking")</code>.</p>
+    <p><code>js/orb.js</code> is optional: <code>MatrixOrb.setState(orb, "thinking")</code>.</p>
 
-    <h2>PHP include</h2>
+    <h2>PHP sample (optional)</h2>
     <pre>&lt;link rel="stylesheet" href="/css/orbs.css"&gt;
 &lt;?php
 $orbVariant = "lattice-orbit"; // or lattice-spiral

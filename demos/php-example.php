@@ -16,8 +16,8 @@
 <body>
   <main>
     <p><a href="./index.html">← Gallery</a> · <a href="./standalone.html">Standalone</a></p>
-    <h1>PHP include</h1>
-    <p>This page is <code>demos/php-example.php</code>. Serve with <code>php -S localhost:8080</code>.</p>
+    <h1>PHP sample</h1>
+    <p>Optional include — the library does not require PHP. Serve this file with <code>php -S localhost:8080</code>. Same <code>data-state</code> API as HTML: <code>document.querySelector(".orb").dataset.state = "listening"</code>.</p>
     <div class="preview">
 <?php
 $orbVariant = 'lattice-orbit';

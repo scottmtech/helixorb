@@ -1,10 +1,104 @@
 # Matrix Orbs
 
-Drop-in **pure CSS** “AI presence” orbs: glowing spheres with a digital / matrix look (rings, dots, meridians, ripples, facets). No build step, no CDN, no frameworks, no images.
+Drop-in **pure CSS** presence orbs — particle shells, rings, meridians, ripples, facets. Four motion states, one attribute. No build, no CDN, no frameworks, no images.
 
-Inspired by the *idea* of a matrix orb — this CSS and markup are original.
+Inspired by the *idea* of a matrix orb. The CSS and markup are original.
 
-## Open the demos
+Public entry: **`css/orbs.css`**. Recommended variants: **`orb--lattice-orbit`** and **`orb--lattice-spiral`** (shell-first: sharp dots, minimal core/halo).
+
+## Install
+
+Copy `css/` into the project (or vendor this repo) and link the bundle:
+
+```html
+<link rel="stylesheet" href="css/orbs.css">
+```
+
+That one file `@import`s tokens, the shared shell, and every variation. You can instead link `tokens.css` + `orb.css` + one variant file.
+
+`js/orb.js` is **optional**. PHP in `snippets/orb.php` is an optional sample include.
+
+## Markup + state
+
+Paste a snippet from `snippets/` (start with `lattice-orbit.html` or `lattice-spiral.html`):
+
+```html
+<link rel="stylesheet" href="css/orbs.css">
+
+<!-- snippets/lattice-orbit.html -->
+<div class="orb orb--lattice-orbit" data-state="idle" role="img" aria-label="AI presence, idle">
+  …
+</div>
+```
+
+CSS reads **`data-state`** on `.orb`:
+
+| Value | Feel |
+| --- | --- |
+| `idle` | Calm drift |
+| `thinking` | Search / scan (orbit: latitude bands; spiral: helical tilt) |
+| `listening` | Expand–contract |
+| `talking` | Faster speaking cadence |
+| `writing` | Alias of `talking` |
+
+Orbit and spiral keep states distinct through **motion**, not a brighter core.
+
+## Change state (JS)
+
+One line. No helper required:
+
+```js
+const orb = document.querySelector(".orb");
+orb.dataset.state = "listening";
+```
+
+Optional helper (`js/orb.js`):
+
+```js
+MatrixOrb.setState(orb, "thinking");
+MatrixOrb.setHue(orb, 272);
+```
+
+## Variants
+
+| Class | Look | Snippet |
+| --- | --- | --- |
+| **`orb orb--lattice-orbit`** | **Latitude rings of dots (recommended)** | `snippets/lattice-orbit.html` |
+| **`orb orb--lattice-spiral`** | **Helical scatter (recommended)** | `snippets/lattice-spiral.html` |
+| `orb orb--lattice` | Baseline Fibonacci cloud | `snippets/lattice.html` |
+| `orb orb--lattice-dense` | Packed cloud | `snippets/lattice-dense.html` |
+| `orb orb--lattice-air` | Sparse constellation | `snippets/lattice-air.html` |
+| `orb orb--lattice-nested` | Dual concentric shells | `snippets/lattice-nested.html` |
+| `orb orb--soft` | Soft glow + rings | `snippets/soft.html` |
+| `orb orb--wire` | Wireframe meridians | `snippets/wire.html` |
+| `orb orb--ripple` | Pulse rings | `snippets/ripple.html` |
+| `orb orb--crystal` | Faceted crystal | `snippets/crystal.html` |
+
+## Theming
+
+Set `--orb-hue` on the orb, a wrapper, or `:root`. Derived colors follow unless you override them.
+
+```html
+<div class="orb orb--lattice-orbit" data-state="idle" style="--orb-hue: 272;">
+```
+
+```html
+<div class="orb orb--lattice-spiral" data-state="talking"
+     style="--orb-color: #39ff88; --orb-color-secondary: #baffd9; --orb-size: 180px;">
+```
+
+| Token | Role | Default |
+| --- | --- | --- |
+| `--orb-hue` | Hue (0–360) when you do not set `--orb-color` | `168` |
+| `--orb-color` | Primary stroke / fill | from hue |
+| `--orb-color-secondary` | Highlights | from hue + 42 |
+| `--orb-glow` | Soft bloom | mix of `--orb-color` |
+| `--orb-size` | Width and height | `160px` |
+| `--orb-bg` | Demo page background | `#070b10` |
+
+`prefers-reduced-motion: reduce` stops looping animation.
+
+## Demos
 
 From the repo root:
 
@@ -12,169 +106,50 @@ From the repo root:
 python3 -m http.server 8080
 ```
 
-Then open:
+| Page | What |
+| --- | --- |
+| [demos/standalone.html](demos/standalone.html) | Copy-paste happy path — orbit + spiral, `data-state` only |
+| [demos/lattice-family.html](demos/lattice-family.html) | Particle-shell explorer (defaults to orbit) |
+| [demos/index.html](demos/index.html) | Full gallery + live theme controls |
+| [demos/php-example.php](demos/php-example.php) | Optional PHP include (`php -S localhost:8080`) |
 
-- [http://localhost:8080/demos/index.html](http://localhost:8080/demos/index.html) — original 5 + Lattice family × 4 states, plus live controls
-- [http://localhost:8080/demos/lattice-family.html](http://localhost:8080/demos/lattice-family.html) — focused particle-shell explorer
-- [http://localhost:8080/demos/standalone.html](http://localhost:8080/demos/standalone.html) — orbit + spiral drop-in, `data-state` only
+`file://` works; a local server is nicer for relative CSS.
 
-You can also open the HTML files directly in a browser (`file://`). A local server is nicer for path resolution.
+Query helpers (samples only): `standalone.html?state=listening`, `lattice-family.html?variant=lattice-spiral&state=thinking`.
 
-## Drop-in (orbit / spiral)
-
-Link one stylesheet, paste a snippet, flip one attribute. No helper JS required.
-
-```html
-<link rel="stylesheet" href="css/orbs.css">
-```
-
-Paste `snippets/lattice-orbit.html` or `snippets/lattice-spiral.html`, then:
-
-```js
-const orb = document.querySelector(".orb");
-orb.dataset.state = "listening";
-```
-
-`data-state` values: `idle` | `thinking` | `listening` | `talking` (`writing` = talking). Theme with `style="--orb-hue: 272"` on the orb or any ancestor.
-
-`js/orb.js` is optional (`MatrixOrb.setState(orb, "thinking")`). CSS already watches `data-state`.
-
-See `demos/standalone.html` for a live copy-paste page.
-
-## Theme in one line
-
-```html
-<div class="orb orb--lattice-orbit" data-state="idle" style="--orb-hue: 272;">
-```
-
-`--orb-color`, `--orb-glow`, and `--orb-color-secondary` follow `--orb-hue` unless you set them yourself:
-
-```html
-<div class="orb orb--wire" data-state="thinking"
-     style="--orb-color: #39ff88; --orb-color-secondary: #baffd9; --orb-size: 180px;">
-```
-
-Set `--orb-hue` on `:root` or any wrapper to retheme every orb inside it.
-
-## Drop into HTML
-
-1. Copy `css/` into the project (or link `css/orbs.css`).
-2. Paste a snippet from `snippets/`.
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="css/orbs.css">
-</head>
-<body>
-  <div class="orb orb--soft" data-state="idle" style="--orb-hue: 168;"
-       role="img" aria-label="AI presence, idle">
-    <span class="orb__glow"></span>
-    <span class="orb__core"></span>
-    <span class="orb__ring" style="--i:1"></span>
-    <span class="orb__ring" style="--i:2"></span>
-    <span class="orb__ring" style="--i:3"></span>
-    <span class="orb__scan"></span>
-  </div>
-</body>
-</html>
-```
-
-Or include only what you need:
-
-```html
-<link rel="stylesheet" href="css/tokens.css">
-<link rel="stylesheet" href="css/orb.css">
-<link rel="stylesheet" href="css/orb-soft.css">
-```
-
-Ready-made fragments:
-
-| Variation | Class | Snippet |
-| --- | --- | --- |
-| Soft glow + rings | `orb orb--soft` | `snippets/soft.html` |
-| Dot lattice (baseline) | `orb orb--lattice` | `snippets/lattice.html` |
-| Dense lattice | `orb orb--lattice-dense` | `snippets/lattice-dense.html` |
-| Airy lattice | `orb orb--lattice-air` | `snippets/lattice-air.html` |
-| Nested shells | `orb orb--lattice-nested` | `snippets/lattice-nested.html` |
-| Orbit rings | `orb orb--lattice-orbit` | `snippets/lattice-orbit.html` |
-| Spiral scatter | `orb orb--lattice-spiral` | `snippets/lattice-spiral.html` |
-| Wireframe meridians | `orb orb--wire` | `snippets/wire.html` |
-| Ripple / pulse rings | `orb orb--ripple` | `snippets/ripple.html` |
-| Faceted crystal | `orb orb--crystal` | `snippets/crystal.html` |
-
-## Drop into PHP
-
-Link the stylesheet once in the layout head, then include the fragment:
+## PHP sample (optional)
 
 ```php
 <link rel="stylesheet" href="/css/orbs.css">
-
 <?php
-$orbVariant = 'lattice-orbit'; // lattice-orbit | lattice-spiral | lattice | ...
-$orbState   = 'idle';   // idle | thinking | listening | talking | writing
+$orbVariant = 'lattice-orbit';
+$orbState   = 'idle';
 $orbHue     = 168;
 include __DIR__ . '/snippets/orb.php';
 ?>
+<script>
+  document.querySelector(".orb").dataset.state = "talking";
+</script>
 ```
 
-Optional: `$orbColor`, `$orbSize` (`'180px'`), `$orbLabel`.
-
-Switch state later in JS — no PHP and no helper library required:
-
-```js
-document.querySelector(".orb").dataset.state = "listening";
-```
-
-## States
-
-Use `data-state` on `.orb` (one pattern, everywhere):
-
-| Value | Feel |
-| --- | --- |
-| `idle` | Calm, slow breathe / drift |
-| `thinking` | Faster, scanning / searching |
-| `listening` | Receptive expand–contract or inward waves |
-| `talking` | Faster speaking cadence (orbit/spiral: shell motion, not a brighter core) |
-| `writing` | Alias of `talking` (same CSS) |
-
-Vanilla JS is optional and only for toggling that attribute.
-
-## CSS variables
-
-| Token | Role |
-| --- | --- |
-| `--orb-hue` | Hue (0–360). Drives color if you do not set `--orb-color`. |
-| `--orb-color` | Primary glow / stroke |
-| `--orb-color-secondary` | Highlights, scan, inner light |
-| `--orb-glow` | Soft bloom color |
-| `--orb-bg` | Page/demo background token |
-| `--orb-size` | Width and height (default `160px`) |
-
-## File map
+## Layout
 
 ```
-css/tokens.css          shared variables + state timing
-css/orb.css             shared shell, reduced-motion
+css/orbs.css                 public bundle (link this)
+css/tokens.css               variables + state timing
+css/orb.css                  shared shell, reduced-motion
+css/orb-lattice.css          particle DNA + baseline lattice
+css/orb-lattice-family.css   dense / air / nested / orbit / spiral
 css/orb-soft.css
-css/orb-lattice.css           baseline + shared particle DNA
-css/orb-lattice-family.css    dense / air / nested / orbit / spiral
 css/orb-wire.css
 css/orb-ripple.css
 css/orb-crystal.css
-css/orbs.css            @import bundle (all of the above)
-js/orb.js               optional MatrixOrb.setState / setHue
-snippets/*.html         copy-paste markup per variation
-snippets/orb.php        PHP include
-demos/index.html            gallery + live controls
-demos/lattice-family.html   focused particle-shell explorer
-demos/standalone.html       single-orb drop-in page
-demos/php-example.php       PHP page that includes the fragment
+js/orb.js                    optional MatrixOrb helper
+snippets/*.html              copy-paste markup
+snippets/orb.php             optional PHP include
+demos/                       samples, not required at runtime
 ```
-
-`prefers-reduced-motion: reduce` stops looping motion.
 
 ## License
 
-MIT. See `LICENSE`.
+MIT. See [LICENSE](LICENSE).
