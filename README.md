@@ -1,12 +1,12 @@
 # Helixorb
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/github/license/scottmtech/helixorb)](LICENSE)
 
 Open-source **pure CSS** presence orbs — particle shells, rings, meridians, ripples, facets. Four motion states, one attribute. No build, no CDN, no frameworks, no images.
 
 Public entry: **`css/orbs.css`**. Recommended variants: **`orb--lattice-orbit`** and **`orb--lattice-spiral`** (shell-first: sharp dots, minimal core/halo).
 
-Class names (`orb`, `orb--lattice-orbit`, `data-state`, …) stay stable. This repo may still be cloned as `css-matrix-orbs` until the GitHub name is `helixorb`.
+Repo: [github.com/scottmtech/helixorb](https://github.com/scottmtech/helixorb). Class names (`orb`, `orb--lattice-orbit`, `data-state`, …) stay stable.
 
 ## Install
 
@@ -156,7 +156,7 @@ demos/                       samples, not required at runtime
 
 ## License
 
-[MIT](LICENSE) — `SPDX-License-Identifier: MIT`.
+[MIT](LICENSE). `package.json` also declares `"license": "MIT"`.
 
 ## Contribute
 
