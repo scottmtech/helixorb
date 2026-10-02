@@ -1,0 +1,125 @@
+/**
+ * Lattice family — shared 3D particle-shell DNA.
+ *
+ * Baseline:        .orb.orb--lattice
+ * Family siblings: .orb--lattice-dense | -air | -nested | -orbit | -spiral
+ *
+ * Markup (classic):
+ *   .orb.orb--lattice[data-state] > .orb__glow + .orb__shell > i[--x --y --z] + .orb__core + .orb__scan
+ */
+
+.orb[class*="orb--lattice"] .orb__shell {
+  position: absolute;
+  inset: 12%;
+  transform-style: preserve-3d;
+  z-index: 2;
+}
+
+.orb[class*="orb--lattice"] .orb__shell i {
+  --r: 0.38;
+  --dot: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--dot);
+  height: var(--dot);
+  margin: calc(var(--dot) / -2) 0 0 calc(var(--dot) / -2);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--_c2) 55%, white);
+  box-shadow: 0 0 6px var(--_c);
+  transform:
+    translate3d(
+      calc(var(--x) * var(--orb-size) * var(--r)),
+      calc(var(--y) * var(--orb-size) * var(--r)),
+      calc(var(--z) * var(--orb-size) * var(--r))
+    );
+  opacity: calc(0.28 + (var(--z) + 1) * 0.36);
+}
+
+.orb[class*="orb--lattice"] .orb__core {
+  inset: 36%;
+  background:
+    radial-gradient(circle at 35% 32%,
+      color-mix(in srgb, var(--_c2) 80%, white),
+      var(--_c) 46%,
+      transparent 74%);
+  box-shadow: 0 0 22px var(--_g);
+  opacity: 0.85;
+}
+
+.orb[class*="orb--lattice"] .orb__shell {
+  animation: orb-lattice-tumble var(--orb-spin) linear infinite;
+}
+
+.orb[class*="orb--lattice"] .orb__core {
+  animation: orb-breathe var(--orb-period) ease-in-out infinite;
+}
+
+.orb[class*="orb--lattice"][data-state="thinking"] .orb__shell {
+  animation: orb-lattice-search 4.5s linear infinite;
+}
+
+.orb[class*="orb--lattice"][data-state="thinking"] .orb__shell i {
+  animation: orb-lattice-twinkle calc(0.8s + var(--x) * 0.4s) ease-in-out infinite;
+}
+
+.orb[class*="orb--lattice"][data-state="listening"] .orb__shell {
+  animation: orb-lattice-listen var(--orb-period) ease-in-out infinite;
+}
+
+.orb[class*="orb--lattice"][data-state="listening"] .orb__core {
+  animation: orb-listen var(--orb-period) ease-in-out infinite;
+}
+
+.orb[class*="orb--lattice"][data-state="talking"] .orb__shell,
+.orb[class*="orb--lattice"][data-state="writing"] .orb__shell {
+  animation: orb-lattice-tumble calc(var(--orb-spin) * 0.45) linear infinite;
+}
+
+.orb[class*="orb--lattice"][data-state="talking"] .orb__shell i,
+.orb[class*="orb--lattice"][data-state="writing"] .orb__shell i {
+  animation: orb-lattice-speak calc(var(--orb-period) + var(--y) * 0.15s) ease-in-out infinite;
+}
+
+.orb[class*="orb--lattice"][data-state="talking"] .orb__core,
+.orb[class*="orb--lattice"][data-state="writing"] .orb__core {
+  animation: orb-speak var(--orb-period) ease-in-out infinite;
+}
+
+@keyframes orb-lattice-tumble {
+  0% { transform: rotateX(-16deg) rotateY(0deg); }
+  100% { transform: rotateX(-16deg) rotateY(360deg); }
+}
+
+@keyframes orb-lattice-search {
+  0% { transform: rotateX(18deg) rotateY(0deg) rotateZ(0deg); }
+  50% { transform: rotateX(-28deg) rotateY(180deg) rotateZ(12deg); }
+  100% { transform: rotateX(18deg) rotateY(360deg) rotateZ(0deg); }
+}
+
+@keyframes orb-lattice-listen {
+  0%, 100% { transform: rotateX(-8deg) rotateY(-12deg) scale3d(0.94, 0.94, 0.94); }
+  50% { transform: rotateX(10deg) rotateY(18deg) scale3d(1.08, 1.08, 1.08); }
+}
+
+@keyframes orb-lattice-twinkle {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+
+@keyframes orb-lattice-speak {
+  0%, 100% {
+    transform: translate3d(
+      calc(var(--x) * var(--orb-size) * var(--r, 0.38)),
+      calc(var(--y) * var(--orb-size) * var(--r, 0.38)),
+      calc(var(--z) * var(--orb-size) * var(--r, 0.38))
+    ) scale(1);
+  }
+  35% {
+    transform: translate3d(
+      calc(var(--x) * var(--orb-size) * var(--r, 0.38) * 1.16),
+      calc(var(--y) * var(--orb-size) * var(--r, 0.38) * 1.16),
+      calc(var(--z) * var(--orb-size) * var(--r, 0.38) * 1.16)
+    ) scale(1.35);
+  }
+}

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matrix Orbs — drop-in sample</title>
+  <link rel="stylesheet" href="../css/orbs.css">
+  <style>
+    html, body {
+      --orb-hue: 168;
+      margin: 0;
+      min-height: 100%;
+      background: #070b10;
+      color: #d7efe6;
+      font: 15px/1.5 ui-sans-serif, system-ui, sans-serif;
+    }
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+    h1 { font-weight: 600; letter-spacing: -0.03em; }
+    .preview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      place-items: center;
+      min-height: 280px;
+      margin: 28px 0 8px;
+      padding: 20px;
+      border: 1px solid #1c2a28;
+      border-radius: 16px;
+      background: radial-gradient(circle at 50% 40%, #0d1816, #070b10 70%);
+    }
+    .preview figure {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 260px;
+      width: 100%;
+    }
+    .preview .orb {
+      width: var(--orb-size, 200px);
+      height: var(--orb-size, 200px);
+    }
+    .preview figcaption {
+      margin-top: 8px;
+      font: 12px/1.4 ui-monospace, Menlo, Consolas, monospace;
+      color: #7f9a90;
+      text-align: center;
+    }
+    pre {
+      overflow: auto;
+      padding: 16px;
+      border-radius: 12px;
+      background: #0b1114;
+      border: 1px solid #1c2a28;
+      font: 12.5px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: #b8e6d4;
+    }
+    a { color: #5ee0b5; }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 24px; }
+    button {
+      background: #12201c;
+      color: #d7efe6;
+      border: 1px solid #2a443c;
+      border-radius: 999px;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+    button.is-on { border-color: #5ee0b5; color: #5ee0b5; }
+    @media (max-width: 640px) {
+      .preview { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="./index.html">← Gallery</a> · <a href="./lattice-family.html">Lattice family</a> · <a href="../README.md">README</a></p>
+    <h1>Drop-in sample</h1>
+    <p>Public entry is <code>css/orbs.css</code>. These two are the recommended variants — orbit and spiral, shell-first. Markup matches <code>snippets/lattice-orbit.html</code> and <code>snippets/lattice-spiral.html</code>. No build, no CDN, no required JS.</p>
+    <div class="preview">
+      <figure>
+        <div class="orb orb--lattice-orbit" data-state="idle" style="--orb-size: 200px; --orb-hue: 168;" role="img" aria-label="Orbit lattice orb, idle">
+  <span class="orb__glow"></span>
+  <span class="orb__shell">
+    <span class="orb__band" style="--band:1">
+      <i style="--x:0.626;--y:-0.780;--z:0.000"></i>
+      <i style="--x:0.542;--y:-0.780;--z:0.313"></i>
+      <i style="--x:0.313;--y:-0.780;--z:0.542"></i>
+      <i style="--x:0.000;--y:-0.780;--z:0.626"></i>
+      <i style="--x:-0.313;--y:-0.780;--z:0.542"></i>
+      <i style="--x:-0.542;--y:-0.780;--z:0.313"></i>
+      <i style="--x:-0.626;--y:-0.780;--z:0.000"></i>
+      <i style="--x:-0.542;--y:-0.780;--z:-0.313"></i>
+      <i style="--x:-0.313;--y:-0.780;--z:-0.542"></i>
+      <i style="--x:-0.000;--y:-0.780;--z:-0.626"></i>
+      <i style="--x:0.313;--y:-0.780;--z:-0.542"></i>
+      <i style="--x:0.542;--y:-0.780;--z:-0.313"></i>
+    </span>
+    <span class="orb__band" style="--band:2">
+      <i style="--x:0.908;--y:-0.420;--z:0.000"></i>
+      <i style="--x:0.853;--y:-0.420;--z:0.310"></i>
+      <i style="--x:0.695;--y:-0.420;--z:0.583"></i>
+      <i style="--x:0.454;--y:-0.420;--z:0.786"></i>
+      <i style="--x:0.158;--y:-0.420;--z:0.894"></i>
+      <i style="--x:-0.158;--y:-0.420;--z:0.894"></i>
+      <i style="--x:-0.454;--y:-0.420;--z:0.786"></i>
+      <i style="--x:-0.695;--y:-0.420;--z:0.583"></i>
+      <i style="--x:-0.853;--y:-0.420;--z:0.310"></i>
+      <i style="--x:-0.908;--y:-0.420;--z:0.000"></i>
+      <i style="--x:-0.853;--y:-0.420;--z:-0.310"></i>
+      <i style="--x:-0.695;--y:-0.420;--z:-0.583"></i>
+      <i style="--x:-0.454;--y:-0.420;--z:-0.786"></i>
+      <i style="--x:-0.158;--y:-0.420;--z:-0.894"></i>
+      <i style="--x:0.158;--y:-0.420;--z:-0.894"></i>
+      <i style="--x:0.454;--y:-0.420;--z:-0.786"></i>
+      <i style="--x:0.695;--y:-0.420;--z:-0.583"></i>
+      <i style="--x:0.853;--y:-0.420;--z:-0.310"></i>
+    </span>
+    <span class="orb__band" style="--band:3">
+      <i style="--x:1.000;--y:0.000;--z:0.000"></i>
+      <i style="--x:0.966;--y:0.000;--z:0.259"></i>
+      <i style="--x:0.866;--y:0.000;--z:0.500"></i>
+      <i style="--x:0.707;--y:0.000;--z:0.707"></i>
+      <i style="--x:0.500;--y:0.000;--z:0.866"></i>
+      <i style="--x:0.259;--y:0.000;--z:0.966"></i>
+      <i style="--x:0.000;--y:0.000;--z:1.000"></i>
+      <i style="--x:-0.259;--y:0.000;--z:0.966"></i>
+      <i style="--x:-0.500;--y:0.000;--z:0.866"></i>
+      <i style="--x:-0.707;--y:0.000;--z:0.707"></i>
+      <i style="--x:-0.866;--y:0.000;--z:0.500"></i>
+      <i style="--x:-0.966;--y:0.000;--z:0.259"></i>
+      <i style="--x:-1.000;--y:0.000;--z:0.000"></i>
+      <i style="--x:-0.966;--y:0.000;--z:-0.259"></i>
+      <i style="--x:-0.866;--y:0.000;--z:-0.500"></i>
+      <i style="--x:-0.707;--y:0.000;--z:-0.707"></i>
+      <i style="--x:-0.500;--y:0.000;--z:-0.866"></i>
+      <i style="--x:-0.259;--y:0.000;--z:-0.966"></i>
+      <i style="--x:-0.000;--y:0.000;--z:-1.000"></i>
+      <i style="--x:0.259;--y:0.000;--z:-0.966"></i>
+      <i style="--x:0.500;--y:0.000;--z:-0.866"></i>
+      <i style="--x:0.707;--y:0.000;--z:-0.707"></i>
+      <i style="--x:0.866;--y:0.000;--z:-0.500"></i>
+      <i style="--x:0.966;--y:0.000;--z:-0.259"></i>
+    </span>
+    <span class="orb__band" style="--band:4">
+      <i style="--x:0.908;--y:0.420;--z:0.000"></i>
+      <i style="--x:0.853;--y:0.420;--z:0.310"></i>
+      <i style="--x:0.695;--y:0.420;--z:0.583"></i>
+      <i style="--x:0.454;--y:0.420;--z:0.786"></i>
+      <i style="--x:0.158;--y:0.420;--z:0.894"></i>
+      <i style="--x:-0.158;--y:0.420;--z:0.894"></i>
+      <i style="--x:-0.454;--y:0.420;--z:0.786"></i>
+      <i style="--x:-0.695;--y:0.420;--z:0.583"></i>
+      <i style="--x:-0.853;--y:0.420;--z:0.310"></i>
+      <i style="--x:-0.908;--y:0.420;--z:0.000"></i>
+      <i style="--x:-0.853;--y:0.420;--z:-0.310"></i>
+      <i style="--x:-0.695;--y:0.420;--z:-0.583"></i>
+      <i style="--x:-0.454;--y:0.420;--z:-0.786"></i>
+      <i style="--x:-0.158;--y:0.420;--z:-0.894"></i>
+      <i style="--x:0.158;--y:0.420;--z:-0.894"></i>
+      <i style="--x:0.454;--y:0.420;--z:-0.786"></i>
+      <i style="--x:0.695;--y:0.420;--z:-0.583"></i>
+      <i style="--x:0.853;--y:0.420;--z:-0.310"></i>
+    </span>
+    <span class="orb__band" style="--band:5">
+      <i style="--x:0.626;--y:0.780;--z:0.000"></i>
+      <i style="--x:0.542;--y:0.780;--z:0.313"></i>
+      <i style="--x:0.313;--y:0.780;--z:0.542"></i>
+      <i style="--x:0.000;--y:0.780;--z:0.626"></i>
+      <i style="--x:-0.313;--y:0.780;--z:0.542"></i>
+      <i style="--x:-0.542;--y:0.780;--z:0.313"></i>
+      <i style="--x:-0.626;--y:0.780;--z:0.000"></i>
+      <i style="--x:-0.542;--y:0.780;--z:-0.313"></i>
+      <i style="--x:-0.313;--y:0.780;--z:-0.542"></i>
+      <i style="--x:-0.000;--y:0.780;--z:-0.626"></i>
+      <i style="--x:0.313;--y:0.780;--z:-0.542"></i>
+      <i style="--x:0.542;--y:0.780;--z:-0.313"></i>
+    </span>
+  </span>
+  <span class="orb__core"></span>
+  <span class="orb__scan"></span>
+</div>
+        <figcaption>orb--lattice-orbit</figcaption>
+      </figure>
+      <figure>
+        <div class="orb orb--lattice-spiral" data-state="idle" style="--orb-size: 200px; --orb-hue: 168;" role="img" aria-label="Spiral lattice orb, idle">
+  <span class="orb__glow"></span>
+  <span class="orb__shell">
+    <i style="--x:0.000;--y:1.000;--z:0.000"></i>
+    <i style="--x:0.203;--y:0.968;--z:0.146"></i>
+    <i style="--x:0.112;--y:0.937;--z:0.332"></i>
+    <i style="--x:-0.126;--y:0.905;--z:0.407"></i>
+    <i style="--x:-0.389;--y:0.873;--z:0.294"></i>
+    <i style="--x:-0.540;--y:0.841;--z:0.013"></i>
+    <i style="--x:-0.485;--y:0.810;--z:-0.331"></i>
+    <i style="--x:-0.215;--y:0.778;--z:-0.591"></i>
+    <i style="--x:0.180;--y:0.746;--z:-0.641"></i>
+    <i style="--x:0.547;--y:0.714;--z:-0.436"></i>
+    <i style="--x:0.730;--y:0.683;--z:-0.036"></i>
+    <i style="--x:0.638;--y:0.651;--z:0.412"></i>
+    <i style="--x:0.287;--y:0.619;--z:0.731"></i>
+    <i style="--x:-0.200;--y:0.587;--z:0.784"></i>
+    <i style="--x:-0.637;--y:0.556;--z:0.534"></i>
+    <i style="--x:-0.849;--y:0.524;--z:0.064"></i>
+    <i style="--x:-0.743;--y:0.492;--z:-0.454"></i>
+    <i style="--x:-0.345;--y:0.460;--z:-0.818"></i>
+    <i style="--x:0.201;--y:0.429;--z:-0.881"></i>
+    <i style="--x:0.688;--y:0.397;--z:-0.607"></i>
+    <i style="--x:0.926;--y:0.365;--z:-0.093"></i>
+    <i style="--x:0.816;--y:0.333;--z:0.471"></i>
+    <i style="--x:0.392;--y:0.302;--z:0.869"></i>
+    <i style="--x:-0.191;--y:0.270;--z:0.944"></i>
+    <i style="--x:-0.712;--y:0.238;--z:0.661"></i>
+    <i style="--x:-0.971;--y:0.206;--z:0.122"></i>
+    <i style="--x:-0.865;--y:0.175;--z:-0.471"></i>
+    <i style="--x:-0.429;--y:0.143;--z:-0.892"></i>
+    <i style="--x:0.173;--y:0.111;--z:-0.979"></i>
+    <i style="--x:0.714;--y:0.079;--z:-0.696"></i>
+    <i style="--x:0.988;--y:0.048;--z:-0.149"></i>
+    <i style="--x:0.890;--y:0.016;--z:0.456"></i>
+    <i style="--x:0.456;--y:-0.016;--z:0.890"></i>
+    <i style="--x:-0.149;--y:-0.048;--z:0.988"></i>
+    <i style="--x:-0.696;--y:-0.079;--z:0.714"></i>
+    <i style="--x:-0.979;--y:-0.111;--z:0.173"></i>
+    <i style="--x:-0.892;--y:-0.143;--z:-0.429"></i>
+    <i style="--x:-0.471;--y:-0.175;--z:-0.865"></i>
+    <i style="--x:0.122;--y:-0.206;--z:-0.971"></i>
+    <i style="--x:0.661;--y:-0.238;--z:-0.712"></i>
+    <i style="--x:0.944;--y:-0.270;--z:-0.191"></i>
+    <i style="--x:0.869;--y:-0.302;--z:0.392"></i>
+    <i style="--x:0.471;--y:-0.333;--z:0.816"></i>
+    <i style="--x:-0.093;--y:-0.365;--z:0.926"></i>
+    <i style="--x:-0.607;--y:-0.397;--z:0.688"></i>
+    <i style="--x:-0.881;--y:-0.429;--z:0.201"></i>
+    <i style="--x:-0.818;--y:-0.460;--z:-0.345"></i>
+    <i style="--x:-0.454;--y:-0.492;--z:-0.743"></i>
+    <i style="--x:0.064;--y:-0.524;--z:-0.849"></i>
+    <i style="--x:0.534;--y:-0.556;--z:-0.637"></i>
+    <i style="--x:0.784;--y:-0.587;--z:-0.200"></i>
+    <i style="--x:0.731;--y:-0.619;--z:0.287"></i>
+    <i style="--x:0.412;--y:-0.651;--z:0.638"></i>
+    <i style="--x:-0.036;--y:-0.683;--z:0.730"></i>
+    <i style="--x:-0.436;--y:-0.714;--z:0.547"></i>
+    <i style="--x:-0.641;--y:-0.746;--z:0.180"></i>
+    <i style="--x:-0.591;--y:-0.778;--z:-0.215"></i>
+    <i style="--x:-0.331;--y:-0.810;--z:-0.485"></i>
+    <i style="--x:0.013;--y:-0.841;--z:-0.540"></i>
+    <i style="--x:0.294;--y:-0.873;--z:-0.389"></i>
+    <i style="--x:0.407;--y:-0.905;--z:-0.126"></i>
+    <i style="--x:0.332;--y:-0.937;--z:0.112"></i>
+    <i style="--x:0.146;--y:-0.968;--z:0.203"></i>
+    <i style="--x:-0.000;--y:-1.000;--z:0.000"></i>
+  </span>
+  <span class="orb__core"></span>
+  <span class="orb__scan"></span>
+</div>
+        <figcaption>orb--lattice-spiral</figcaption>
+      </figure>
+    </div>
+    <div class="row" id="states">
+      <button type="button" data-state="idle" class="is-on">idle</button>
+      <button type="button" data-state="thinking">thinking</button>
+      <button type="button" data-state="listening">listening</button>
+      <button type="button" data-state="talking">talking</button>
+    </div>
+
+    <h2>Copy-paste</h2>
+    <pre>&lt;link rel="stylesheet" href="css/orbs.css"&gt;
+
+&lt;!-- paste snippets/lattice-orbit.html or snippets/lattice-spiral.html --&gt;
+
+&lt;script&gt;
+  const orb = document.querySelector(".orb");
+  orb.dataset.state = "listening";
+&lt;/script&gt;</pre>
+
+    <h2>State API</h2>
+    <p><code>data-state</code> on the orb: <code>idle</code> · <code>thinking</code> · <code>listening</code> · <code>talking</code>. <code>writing</code> is a talking alias. The buttons above only do <code>orb.dataset.state = '…'</code>.</p>
+    <pre>const orb = document.querySelector(".orb");
+orb.dataset.state = "listening";</pre>
+    <p><code>js/orb.js</code> is optional: <code>MatrixOrb.setState(orb, "thinking")</code>.</p>
+
+    <h2>PHP sample (optional)</h2>
+    <pre>&lt;link rel="stylesheet" href="/css/orbs.css"&gt;
+&lt;?php
+$orbVariant = "lattice-orbit"; // or lattice-spiral
+$orbState = "idle";
+$orbHue = 168;
+include __DIR__ . "/snippets/orb.php";
+?&gt;
+&lt;script&gt;
+  document.querySelector(".orb").dataset.state = "talking";
+&lt;/script&gt;</pre>
+  </main>
+  <script>
+    function setOrbs(state) {
+      document.querySelectorAll(".orb").forEach(function (orb) {
+        orb.dataset.state = state;
+      });
+      document.querySelectorAll("#states button").forEach(function (b) {
+        b.classList.toggle("is-on", b.getAttribute("data-state") === state);
+      });
+    }
+    var params = new URLSearchParams(location.search);
+    var initial = params.get("state");
+    if (initial) setOrbs(initial);
+    if (params.has("cycle")) {
+      var states = ["idle", "thinking", "listening", "talking"];
+      var n = 0;
+      setInterval(function () {
+        n = (n + 1) % states.length;
+        setOrbs(states[n]);
+      }, 1600);
+    }
+    document.getElementById("states").addEventListener("click", function (e) {
+      var btn = e.target.closest("[data-state]");
+      if (!btn) return;
+      setOrbs(btn.getAttribute("data-state"));
+    });
+  </script>
+</body>
+</html>

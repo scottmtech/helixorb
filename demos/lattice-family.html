@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lattice family — Matrix Orbs</title>
+  <link rel="stylesheet" href="../css/orbs.css">
+  <link rel="stylesheet" href="./demo.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">CSS Matrix Orbs / library sample</p>
+    <h1>Lattice family</h1>
+    <p class="lede">Particle shells, same <code>data-state</code> API. Recommended: <code>orb--lattice-orbit</code> and <code>orb--lattice-spiral</code> (shell-first). Copy markup from <code>snippets/</code>.</p>
+    <p class="links">
+      <a href="./index.html">← Full gallery</a>
+      <a href="./standalone.html">Drop-in sample</a>
+      <a href="../README.md">README</a>
+    </p>
+  </header>
+
+  <section class="playground playground--wide" aria-label="Lattice family playground">
+    <div class="stage stage--lg" id="stage">
+      <div class="orb orb--lattice" data-state="idle" role="img" aria-label="Lattice family orb" id="stage-orb" style="--orb-size: 260px;">
+  <span class="orb__glow"></span>
+  <span class="orb__shell">
+    <i style="--x:0.000;--y:1.000;--z:0.000"></i>
+    <i style="--x:-0.174;--y:0.972;--z:0.159"></i>
+    <i style="--x:0.029;--y:0.944;--z:-0.330"></i>
+    <i style="--x:0.245;--y:0.915;--z:0.319"></i>
+    <i style="--x:-0.454;--y:0.887;--z:-0.080"></i>
+    <i style="--x:0.432;--y:0.859;--z:-0.275"></i>
+    <i style="--x:-0.144;--y:0.831;--z:0.537"></i>
+    <i style="--x:-0.275;--y:0.803;--z:-0.529"></i>
+    <i style="--x:0.594;--y:0.775;--z:0.217"></i>
+    <i style="--x:-0.615;--y:0.746;--z:0.254"></i>
+    <i style="--x:0.295;--y:0.718;--z:-0.630"></i>
+    <i style="--x:0.217;--y:0.690;--z:0.691"></i>
+    <i style="--x:-0.649;--y:0.662;--z:-0.376"></i>
+    <i style="--x:0.755;--y:0.634;--z:-0.166"></i>
+    <i style="--x:-0.458;--y:0.606;--z:0.651"></i>
+    <i style="--x:-0.105;--y:0.577;--z:-0.810"></i>
+    <i style="--x:0.639;--y:0.549;--z:0.539"></i>
+    <i style="--x:-0.853;--y:0.521;--z:0.035"></i>
+    <i style="--x:0.617;--y:0.493;--z:-0.614"></i>
+    <i style="--x:-0.041;--y:0.465;--z:0.884"></i>
+    <i style="--x:-0.576;--y:0.437;--z:-0.691"></i>
+    <i style="--x:0.905;--y:0.408;--z:0.122"></i>
+    <i style="--x:-0.759;--y:0.380;--z:0.528"></i>
+    <i style="--x:0.205;--y:0.352;--z:-0.913"></i>
+    <i style="--x:0.470;--y:0.324;--z:0.821"></i>
+    <i style="--x:-0.910;--y:0.296;--z:-0.290"></i>
+    <i style="--x:0.875;--y:0.268;--z:-0.404"></i>
+    <i style="--x:-0.375;--y:0.239;--z:0.896"></i>
+    <i style="--x:-0.331;--y:0.211;--z:-0.920"></i>
+    <i style="--x:0.870;--y:0.183;--z:0.457"></i>
+    <i style="--x:-0.955;--y:0.155;--z:0.252"></i>
+    <i style="--x:0.536;--y:0.127;--z:-0.834"></i>
+    <i style="--x:0.169;--y:0.099;--z:0.981"></i>
+    <i style="--x:-0.789;--y:0.070;--z:-0.611"></i>
+    <i style="--x:0.996;--y:0.042;--z:-0.082"></i>
+    <i style="--x:-0.679;--y:0.014;--z:0.734"></i>
+    <i style="--x:0.005;--y:-0.014;--z:-1.000"></i>
+    <i style="--x:0.671;--y:-0.042;--z:0.740"></i>
+    <i style="--x:-0.993;--y:-0.070;--z:-0.092"></i>
+    <i style="--x:0.793;--y:-0.099;--z:-0.602"></i>
+    <i style="--x:-0.178;--y:-0.127;--z:0.976"></i>
+    <i style="--x:-0.526;--y:-0.155;--z:-0.836"></i>
+    <i style="--x:0.948;--y:-0.183;--z:0.260"></i>
+    <i style="--x:-0.870;--y:-0.211;--z:0.446"></i>
+    <i style="--x:0.338;--y:-0.239;--z:-0.910"></i>
+    <i style="--x:0.363;--y:-0.268;--z:0.892"></i>
+    <i style="--x:-0.863;--y:-0.296;--z:-0.409"></i>
+    <i style="--x:0.904;--y:-0.324;--z:-0.279"></i>
+    <i style="--x:-0.473;--y:-0.352;--z:0.808"></i>
+    <i style="--x:-0.194;--y:-0.380;--z:-0.904"></i>
+    <i style="--x:0.744;--y:-0.408;--z:0.529"></i>
+    <i style="--x:-0.893;--y:-0.437;--z:0.111"></i>
+    <i style="--x:0.574;--y:-0.465;--z:-0.674"></i>
+    <i style="--x:0.032;--y:-0.493;--z:0.869"></i>
+    <i style="--x:-0.599;--y:-0.521;--z:-0.608"></i>
+    <i style="--x:0.835;--y:-0.549;--z:0.043"></i>
+    <i style="--x:-0.629;--y:-0.577;--z:0.520"></i>
+    <i style="--x:0.110;--y:-0.606;--z:-0.788"></i>
+    <i style="--x:0.439;--y:-0.634;--z:0.637"></i>
+    <i style="--x:-0.730;--y:-0.662;--z:-0.168"></i>
+    <i style="--x:0.630;--y:-0.690;--z:-0.357"></i>
+    <i style="--x:-0.215;--y:-0.718;--z:0.662"></i>
+    <i style="--x:-0.276;--y:-0.746;--z:-0.605"></i>
+    <i style="--x:0.582;--y:-0.775;--z:0.247"></i>
+    <i style="--x:-0.562;--y:-0.803;--z:0.199"></i>
+    <i style="--x:0.261;--y:-0.831;--z:-0.491"></i>
+    <i style="--x:0.128;--y:-0.859;--z:0.495"></i>
+    <i style="--x:-0.387;--y:-0.887;--z:-0.251"></i>
+    <i style="--x:0.397;--y:-0.915;--z:-0.066"></i>
+    <i style="--x:-0.204;--y:-0.944;--z:0.261"></i>
+    <i style="--x:-0.018;--y:-0.972;--z:-0.235"></i>
+    <i style="--x:0.000;--y:-1.000;--z:0.000"></i>
+  </span>
+  <span class="orb__core"></span>
+  <span class="orb__scan"></span>
+</div>
+    </div>
+    <div class="controls">
+      <div class="control-block">
+        <h2>Variation</h2>
+        <label class="select">
+          <select id="variant-select" aria-label="Lattice variation">
+            <option value="lattice-orbit" selected>Orbit — orb--lattice-orbit (recommended)</option>
+            <option value="lattice-spiral">Spiral — orb--lattice-spiral (recommended)</option>
+            <option value="lattice">Dot lattice — orb--lattice</option>
+            <option value="lattice-dense">Dense lattice — orb--lattice-dense</option>
+            <option value="lattice-air">Airy lattice — orb--lattice-air</option>
+            <option value="lattice-nested">Nested lattice — orb--lattice-nested</option>
+          </select>
+        </label>
+        <p class="hint" id="class-badge"><code>orb--lattice-orbit</code></p>
+      </div>
+      <div class="control-block">
+        <h2>State</h2>
+        <div class="pills" role="group" aria-label="State">
+          <button type="button" data-state="idle" class="is-active">idle</button>
+          <button type="button" data-state="thinking">thinking</button>
+          <button type="button" data-state="listening">listening</button>
+          <button type="button" data-state="talking">talking</button>
+        </div>
+      </div>
+      <div class="control-block">
+        <h2>Theme</h2>
+        <label class="hue">
+          <span>Hue <output id="hue-out">168</output></span>
+          <input id="hue" type="range" min="0" max="360" value="168">
+        </label>
+        <div class="swatches" role="group" aria-label="Color presets">
+          <button type="button" data-hue="168" style="--sw:168"></button>
+          <button type="button" data-hue="196" style="--sw:196"></button>
+          <button type="button" data-hue="272" style="--sw:272"></button>
+          <button type="button" data-hue="32" style="--sw:32"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" aria-label="All lattice variants idle">
+    <header class="section-head">
+      <h2>Family at a glance</h2>
+      <p>Idle pose for each shell. Use the playground to cycle states.</p>
+    </header>
+    <div class="grid grid--family">
+      <figure class="cell">
+        <div class="orb orb--lattice" data-state="idle" role="img" aria-label="Dot lattice orb, idle" style="--orb-size: 150px;">
+  <span class="orb__glow"></span>
+  <span class="orb__shell">
+    <i style="--x:0.000;--y:1.000;--z:0.000"></i>
+    <i style="--x:-0.174;--y:0.972;--z:0.159"></i>
+    <i style="--x:0.029;--y:0.944;--z:-0.330"></i>
+    <i style="--x:0.245;--y:0.915;--z:0.319"></i>
+    <i style="--x:-0.454;--y:0.887;--z:-0.080"></i>
+    <i style="--x:0.432;--y:0.859;--z:-0.275"></i>
+    <i style="--x:-0.144;--y:0.831;--z:0.537"></i>
+    <i style="--x:-0.275;--y:0.803;--z:-0.529"></i>
+    <i style="--x:0.594;--y:0.775;--z:0.217"></i>
+    <i style="--x:-0.615;--y:0.746;--z:0.254"></i>
+    <i style="--x:0.295;--y:0.718;--z:-0.630"></i>
+    <i style="--x:0.217;--y:0.690;--z:0.691"></i>
+    <i style="--x:-0.649;--y:0.662;--z:-0.376"></i>
+    <i style="--x:0.755;--y:0.634;--z:-0.166"></i>
+    <i style="--x:-0.458;--y:0.606;--z:0.651"></i>
+    <i style="--x:-0.105;--y:0.577;--z:-0.810"></i>
+    <i style="--x:0.639;--y:0.549;--z:0.539"></i>
+    <i style="--x:-0.853;--y:0.521;--z:0.035"></i>
+    <i style="--x:0.617;--y:0.493;--z:-0.614"></i>
+    <i style="--x:-0.041;--y:0.465;--z:0.884"></i>
+    <i style="--x:-0.576;--y:0.437;--z:-0.691"></i>
+    <i style="--x:0.905;--y:0.408;--z:0.122"></i>
+    <i style="--x:-0.759;--y:0.380;--z:0.528"></i>
+    <i style="--x:0.205;--y:0.352;--z:-0.913"></i>
+    <i style="--x:0.470;--y:0.324;--z:0.821"></i>
+    <i style="--x:-0.910;--y:0.296;--z:-0.290"></i>
+    <i style="--x:0.875;--y:0.268;--z:-0.404"></i>
+    <i style="--x:-0.375;--y:0.239;--z:0.896"></i>
+    <i style="--x:-0.331;--y:0.211;--z:-0.920"></i>
+    <i style="--x:0.870;--y:0.183;--z:0.457"></i>
+    <i style="--x:-0.955;--y:0.155;--z:0.252"></i>
+    <i style="--x:0.536;--y:0.127;--z:-0.834"></i>
+    <i style="--x:0.169;--y:0.099;--z:0.981"></i>
+    <i style="--x:-0.789;--y:0.070;--z:-0.611"></i>
+    <i style="--x:0.996;--y:0.042;--z:-0.082"></i>
+    <i style="--x:-0.679;--y:0.014;--z:0.734"></i>
+    <i style="--x:0.005;--y:-0.014;--z:-1.000"></i>
+    <i style="--x:0.671;--y:-0.042;--z:0.740"></i>
+    <i style="--x:-0.993;--y:-0.070;--z:-0.092"></i>
+    <i style="--x:0.793;--y:-0.099;--z:-0.602"></i>
+    <i style="--x:-0.178;--y:-0.127;--z:0.976"></i>
+    <i style="--x:-0.526;--y:-0.155;--z:-0.836"></i>
+    <i style="--x:0.948;--y:-0.183;--z:0.260"></i>
+    <i style="--x:-0.870;--y:-0.211;--z:0.446"></i>
+    <i style="--x:0.338;--y:-0.239;--z:-0.910"></i>
+    <i style="--x:0.363;--y:-0.268;--z:0.892"></i>
+    <i style="--x:-0.863;--y:-0.296;--z:-0.409"></i>
+    <i style="--x:0.904;--y:-0.324;--z:-0.279"></i>
+    <i style="--x:-0.473;--y:-0.352;--z:0.808"></i>
+    <i style="--x:-0.194;--y:-0.380;--z:-0.904"></i>
+    <i style="--x:0.744;--y:-0.408;--z:0.529"></i>
+    <i style="--x:-0.893;--y:-0.437;--z:0.111"></i>
+    <i style="--x:0.574;--y:-0.465;--z:-0.674"></i>
+    <i style="--x:0.032;--y:-0.493;--z:0.869"></i>
+    <i style="--x:-0.599;--y:-0.521;--z:-0.608"></i>
+    <i style="--x:0.835;--y:-0.549;--z:0.043"></i>
+    <i style="--x:-0.629;--y:-0.577;--z:0.520"></i>
+    <i style="--x:0.110;--y:-0.606;--z:-0.788"></i>
+    <i style="--x:0.439;--y:-0.634;--z:0.637"></i>
+    <i style="--x:-0.730;--y:-0.662;--z:-0.168"></i>
+    <i style="--x:0.630;--y:-0.690;--z:-0.357"></i>
+    <i style="--x:-0.215;--y:-0.718;--z:0.662"></i>
+    <i style="--x:-0.276;--y:-0.746;--z:-0.605"></i>
+    <i style="--x:0.582;--y:-0.775;--z:0.247"></i>
+    <i style="--x:-0.562;--y:-0.803;--z:0.199"></i>
+    <i style="--x:0.261;--y:-0.831;--z:-0.491"></i>
+    <i style="--x:0.128;--y:-0.859;--z:0.495"></i>
+    <i style="--x:-0.387;--y:-0.887;--z:-0.251"></i>
+    <i style="--x:0.397;--y:-0.915;--z:-0.066"></i>
+    <i style="--x:-0.204;--y:-0.944;--z:0.261"></i>
+    <i style="--x:-0.018;--y:-0.972;--z:-0.235"></i>
+    <i style="--x:0.000;--y:-1.000;--z:0.000"></i>
+  </span>
+  <span class="orb__core"></span>
+  <span class="orb__scan"></span>
+</div>
+        <figcaption>
+          <span class="cell__var">Dot lattice</span>
+          <span class="cell__state">orb--lattice</span>
+        </figcaption>
+      </figure>
+      <figure class="cell">
+        <div class="orb orb--lattice-dense" data-state="idle" role="img" aria-label="Dense lattice orb, idle" style="--orb-size: 150px;">
+  <span class="orb__glow"></span>
+  <span class="orb__shell">
+    <i style="--x:0.000;--y:1.000;--z:0.000"></i>
+    <i style="--x:-0.130;--y:0.984;--z:0.119"></i>
+    <i style="--x:0.022;--y:0.969;--z:-0.248"></i>
+    <i style="--x:0.185;--y:0.953;--z:0.241"></i>
+    <i style="--x:-0.344;--y:0.937;--z:-0.061"></i>
+    <i style="--x:0.328;--y:0.921;--z:-0.209"></i>
+    <i style="--x:-0.110;--y:0.906;--z:0.410"></i>
+    <i style="--x:-0.210;--y:0.890;--z:-0.405"></i>
+    <i style="--x:0.456;--y:0.874;--z:0.167"></i>
+    <i style="--x:-0.474;--y:0.858;--z:0.196"></i>
+    <i style="--x:0.228;--y:0.843;--z:-0.488"></i>
+    <i style="--x:0.168;--y:0.827;--z:0.537"></i>
+    <i style="--x:-0.506;--y:0.811;--z:-0.293"></i>
+    <i style="--x:0.592;--y:0.795;--z:-0.130"></i>
+    <i style="--x:-0.360;--y:0.780;--z:0.512"></i>
+    <i style="--x:-0.083;--y:0.764;--z:-0.640"></i>
+    <i style="--x:0.507;--y:0.748;--z:0.428"></i>
+    <i style="--x:-0.680;--y:0.732;--z:0.028"></i>
+    <i style="--x:0.494;--y:0.717;--z:-0.492"></i>
+    <i style="--x:-0.033;--y:0.701;--z:0.713"></i>
+    <i style="--x:-0.467;--y:0.685;--z:-0.559"></i>
+    <i style="--x:0.736;--y:0.669;--z:0.099"></i>
+    <i style="--x:-0.621;--y:0.654;--z:0.432"></i>
+    <i style="--x:0.169;--y:0.638;--z:-0.751"></i>
+    <i style="--x:0.389;--y:0.622;--z:0.679"></i>
+    <i style="--x:-0.758;--y:0.606;--z:-0.242"></i>
+    <i style="--x:0.733;--y:0.591;--z:-0.338"></i>
+    <i style="--x:-0.316;--y:0.575;--z:0.755"></i>
+    <i style="--x:-0.281;--y:0.559;--z:-0.780"></i>
+    <i style="--x:0.743;--y:0.543;--z:0.391"></i>
+    <i style="--x:-0.821;--y:0.528;--z:0.217"></i>
+    <i style="--x:0.465;--y:0.512;--z:-0.723"></i>
+    <i style="--x:0.147;--y:0.496;--z:0.856"></i>
+    <i style="--x:-0.693;--y:0.480;--z:-0.537"></i>
+    <i style="--x:0.883;--y:0.465;--z:-0.073"></i>
+    <i style="--x:-0.607;--y:0.449;--z:0.656"></i>
+    <i style="--x:0.004;--y:0.433;--z:-0.901"></i>
+    <i style="--x:0.611;--y:0.417;--z:0.673"></i>
+    <i style="--x:-0.912;--y:0.402;--z:-0.085"></i>
+    <i style="--x:0.735;--y:0.386;--z:-0.558"></i>
+    <i style="--x:-0.166;--y:0.370;--z:0.914"></i>
+    <i style="--x:-0.498;--y:0.354;--z:-0.791"></i>
+    <i style="--x:0.907;--y:0.339;--z:0.249"></i>
+    <i style="--x:-0.842;--y:0.323;--z:0.432"></i>
+    <i style="--x:0.331;--y:0.307;--z:-0.892"></i>
+    <i style="--x:0.361;--y:0.291;--z:0.886"></i>
+    <i style="--x:-0.869;--y:0.276;--z:-0.412"></i>
+    <i style="--x:0.923;--y:0.260;--z:-0.285"></i>
+    <i style="--x:-0.490;--y:0.244;--z:0.837"></i>
+    <i style="--x:-0.204;--y:0.228;--z:-0.952"></i>
+    <i style="--x:0.797;--y:0.213;--z:0.566"></i>
+    <i style="--x:-0.973;--y:0.197;--z:0.121"></i>
+    <i style="--x:0.637;--y:0.181;--z:-0.749"></i>
+    <i style="--x:0.036;--y:0.165;--z:0.986"></i>
+    <i style="--x:-0.694;--y:0.150;--z:-0.704"></i>
+    <i style="--x:0.990;--y:0.134;--z:0.051"></i>
+    <i style="--x:-0.766;--y:0.118;--z:0.632"></i>
+    <i style="--x:0.137;--y:0.102;--z:-0.985"></i>
+    <i style="--x:0.565;--y:0.087;--z:0.821"></i>
+    <i style="--x:-0.972;--y:0.071;--z:-0.224"></i>
+    <i style="--x:0.869;--y:0.055;--z:-0.492"></i>
+    <i style="--x:-0.308;--y:0.039;--z:0.950"></i>
+    <i style="--x:-0.415;--y:0.024;--z:-0.910"></i>
+    <i style="--x:0.921;--y:0.008;--z:0.391"></i>
+    <i style="--x:-0.943;--y:-0.008;--z:0.334"></i>
+    <i style="--x:0.469;--y:-0.024;--z:-0.883"></i>
+    <i style="--x:0.250;--y:-0.039;--z:0.967"></i>
+    <i style="--x:-0.837;--y:-0.055;--z:-0.544"></i>
+    <i style="--x:0.984;--y:-0.071;--z:-0.164"></i>
+    <i style="--x:-0.614;--y:-0.087;--z:0.785"></i>
+    <i style="--x:-0.077;--y:-0.102;--z:-0.992"></i>
+    <i style="--x:0.726;--y:-0.118;--z:0.678"></i>
+    <i style="--x:-0.991;--y:-0.134;--z:-0.010"></i>
+    <i style="--x:0.736;--y:-0.150;--z:-0.661"></i>
+    <i style="--x:-0.096;--y:-0.165;--z:0.982"></i>
+    <i style="--x:-0.591;--y:-0.181;--z:-0.786"></i>
+    <i style="--x:0.964;--y:-0.197;--z:0.180"></i>
+    <i style="--x:-0.830;--y:-0.213;--z:0.516"></i>
+    <i style="--x:0.262;--y:-0.228;--z:-0.938"></i>
+    <i style="--x:0.439;--y:-0.244;--z:0.865"></i>
+    <i style="--x:-0.904;--y:-0.260;--z:-0.340"></i>
+    <i style="--x:0.892;--y:-0.276;--z:-0.358"></i>
+    <i style="--x:-0.414;--y:-0.291;--z:0.862"></i>
+    <i style="--x:-0.276;--y:-0.307;--z:-0.911"></i>
+    <i style="--x:0.814;--y:-0.323;--z:0.483"></i>
+    <i style="--x:-0.921;--y:-0.339;--z:0.193"></i>
+    <i style="--x:0.545;--y:-0.354;--z:-0.760"></i>
+    <i style="--x:0.110;--y:-0.370;--z:0.922"></i>
+    <i style="--x:-0.700;--y:-0.386;--z:-0.601"></i>
+    <i style="--x:0.915;--y:-0.402;--z:-0.029"></i>
+    <i style="--x:-0.650;--y:-0.417;--z:0.635"></i>
+    <i style="--x:0.050;--y:-0.433;--z:-0.900"></i>
+    <i style="--x:0.566;--y:-0.449;--z:0.692"></i>
+    <i style="--x:-0.876;--y:-0.465;--z:-0.127"></i>
+    <i style="--x:0.725;--y:-0.480;--z:-0.494"></i>
+    <i style="--x:-0.199;--y:-0.496;--z:0.845"></i>
+    <i style="--x:-0.420;--y:-0.512;--z:-0.750"></i>
+    <i style="--x:0.807;--y:-0.528;--z:0.266"></i>
+    <i style="--x:-0.766;--y:-0.543;--z:0.345"></i>
+    <i style="--x:0.328;--y:-0.559;--z:-0.762"></i>
+    <i style="--x:0.269;--y:-0.575;--z:0.773"></i>
+    <i style="--x:-0.711;--y:-0.591;--z:-0.382"></i>
+    <i style="--x:0.771;--y:-0.606;--z:-0.195"></i>
+    <i style="--x:-0.430;--y:-0.622;--z:0.654"></i>
+    <i style="--x:-0.123;--y:-0.638;--z:-0.760"></i>
+    <i style="--x:0.594;--y:-0.654;--z:0.469"></i>
+    <i style="--x:-0.741;--y:-0.669;--z:0.054"></i>
+    <i style="--x:0.500;--y:-0.685;--z:-0.530"></i>
+    <i style="--x:-0.010;--y:-0.701;--z:0.713"></i>
+    <i style="--x:-0.464;--y:-0.717;--z:-0.521"></i>
+    <i style="--x:0.677;--y:-0.732;--z:0.069"></i>
+    <i style="--x:-0.533;--y:-0.748;--z:0.396"></i>
+    <i style="--x:0.122;--y:-0.764;--z:-0.634"></i>
+    <i style="--x:0.328;--y:-0.780;--z:0.533"></i>
+    <i style="--x:-0.583;--y:-0.795;--z:-0.166"></i>
+    <i style="--x:0.523;--y:-0.811;--z:-0.262"></i>
+    <i style="--x:-0.201;--y:-0.827;--z:0.526"></i>
+    <i style="--x:-0.198;--y:-0.843;--z:-0.501"></i>
+    <i style="--x:0.462;--y:-0.858;--z:0.224"></i>
+    <i style="--x:-0.466;--y:-0.874;--z:0.139"></i>
+    <i style="--x:0.235;--y:-0.890;--z:-0.392"></i>
+    <i style="--x:0.085;--y:-0.906;--z:0.416"></i>
+    <i style="--x:-0.315;--y:-0.921;--z:-0.228"></i>
+    <i style="--x:0.347;--y:-0.937;--z:-0.040"></i>
+    <i style="--x:-0.199;--y:-0.953;--z:0.229"></i>
+    <i style="--x:-0.007;--y:-0.969;--z:-0.249"></i>
+    <i style="--x:0.123;--y:-0.984;--z:0.127"></i>
+    <i style="--x:-0.000;--y:-1.000;--z:-0.000"></i>
+  </span>
+  <span class="orb__core"></span>
+  <span class="orb__scan"></span>
+</div>
+        <figcaption>
+          <span class="cell__var">Dense lattice</span>
+          <span class="cell__state">orb--lattice-dense</span>
+        </figcaption>
+      </figure>
+      <figure class="cell">
+        <div class="orb orb--lattice-air" data-state="idle" role="img" aria-label="Airy lattice orb, idle" style="--orb-size: 150px;">
+  <span class="orb__glow"></span>
+  <span class="orb__shell">
+    <i style="--x:0.000;--y:1.000;--z:0.000"></i>
+    <i style="--x:-0.261;--y:0.935;--z:0.239"></i>
+    <i style="--x:0.043;--y:0.871;--z:-0.489"></i>
+    <i style="--x:0.360;--y:0.806;--z:0.469"></i>
+    <i style="--x:-0.660;--y:0.742;--z:-0.117"></i>
+    <i style="--x:0.621;--y:0.677;--z:-0.395"></i>
+    <i style="--x:-0.205;--y:0.613;--z:0.763"></i>
+    <i style="--x:-0.385;--y:0.548;--z:-0.742"></i>
+    <i style="--x:0.822;--y:0.484;--z:0.300"></i>
+    <i style="--x:-0.839;--y:0.419;--z:0.346"></i>
+    <i style="--x:0.396;--y:0.355;--z:-0.847"></i>
+    <i style="--x:0.286;--y:0.290;--z:0.913"></i>
+    <i style="--x:-0.843;--y:0.226;--z:-0.488"></i>
+    <i style="--x:0.964;--y:0.161;--z:-0.212"></i>
+    <i style="--x:-0.572;--y:0.097;--z:0.814"></i>
+    <i style="--x:-0.128;--y:0.032;--z:-0.991"></i>
+    <i style="--x:0.764;--y:-0.032;--z:0.644"></i>
+    <i style="--x:-0.994;--y:-0.097;--z:0.041"></i>
+    <i style="--x:0.700;--y:-0.161;--z:-0.696"></i>
+    <i style="--x:-0.045;--y:-0.226;--z:0.973"></i>
+    <i style="--x:-0.613;--y:-0.290;--z:-0.735"></i>
+    <i style="--x:0.927;--y:-0.355;--z:0.125"></i>
+    <i style="--x:-0.745;--y:-0.419;--z:0.518"></i>
+    <i style="--x:0.192;--y:-0.484;--z:-0.854"></i>
+    <i style="--x:0.416;--y:-0.548;--z:0.726"></i>
+    <i style="--x:-0.753;--y:-0.613;--z:-0.240"></i>
+    <i style="--x:0.668;--y:-0.677;--z:-0.309"></i>
+    <i style="--x:-0.259;--y:-0.742;--z:0.618"></i>
+    <i style="--x:-0.200;--y:-0.806;--z:-0.556"></i>
+    <i style="--x:0.435;--y:-0.871;--z:0.229"></i>
+    <i style="--x:-0.342;--y:-0.935;--z:0.090"></i>
+    <i style="--x:0.000;--y:-1.000;--z:-0.000"></i>
+  </span>
+  <span class="orb__core"></span>
+  <span class="orb__scan"></span>
+</div>
+        <figcaption>
+          <span class="cell__var">Airy lattice</span>
+          <span class="cell__state">orb--lattice-air</span>
+        </figcaption>
+      </figure>
+      <figure class="cell">
+        <div class="orb orb--lattice-nested" data-state="idle" role="img" aria-label="Nested lattice orb, idle" style="--orb-size: 150px;">
+  <span class="orb__glow"></span>
+  <span class="orb__shell orb__shell--outer">
+    <i style="--x:0.000;--y:1.000;--z:0.000"></i>
+    <i style="--x:-0.204;--y:0.961;--z:0.187"></i>
+    <i style="--x:0.034;--y:0.922;--z:-0.387"></i>
+    <i style="--x:0.286;--y:0.882;--z:0.373"></i>
+    <i style="--x:-0.529;--y:0.843;--z:-0.094"></i>
+    <i style="--x:0.502;--y:0.804;--z:-0.319"></i>
+    <i style="--x:-0.167;--y:0.765;--z:0.622"></i>
+    <i style="--x:-0.317;--y:0.725;--z:-0.611"></i>
+    <i style="--x:0.683;--y:0.686;--z:0.250"></i>
+    <i style="--x:-0.705;--y:0.647;--z:0.291"></i>
+    <i style="--x:0.337;--y:0.608;--z:-0.719"></i>
+    <i style="--x:0.246;--y:0.569;--z:0.785"></i>
+    <i style="--x:-0.734;--y:0.529;--z:-0.425"></i>
+    <i style="--x:0.851;--y:0.490;--z:-0.187"></i>
+    <i style="--x:-0.513;--y:0.451;--z:0.730"></i>
+    <i style="--x:-0.117;--y:0.412;--z:-0.904"></i>
+    <i style="--x:0.710;--y:0.373;--z:0.598"></i>
+    <i style="--x:-0.942;--y:0.333;--z:0.039"></i>
+    <i style="--x:0.677;--y:0.294;--z:-0.674"></i>
+    <i style="--x:-0.045;--y:0.255;--z:0.966"></i>
+    <i style="--x:-0.626;--y:0.216;--z:-0.750"></i>
+    <i style="--x:0.976;--y:0.176;--z:0.131"></i>
+    <i style="--x:-0.813;--y:0.137;--z:0.566"></i>
+    <i style="--x:0.218;--y:0.098;--z:-0.971"></i>
+    <i style="--x:0.496;--y:0.059;--z:0.866"></i>
+    <i style="--x:-0.953;--y:0.020;--z:-0.304"></i>
+    <i style="--x:0.908;--y:-0.020;--z:-0.419"></i>
+    <i style="--x:-0.385;--y:-0.059;--z:0.921"></i>
+    <i style="--x:-0.337;--y:-0.098;--z:-0.936"></i>
+    <i style="--x:0.877;--y:-0.137;--z:0.461"></i>
+    <i style="--x:-0.952;--y:-0.176;--z:0.251"></i>
+    <i style="--x:0.528;--y:-0.216;--z:-0.821"></i>
+    <i style="--x:0.164;--y:-0.255;--z:0.953"></i>
+    <i style="--x:-0.756;--y:-0.294;--z:-0.585"></i>
+    <i style="--x:0.940;--y:-0.333;--z:-0.078"></i>
+    <i style="--x:-0.630;--y:-0.373;--z:0.681"></i>
+    <i style="--x:0.004;--y:-0.412;--z:-0.911"></i>
+    <i style="--x:0.600;--y:-0.451;--z:0.661"></i>
+    <i style="--x:-0.868;--y:-0.490;--z:-0.080"></i>
+    <i style="--x:0.676;--y:-0.529;--z:-0.513"></i>
+    <i style="--x:-0.147;--y:-0.569;--z:0.809"></i>
+    <i style="--x:-0.423;--y:-0.608;--z:-0.672"></i>
+    <i style="--x:0.735;--y:-0.647;--z:0.202"></i>
+    <i style="--x:-0.647;--y:-0.686;--z:0.332"></i>
+    <i style="--x:0.239;--y:-0.725;--z:-0.645"></i>
+    <i style="--x:0.243;--y:-0.765;--z:0.597"></i>
+    <i style="--x:-0.537;--y:-0.804;--z:-0.255"></i>
+    <i style="--x:0.514;--y:-0.843;--z:-0.158"></i>
+    <i style="--x:-0.238;--y:-0.882;--z:0.406"></i>
+    <i style="--x:-0.082;--y:-0.922;--z:-0.380"></i>
+    <i style="--x:0.226;--y:-0.961;--z:0.161"></i>
+    <i style="--x:-0.000;--y:-1.000;--z:0.000"></i>
+  </span>
+  <span class="orb__shell orb__shell--inner">
+    <i style="--x:0.000;--y:1.000;--z:0.000"></i>
+    <i style="--x:-0.279;--y:0.926;--z:0.255"></i>
+    <i style="--x:0.046;--y:0.852;--z:-0.522"></i>
+    <i style="--x:0.382;--y:0.778;--z:0.499"></i>
+    <i style="--x:-0.700;--y:0.704;--z:-0.124"></i>
+    <i style="--x:0.656;--y:0.630;--z:-0.417"></i>
+    <i style="--x:-0.216;--y:0.556;--z:0.803"></i>
+    <i style="--x:-0.404;--y:0.481;--z:-0.778"></i>
+    <i style="--x:0.858;--y:0.407;--z:0.313"></i>
+    <i style="--x:-0.871;--y:0.333;--z:0.360"></i>
+    <i style="--x:0.409;--y:0.259;--z:-0.875"></i>
+    <i style="--x:0.294;--y:0.185;--z:0.938"></i>
+    <i style="--x:-0.860;--y:0.111;--z:-0.498"></i>
+    <i style="--x:0.976;--y:0.037;--z:-0.215"></i>
+    <i style="--x:-0.575;--y:-0.037;--z:0.818"></i>
+    <i style="--x:-0.128;--y:-0.111;--z:-0.986"></i>
+    <i style="--x:0.751;--y:-0.185;--z:0.633"></i>
+    <i style="--x:-0.965;--y:-0.259;--z:0.040"></i>
+    <i style="--x:0.668;--y:-0.333;--z:-0.665"></i>
+    <i style="--x:-0.042;--y:-0.407;--z:0.912"></i>
+    <i style="--x:-0.562;--y:-0.481;--z:-0.673"></i>
+    <i style="--x:0.824;--y:-0.556;--z:0.111"></i>
+    <i style="--x:-0.638;--y:-0.630;--z:0.444"></i>
+    <i style="--x:0.156;--y:-0.704;--z:-0.693"></i>
+    <i style="--x:0.312;--y:-0.778;--z:0.545"></i>
+    <i style="--x:-0.499;--y:-0.852;--z:-0.159"></i>
+    <i style="--x:0.343;--y:-0.926;--z:-0.158"></i>
+    <i style="--x:-0.000;--y:-1.000;--z:0.000"></i>
+  </span>
+  <span class="orb__core"></span>
+  <span class="orb__scan"></span>
+</div>
+        <figcaption>
+          <span class="cell__var">Nested lattice</span>
+          <span class="cell__state">orb--lattice-nested</span>
+        </figcaption>
+      </figure>
+      <figure class="cell">
+        <div class="orb orb--lattice-orbit" data-state="idle" role="img" aria-label="Orbit lattice orb, idle" style="--orb-size: 150px;">
+  <span class="orb__glow"></span>
+  <span class="orb__shell">
+    <span class="orb__band" style="--band:1">
+      <i style="--x:0.626;--y:-0.780;--z:0.000"></i>
+      <i style="--x:0.542;--y:-0.780;--z:0.313"></i>
+      <i style="--x:0.313;--y:-0.780;--z:0.542"></i>
+      <i style="--x:0.000;--y:-0.780;--z:0.626"></i>
+      <i style="--x:-0.313;--y:-0.780;--z:0.542"></i>
+      <i style="--x:-0.542;--y:-0.780;--z:0.313"></i>
+      <i style="--x:-0.626;--y:-0.780;--z:0.000"></i>
+      <i style="--x:-0.542;--y:-0.780;--z:-0.313"></i>
+      <i style="--x:-0.313;--y:-0.780;--z:-0.542"></i>
+      <i style="--x:-0.000;--y:-0.780;--z:-0.626"></i>
+      <i style="--x:0.313;--y:-0.780;--z:-0.542"></i>
+      <i style="--x:0.542;--y:-0.780;--z:-0.313"></i>
+    </span>
+    <span class="orb__band" style="--band:2">
+      <i style="--x:0.908;--y:-0.420;--z:0.000"></i>
+      <i style="--x:0.853;--y:-0.420;--z:0.310"></i>
+      <i style="--x:0.695;--y:-0.420;--z:0.583"></i>
+      <i style="--x:0.454;--y:-0.420;--z:0.786"></i>
+      <i style="--x:0.158;--y:-0.420;--z:0.894"></i>
+      <i style="--x:-0.158;--y:-0.420;--z:0.894"></i>
+      <i style="--x:-0.454;--y:-0.420;--z:0.786"></i>
+      <i style="--x:-0.695;--y:-0.420;--z:0.583"></i>
+      <i style="--x:-0.853;--y:-0.420;--z:0.310"></i>
+      <i style="--x:-0.908;--y:-0.420;--z:0.000"></i>
+      <i style="--x:-0.853;--y:-0.420;--z:-0.310"></i>
+      <i style="--x:-0.695;--y:-0.420;--z:-0.583"></i>
+      <i style="--x:-0.454;--y:-0.420;--z:-0.786"></i>
+      <i style="--x:-0.158;--y:-0.420;--z:-0.894"></i>
+      <i style="--x:0.158;--y:-0.420;--z:-0.894"></i>
+      <i style="--x:0.454;--y:-0.420;--z:-0.786"></i>
+      <i style="--x:0.695;--y:-0.420;--z:-0.583"></i>
+      <i style="--x:0.853;--y:-0.420;--z:-0.310"></i>
+    </span>
+    <span class="orb__band" style="--band:3">
+      <i style="--x:1.000;--y:0.000;--z:0.000"></i>
+      <i style="--x:0.966;--y:0.000;--z:0.259"></i>
+      <i style="--x:0.866;--y:0.000;--z:0.500"></i>
+      <i style="--x:0.707;--y:0.000;--z:0.707"></i>
+      <i style="--x:0.500;--y:0.000;--z:0.866"></i>
+      <i style="--x:0.259;--y:0.000;--z:0.966"></i>
+      <i style="--x:0.000;--y:0.000;--z:1.000"></i>
+      <i style="--x:-0.259;--y:0.000;--z:0.966"></i>
+      <i style="--x:-0.500;--y:0.000;--z:0.866"></i>
+      <i style="--x:-0.707;--y:0.000;--z:0.707"></i>
+      <i style="--x:-0.866;--y:0.000;--z:0.500"></i>
+      <i style="--x:-0.966;--y:0.000;--z:0.259"></i>
+      <i style="--x:-1.000;--y:0.000;--z:0.000"></i>
+      <i style="--x:-0.966;--y:0.000;--z:-0.259"></i>
+      <i style="--x:-0.866;--y:0.000;--z:-0.500"></i>
+      <i style="--x:-0.707;--y:0.000;--z:-0.707"></i>
+      <i style="--x:-0.500;--y:0.000;--z:-0.866"></i>
+      <i style="--x:-0.259;--y:0.000;--z:-0.966"></i>
+      <i style="--x:-0.000;--y:0.000;--z:-1.000"></i>
+      <i style="--x:0.259;--y:0.000;--z:-0.966"></i>
+      <i style="--x:0.500;--y:0.000;--z:-0.866"></i>
+      <i style="--x:0.707;--y:0.000;--z:-0.707"></i>
+      <i style="--x:0.866;--y:0.000;--z:-0.500"></i>
+      <i style="--x:0.966;--y:0.000;--z:-0.259"></i>
+    </span>
+    <span class="orb__band" style="--band:4">
+      <i style="--x:0.908;--y:0.420;--z:0.000"></i>
+      <i style="--x:0.853;--y:0.420;--z:0.310"></i>
+      <i style="--x:0.695;--y:0.420;--z:0.583"></i>
+      <i style="--x:0.454;--y:0.420;--z:0.786"></i>
+      <i style="--x:0.158;--y:0.420;--z:0.894"></i>
+      <i style="--x:-0.158;--y:0.420;--z:0.894"></i>
+      <i style="--x:-0.454;--y:0.420;--z:0.786"></i>
+      <i style="--x:-0.695;--y:0.420;--z:0.583"></i>
+      <i style="--x:-0.853;--y:0.420;--z:0.310"></i>
+      <i style="--x:-0.908;--y:0.420;--z:0.000"></i>
+      <i style="--x:-0.853;--y:0.420;--z:-0.310"></i>
+      <i style="--x:-0.695;--y:0.420;--z:-0.583"></i>
+      <i style="--x:-0.454;--y:0.420;--z:-0.786"></i>
+      <i style="--x:-0.158;--y:0.420;--z:-0.894"></i>
+      <i style="--x:0.158;--y:0.420;--z:-0.894"></i>
+      <i style="--x:0.454;--y:0.420;--z:-0.786"></i>
+      <i style="--x:0.695;--y:0.420;--z:-0.583"></i>
+      <i style="--x:0.853;--y:0.420;--z:-0.310"></i>
+    </span>
+    <span class="orb__band" style="--band:5">
+      <i style="--x:0.626;--y:0.780;--z:0.000"></i>
+      <i style="--x:0.542;--y:0.780;--z:0.313"></i>
+      <i style="--x:0.313;--y:0.780;--z:0.542"></i>
+      <i style="--x:0.000;--y:0.780;--z:0.626"></i>
+      <i style="--x:-0.313;--y:0.780;--z:0.542"></i>
+      <i style="--x:-0.542;--y:0.780;--z:0.313"></i>
+      <i style="--x:-0.626;--y:0.780;--z:0.000"></i>
+      <i style="--x:-0.542;--y:0.780;--z:-0.313"></i>
+      <i style="--x:-0.313;--y:0.780;--z:-0.542"></i>
+      <i style="--x:-0.000;--y:0.780;--z:-0.626"></i>
+      <i style="--x:0.313;--y:0.780;--z:-0.542"></i>
+      <i style="--x:0.542;--y:0.780;--z:-0.313"></i>
+    </span>
+  </span>
+  <span class="orb__core"></span>
+  <span class="orb__scan"></span>
+</div>
+        <figcaption>
+          <span class="cell__var">Orbit lattice</span>
+          <span class="cell__state">orb--lattice-orbit</span>
+        </figcaption>
+      </figure>
+      <figure class="cell">
+        <div class="orb orb--lattice-spiral" data-state="idle" role="img" aria-label="Spiral lattice orb, idle" style="--orb-size: 150px;">
+  <span class="orb__glow"></span>
+  <span class="orb__shell">
+    <i style="--x:0.000;--y:1.000;--z:0.000"></i>
+    <i style="--x:0.203;--y:0.968;--z:0.146"></i>
+    <i style="--x:0.112;--y:0.937;--z:0.332"></i>
+    <i style="--x:-0.126;--y:0.905;--z:0.407"></i>
+    <i style="--x:-0.389;--y:0.873;--z:0.294"></i>
+    <i style="--x:-0.540;--y:0.841;--z:0.013"></i>
+    <i style="--x:-0.485;--y:0.810;--z:-0.331"></i>
+    <i style="--x:-0.215;--y:0.778;--z:-0.591"></i>
+    <i style="--x:0.180;--y:0.746;--z:-0.641"></i>
+    <i style="--x:0.547;--y:0.714;--z:-0.436"></i>
+    <i style="--x:0.730;--y:0.683;--z:-0.036"></i>
+    <i style="--x:0.638;--y:0.651;--z:0.412"></i>
+    <i style="--x:0.287;--y:0.619;--z:0.731"></i>
+    <i style="--x:-0.200;--y:0.587;--z:0.784"></i>
+    <i style="--x:-0.637;--y:0.556;--z:0.534"></i>
+    <i style="--x:-0.849;--y:0.524;--z:0.064"></i>
+    <i style="--x:-0.743;--y:0.492;--z:-0.454"></i>
+    <i style="--x:-0.345;--y:0.460;--z:-0.818"></i>
+    <i style="--x:0.201;--y:0.429;--z:-0.881"></i>
+    <i style="--x:0.688;--y:0.397;--z:-0.607"></i>
+    <i style="--x:0.926;--y:0.365;--z:-0.093"></i>
+    <i style="--x:0.816;--y:0.333;--z:0.471"></i>
+    <i style="--x:0.392;--y:0.302;--z:0.869"></i>
+    <i style="--x:-0.191;--y:0.270;--z:0.944"></i>
+    <i style="--x:-0.712;--y:0.238;--z:0.661"></i>
+    <i style="--x:-0.971;--y:0.206;--z:0.122"></i>
+    <i style="--x:-0.865;--y:0.175;--z:-0.471"></i>
+    <i style="--x:-0.429;--y:0.143;--z:-0.892"></i>
+    <i style="--x:0.173;--y:0.111;--z:-0.979"></i>
+    <i style="--x:0.714;--y:0.079;--z:-0.696"></i>
+    <i style="--x:0.988;--y:0.048;--z:-0.149"></i>
+    <i style="--x:0.890;--y:0.016;--z:0.456"></i>
+    <i style="--x:0.456;--y:-0.016;--z:0.890"></i>
+    <i style="--x:-0.149;--y:-0.048;--z:0.988"></i>
+    <i style="--x:-0.696;--y:-0.079;--z:0.714"></i>
+    <i style="--x:-0.979;--y:-0.111;--z:0.173"></i>
+    <i style="--x:-0.892;--y:-0.143;--z:-0.429"></i>
+    <i style="--x:-0.471;--y:-0.175;--z:-0.865"></i>
+    <i style="--x:0.122;--y:-0.206;--z:-0.971"></i>
+    <i style="--x:0.661;--y:-0.238;--z:-0.712"></i>
+    <i style="--x:0.944;--y:-0.270;--z:-0.191"></i>
+    <i style="--x:0.869;--y:-0.302;--z:0.392"></i>
+    <i style="--x:0.471;--y:-0.333;--z:0.816"></i>
+    <i style="--x:-0.093;--y:-0.365;--z:0.926"></i>
+    <i style="--x:-0.607;--y:-0.397;--z:0.688"></i>
+    <i style="--x:-0.881;--y:-0.429;--z:0.201"></i>
+    <i style="--x:-0.818;--y:-0.460;--z:-0.345"></i>
+    <i style="--x:-0.454;--y:-0.492;--z:-0.743"></i>
+    <i style="--x:0.064;--y:-0.524;--z:-0.849"></i>
+    <i style="--x:0.534;--y:-0.556;--z:-0.637"></i>
+    <i style="--x:0.784;--y:-0.587;--z:-0.200"></i>
+    <i style="--x:0.731;--y:-0.619;--z:0.287"></i>
+    <i style="--x:0.412;--y:-0.651;--z:0.638"></i>
+    <i style="--x:-0.036;--y:-0.683;--z:0.730"></i>
+    <i style="--x:-0.436;--y:-0.714;--z:0.547"></i>
+    <i style="--x:-0.641;--y:-0.746;--z:0.180"></i>
+    <i style="--x:-0.591;--y:-0.778;--z:-0.215"></i>
+    <i style="--x:-0.331;--y:-0.810;--z:-0.485"></i>
+    <i style="--x:0.013;--y:-0.841;--z:-0.540"></i>
+    <i style="--x:0.294;--y:-0.873;--z:-0.389"></i>
+    <i style="--x:0.407;--y:-0.905;--z:-0.126"></i>
+    <i style="--x:0.332;--y:-0.937;--z:0.112"></i>
+    <i style="--x:0.146;--y:-0.968;--z:0.203"></i>
+    <i style="--x:-0.000;--y:-1.000;--z:0.000"></i>
+  </span>
+  <span class="orb__core"></span>
+  <span class="orb__scan"></span>
+</div>
+        <figcaption>
+          <span class="cell__var">Spiral lattice</span>
+          <span class="cell__state">orb--lattice-spiral</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <template id="tpl-lattice"><div class="orb orb--lattice" data-state="idle" role="img" aria-label="Lattice family orb" id="stage-orb" style="--orb-size: 260px;">
+  <span class="orb__glow"></span>
+  <span class="orb__shell">
+    <i style="--x:0.000;--y:1.000;--z:0.000"></i>
+    <i style="--x:-0.174;--y:0.972;--z:0.159"></i>
+    <i style="--x:0.029;--y:0.944;--z:-0.330"></i>
+    <i style="--x:0.245;--y:0.915;--z:0.319"></i>
+    <i style="--x:-0.454;--y:0.887;--z:-0.080"></i>
+    <i style="--x:0.432;--y:0.859;--z:-0.275"></i>
+    <i style="--x:-0.144;--y:0.831;--z:0.537"></i>
+    <i style="--x:-0.275;--y:0.803;--z:-0.529"></i>
+    <i style="--x:0.594;--y:0.775;--z:0.217"></i>
+    <i style="--x:-0.615;--y:0.746;--z:0.254"></i>
+    <i style="--x:0.295;--y:0.718;--z:-0.630"></i>
+    <i style="--x:0.217;--y:0.690;--z:0.691"></i>
+    <i style="--x:-0.649;--y:0.662;--z:-0.376"></i>
+    <i style="--x:0.755;--y:0.634;--z:-0.166"></i>
+    <i style="--x:-0.458;--y:0.606;--z:0.651"></i>
+    <i style="--x:-0.105;--y:0.577;--z:-0.810"></i>
+    <i style="--x:0.639;--y:0.549;--z:0.539"></i>
+    <i style="--x:-0.853;--y:0.521;--z:0.035"></i>
+    <i style="--x:0.617;--y:0.493;--z:-0.614"></i>
+    <i style="--x:-0.041;--y:0.465;--z:0.884"></i>
+    <i style="--x:-0.576;--y:0.437;--z:-0.691"></i>
+    <i style="--x:0.905;--y:0.408;--z:0.122"></i>
+    <i style="--x:-0.759;--y:0.380;--z:0.528"></i>
+    <i style="--x:0.205;--y:0.352;--z:-0.913"></i>
+    <i style="--x:0.470;--y:0.324;--z:0.821"></i>
+    <i style="--x:-0.910;--y:0.296;--z:-0.290"></i>
+    <i style="--x:0.875;--y:0.268;--z:-0.404"></i>
+    <i style="--x:-0.375;--y:0.239;--z:0.896"></i>
+    <i style="--x:-0.331;--y:0.211;--z:-0.920"></i>
+    <i style="--x:0.870;--y:0.183;--z:0.457"></i>
+    <i style="--x:-0.955;--y:0.155;--z:0.252"></i>
+    <i style="--x:0.536;--y:0.127;--z:-0.834"></i>
+    <i style="--x:0.169;--y:0.099;--z:0.981"></i>
+    <i style="--x:-0.789;--y:0.070;--z:-0.611"></i>
+    <i style="--x:0.996;--y:0.042;--z:-0.082"></i>
+    <i style="--x:-0.679;--y:0.014;--z:0.734"></i>
+    <i style="--x:0.005;--y:-0.014;--z:-1.000"></i>
+    <i style="--x:0.671;--y:-0.042;--z:0.740"></i>
+    <i style="--x:-0.993;--y:-0.070;--z:-0.092"></i>
+    <i style="--x:0.793;--y:-0.099;--z:-0.602"></i>
+    <i style="--x:-0.178;--y:-0.127;--z:0.976"></i>
+    <i style="--x:-0.526;--y:-0.155;--z:-0.836"></i>
+    <i style="--x:0.948;--y:-0.183;--z:0.260"></i>
+    <i style="--x:-0.870;--y:-0.211;--z:0.446"></i>
+    <i style="--x:0.338;--y:-0.239;--z:-0.910"></i>
+    <i style="--x:0.363;--y:-0.268;--z:0.892"></i>
+    <i style="--x:-0.863;--y:-0.296;--z:-0.409"></i>
+    <i style="--x:0.904;--y:-0.324;--z:-0.279"></i>
+    <i style="--x:-0.473;--y:-0.352;--z:0.808"></i>
+    <i style="--x:-0.194;--y:-0.380;--z:-0.904"></i>
+    <i style="--x:0.744;--y:-0.408;--z:0.529"></i>
+    <i style="--x:-0.893;--y:-0.437;--z:0.111"></i>
+    <i style="--x:0.574;--y:-0.465;--z:-0.674"></i>
+    <i style="--x:0.032;--y:-0.493;--z:0.869"></i>
+    <i style="--x:-0.599;--y:-0.521;--z:-0.608"></i>
+    <i style="--x:0.835;--y:-0.549;--z:0.043"></i>
+    <i style="--x:-0.629;--y:-0.577;--z:0.520"></i>
+    <i style="--x:0.110;--y:-0.606;--z:-0.788"></i>
+    <i style="--x:0.439;--y:-0.634;--z:0.637"></i>
+    <i style="--x:-0.730;--y:-0.662;--z:-0.168"></i>
+    <i style="--x:0.630;--y:-0.690;--z:-0.357"></i>
+    <i style="--x:-0.215;--y:-0.718;--z:0.662"></i>
+    <i style="--x:-0.276;--y:-0.746;--z:-0.605"></i>
+    <i style="--x:0.582;--y:-0.775;--z:0.247"></i>
+    <i style="--x:-0.562;--y:-0.803;--z:0.199"></i>
+    <i style="--x:0.261;--y:-0.831;--z:-0.491"></i>
+    <i style="--x:0.128;--y:-0.859;--z:0.495"></i>
+    <i style="--x:-0.387;--y:-0.887;--z:-0.251"></i>
+    <i style="--x:0.397;--y:-0.915;--z:-0.066"></i>
+    <i style="--x:-0.204;--y:-0.944;--z:0.261"></i>
+    <i style="--x:-0.018;--y:-0.972;--z:-0.235"></i>
+    <i style="--x:0.000;--y:-1.000;--z:0.000"></i>
+  </span>
+  <span class="orb__core"></span>
+  <span class="orb__scan"></span>
+</div></template>
+  <template id="tpl-lattice-dense"><div class="orb orb--lattice-dense" data-state="idle" role="img" aria-label="Lattice family orb" id="stage-orb" style="--orb-size: 260px;">
+  <span class="orb__glow"></span>
+  <span class="orb__shell">
+    <i style="--x:0.000;--y:1.000;--z:0.000"></i>
+    <i style="--x:-0.130;--y:0.984;--z:0.119"></i>
+    <i style="--x:0.022;--y:0.969;--z:-0.248"></i>
+    <i style="--x:0.185;--y:0.953;--z:0.241"></i>
+    <i style="--x:-0.344;--y:0.937;--z:-0.061"></i>
+    <i style="--x:0.328;--y:0.921;--z:-0.209"></i>
+    <i style="--x:-0.110;--y:0.906;--z:0.410"></i>
+    <i style="--x:-0.210;--y:0.890;--z:-0.405"></i>
+    <i style="--x:0.456;--y:0.874;--z:0.167"></i>
+    <i style="--x:-0.474;--y:0.858;--z:0.196"></i>
+    <i style="--x:0.228;--y:0.843;--z:-0.488"></i>
+    <i style="--x:0.168;--y:0.827;--z:0.537"></i>
+    <i style="--x:-0.506;--y:0.811;--z:-0.293"></i>
+    <i style="--x:0.592;--y:0.795;--z:-0.130"></i>
+    <i style="--x:-0.360;--y:0.780;--z:0.512"></i>
+    <i style="--x:-0.083;--y:0.764;--z:-0.640"></i>
+    <i style="--x:0.507;--y:0.748;--z:0.428"></i>
+    <i style="--x:-0.680;--y:0.732;--z:0.028"></i>
+    <i style="--x:0.494;--y:0.717;--z:-0.492"></i>
+    <i style="--x:-0.033;--y:0.701;--z:0.713"></i>
+    <i style="--x:-0.467;--y:0.685;--z:-0.559"></i>
+    <i style="--x:0.736;--y:0.669;--z:0.099"></i>
+    <i style="--x:-0.621;--y:0.654;--z:0.432"></i>
+    <i style="--x:0.169;--y:0.638;--z:-0.751"></i>
+    <i style="--x:0.389;--y:0.622;--z:0.679"></i>
+    <i style="--x:-0.758;--y:0.606;--z:-0.242"></i>
+    <i style="--x:0.733;--y:0.591;--z:-0.338"></i>
+    <i style="--x:-0.316;--y:0.575;--z:0.755"></i>
+    <i style="--x:-0.281;--y:0.559;--z:-0.780"></i>
+    <i style="--x:0.743;--y:0.543;--z:0.391"></i>
+    <i style="--x:-0.821;--y:0.528;--z:0.217"></i>
+    <i style="--x:0.465;--y:0.512;--z:-0.723"></i>
+    <i style="--x:0.147;--y:0.496;--z:0.856"></i>
+    <i style="--x:-0.693;--y:0.480;--z:-0.537"></i>
+    <i style="--x:0.883;--y:0.465;--z:-0.073"></i>
+    <i style="--x:-0.607;--y:0.449;--z:0.656"></i>
+    <i style="--x:0.004;--y:0.433;--z:-0.901"></i>
+    <i style="--x:0.611;--y:0.417;--z:0.673"></i>
+    <i style="--x:-0.912;--y:0.402;--z:-0.085"></i>
+    <i style="--x:0.735;--y:0.386;--z:-0.558"></i>
+    <i style="--x:-0.166;--y:0.370;--z:0.914"></i>
+    <i style="--x:-0.498;--y:0.354;--z:-0.791"></i>
+    <i style="--x:0.907;--y:0.339;--z:0.249"></i>
+    <i style="--x:-0.842;--y:0.323;--z:0.432"></i>
+    <i style="--x:0.331;--y:0.307;--z:-0.892"></i>
+    <i style="--x:0.361;--y:0.291;--z:0.886"></i>
+    <i style="--x:-0.869;--y:0.276;--z:-0.412"></i>
+    <i style="--x:0.923;--y:0.260;--z:-0.285"></i>
+    <i style="--x:-0.490;--y:0.244;--z:0.837"></i>
+    <i style="--x:-0.204;--y:0.228;--z:-0.952"></i>
+    <i style="--x:0.797;--y:0.213;--z:0.566"></i>
+    <i style="--x:-0.973;--y:0.197;--z:0.121"></i>
+    <i style="--x:0.637;--y:0.181;--z:-0.749"></i>
+    <i style="--x:0.036;--y:0.165;--z:0.986"></i>
+    <i style="--x:-0.694;--y:0.150;--z:-0.704"></i>
+    <i style="--x:0.990;--y:0.134;--z:0.051"></i>
+    <i style="--x:-0.766;--y:0.118;--z:0.632"></i>
+    <i style="--x:0.137;--y:0.102;--z:-0.985"></i>
+    <i style="--x:0.565;--y:0.087;--z:0.821"></i>
+    <i style="--x:-0.972;--y:0.071;--z:-0.224"></i>
+    <i style="--x:0.869;--y:0.055;--z:-0.492"></i>
+    <i style="--x:-0.308;--y:0.039;--z:0.950"></i>
+    <i style="--x:-0.415;--y:0.024;--z:-0.910"></i>
+    <i style="--x:0.921;--y:0.008;--z:0.391"></i>
+    <i style="--x:-0.943;--y:-0.008;--z:0.334"></i>
+    <i style="--x:0.469;--y:-0.024;--z:-0.883"></i>
+    <i style="--x:0.250;--y:-0.039;--z:0.967"></i>
+    <i style="--x:-0.837;--y:-0.055;--z:-0.544"></i>
+    <i style="--x:0.984;--y:-0.071;--z:-0.164"></i>
+    <i style="--x:-0.614;--y:-0.087;--z:0.785"></i>
+    <i style="--x:-0.077;--y:-0.102;--z:-0.992"></i>
+    <i style="--x:0.726;--y:-0.118;--z:0.678"></i>
+    <i style="--x:-0.991;--y:-0.134;--z:-0.010"></i>
+    <i style="--x:0.736;--y:-0.150;--z:-0.661"></i>
+    <i style="--x:-0.096;--y:-0.165;--z:0.982"></i>
+    <i style="--x:-0.591;--y:-0.181;--z:-0.786"></i>
+    <i style="--x:0.964;--y:-0.197;--z:0.180"></i>
+    <i style="--x:-0.830;--y:-0.213;--z:0.516"></i>
+    <i style="--x:0.262;--y:-0.228;--z:-0.938"></i>
+    <i style="--x:0.439;--y:-0.244;--z:0.865"></i>
+    <i style="--x:-0.904;--y:-0.260;--z:-0.340"></i>
+    <i style="--x:0.892;--y:-0.276;--z:-0.358"></i>
+    <i style="--x:-0.414;--y:-0.291;--z:0.862"></i>
+    <i style="--x:-0.276;--y:-0.307;--z:-0.911"></i>
+    <i style="--x:0.814;--y:-0.323;--z:0.483"></i>
+    <i style="--x:-0.921;--y:-0.339;--z:0.193"></i>
+    <i style="--x:0.545;--y:-0.354;--z:-0.760"></i>
+    <i style="--x:0.110;--y:-0.370;--z:0.922"></i>
+    <i style="--x:-0.700;--y:-0.386;--z:-0.601"></i>
+    <i style="--x:0.915;--y:-0.402;--z:-0.029"></i>
+    <i style="--x:-0.650;--y:-0.417;--z:0.635"></i>
+    <i style="--x:0.050;--y:-0.433;--z:-0.900"></i>
+    <i style="--x:0.566;--y:-0.449;--z:0.692"></i>
+    <i style="--x:-0.876;--y:-0.465;--z:-0.127"></i>
+    <i style="--x:0.725;--y:-0.480;--z:-0.494"></i>
+    <i style="--x:-0.199;--y:-0.496;--z:0.845"></i>
+    <i style="--x:-0.420;--y:-0.512;--z:-0.750"></i>
+    <i style="--x:0.807;--y:-0.528;--z:0.266"></i>
+    <i style="--x:-0.766;--y:-0.543;--z:0.345"></i>
+    <i style="--x:0.328;--y:-0.559;--z:-0.762"></i>
+    <i style="--x:0.269;--y:-0.575;--z:0.773"></i>
+    <i style="--x:-0.711;--y:-0.591;--z:-0.382"></i>
+    <i style="--x:0.771;--y:-0.606;--z:-0.195"></i>
+    <i style="--x:-0.430;--y:-0.622;--z:0.654"></i>
+    <i style="--x:-0.123;--y:-0.638;--z:-0.760"></i>
+    <i style="--x:0.594;--y:-0.654;--z:0.469"></i>
+    <i style="--x:-0.741;--y:-0.669;--z:0.054"></i>
+    <i style="--x:0.500;--y:-0.685;--z:-0.530"></i>
+    <i style="--x:-0.010;--y:-0.701;--z:0.713"></i>
+    <i style="--x:-0.464;--y:-0.717;--z:-0.521"></i>
+    <i style="--x:0.677;--y:-0.732;--z:0.069"></i>
+    <i style="--x:-0.533;--y:-0.748;--z:0.396"></i>
+    <i style="--x:0.122;--y:-0.764;--z:-0.634"></i>
+    <i style="--x:0.328;--y:-0.780;--z:0.533"></i>
+    <i style="--x:-0.583;--y:-0.795;--z:-0.166"></i>
+    <i style="--x:0.523;--y:-0.811;--z:-0.262"></i>
+    <i style="--x:-0.201;--y:-0.827;--z:0.526"></i>
+    <i style="--x:-0.198;--y:-0.843;--z:-0.501"></i>
+    <i style="--x:0.462;--y:-0.858;--z:0.224"></i>
+    <i style="--x:-0.466;--y:-0.874;--z:0.139"></i>
+    <i style="--x:0.235;--y:-0.890;--z:-0.392"></i>
+    <i style="--x:0.085;--y:-0.906;--z:0.416"></i>
+    <i style="--x:-0.315;--y:-0.921;--z:-0.228"></i>
+    <i style="--x:0.347;--y:-0.937;--z:-0.040"></i>
+    <i style="--x:-0.199;--y:-0.953;--z:0.229"></i>
+    <i style="--x:-0.007;--y:-0.969;--z:-0.249"></i>
+    <i style="--x:0.123;--y:-0.984;--z:0.127"></i>
+    <i style="--x:-0.000;--y:-1.000;--z:-0.000"></i>
+  </span>
+  <span class="orb__core"></span>
+  <span class="orb__scan"></span>
+</div></template>
+  <template id="tpl-lattice-air"><div class="orb orb--lattice-air" data-state="idle" role="img" aria-label="Lattice family orb" id="stage-orb" style="--orb-size: 260px;">
+  <span class="orb__glow"></span>
+  <span class="orb__shell">
+    <i style="--x:0.000;--y:1.000;--z:0.000"></i>
+    <i style="--x:-0.261;--y:0.935;--z:0.239"></i>
+    <i style="--x:0.043;--y:0.871;--z:-0.489"></i>
+    <i style="--x:0.360;--y:0.806;--z:0.469"></i>
+    <i style="--x:-0.660;--y:0.742;--z:-0.117"></i>
+    <i style="--x:0.621;--y:0.677;--z:-0.395"></i>
+    <i style="--x:-0.205;--y:0.613;--z:0.763"></i>
+    <i style="--x:-0.385;--y:0.548;--z:-0.742"></i>
+    <i style="--x:0.822;--y:0.484;--z:0.300"></i>
+    <i style="--x:-0.839;--y:0.419;--z:0.346"></i>
+    <i style="--x:0.396;--y:0.355;--z:-0.847"></i>
+    <i style="--x:0.286;--y:0.290;--z:0.913"></i>
+    <i style="--x:-0.843;--y:0.226;--z:-0.488"></i>
+    <i style="--x:0.964;--y:0.161;--z:-0.212"></i>
+    <i style="--x:-0.572;--y:0.097;--z:0.814"></i>
+    <i style="--x:-0.128;--y:0.032;--z:-0.991"></i>
+    <i style="--x:0.764;--y:-0.032;--z:0.644"></i>
+    <i style="--x:-0.994;--y:-0.097;--z:0.041"></i>
+    <i style="--x:0.700;--y:-0.161;--z:-0.696"></i>
+    <i style="--x:-0.045;--y:-0.226;--z:0.973"></i>
+    <i style="--x:-0.613;--y:-0.290;--z:-0.735"></i>
+    <i style="--x:0.927;--y:-0.355;--z:0.125"></i>
+    <i style="--x:-0.745;--y:-0.419;--z:0.518"></i>
+    <i style="--x:0.192;--y:-0.484;--z:-0.854"></i>
+    <i style="--x:0.416;--y:-0.548;--z:0.726"></i>
+    <i style="--x:-0.753;--y:-0.613;--z:-0.240"></i>
+    <i style="--x:0.668;--y:-0.677;--z:-0.309"></i>
+    <i style="--x:-0.259;--y:-0.742;--z:0.618"></i>
+    <i style="--x:-0.200;--y:-0.806;--z:-0.556"></i>
+    <i style="--x:0.435;--y:-0.871;--z:0.229"></i>
+    <i style="--x:-0.342;--y:-0.935;--z:0.090"></i>
+    <i style="--x:0.000;--y:-1.000;--z:-0.000"></i>
+  </span>
+  <span class="orb__core"></span>
+  <span class="orb__scan"></span>
+</div></template>
+  <template id="tpl-lattice-nested"><div class="orb orb--lattice-nested" data-state="idle" role="img" aria-label="Lattice family orb" id="stage-orb" style="--orb-size: 260px;">
+  <span class="orb__glow"></span>
+  <span class="orb__shell orb__shell--outer">
+    <i style="--x:0.000;--y:1.000;--z:0.000"></i>
+    <i style="--x:-0.204;--y:0.961;--z:0.187"></i>
+    <i style="--x:0.034;--y:0.922;--z:-0.387"></i>
+    <i style="--x:0.286;--y:0.882;--z:0.373"></i>
+    <i style="--x:-0.529;--y:0.843;--z:-0.094"></i>
+    <i style="--x:0.502;--y:0.804;--z:-0.319"></i>
+    <i style="--x:-0.167;--y:0.765;--z:0.622"></i>
+    <i style="--x:-0.317;--y:0.725;--z:-0.611"></i>
+    <i style="--x:0.683;--y:0.686;--z:0.250"></i>
+    <i style="--x:-0.705;--y:0.647;--z:0.291"></i>
+    <i style="--x:0.337;--y:0.608;--z:-0.719"></i>
+    <i style="--x:0.246;--y:0.569;--z:0.785"></i>
+    <i style="--x:-0.734;--y:0.529;--z:-0.425"></i>
+    <i style="--x:0.851;--y:0.490;--z:-0.187"></i>
+    <i style="--x:-0.513;--y:0.451;--z:0.730"></i>
+    <i style="--x:-0.117;--y:0.412;--z:-0.904"></i>
+    <i style="--x:0.710;--y:0.373;--z:0.598"></i>
+    <i style="--x:-0.942;--y:0.333;--z:0.039"></i>
+    <i style="--x:0.677;--y:0.294;--z:-0.674"></i>
+    <i style="--x:-0.045;--y:0.255;--z:0.966"></i>
+    <i style="--x:-0.626;--y:0.216;--z:-0.750"></i>
+    <i style="--x:0.976;--y:0.176;--z:0.131"></i>
+    <i style="--x:-0.813;--y:0.137;--z:0.566"></i>
+    <i style="--x:0.218;--y:0.098;--z:-0.971"></i>
+    <i style="--x:0.496;--y:0.059;--z:0.866"></i>
+    <i style="--x:-0.953;--y:0.020;--z:-0.304"></i>
+    <i style="--x:0.908;--y:-0.020;--z:-0.419"></i>
+    <i style="--x:-0.385;--y:-0.059;--z:0.921"></i>
+    <i style="--x:-0.337;--y:-0.098;--z:-0.936"></i>
+    <i style="--x:0.877;--y:-0.137;--z:0.461"></i>
+    <i style="--x:-0.952;--y:-0.176;--z:0.251"></i>
+    <i style="--x:0.528;--y:-0.216;--z:-0.821"></i>
+    <i style="--x:0.164;--y:-0.255;--z:0.953"></i>
+    <i style="--x:-0.756;--y:-0.294;--z:-0.585"></i>
+    <i style="--x:0.940;--y:-0.333;--z:-0.078"></i>
+    <i style="--x:-0.630;--y:-0.373;--z:0.681"></i>
+    <i style="--x:0.004;--y:-0.412;--z:-0.911"></i>
+    <i style="--x:0.600;--y:-0.451;--z:0.661"></i>
+    <i style="--x:-0.868;--y:-0.490;--z:-0.080"></i>
+    <i style="--x:0.676;--y:-0.529;--z:-0.513"></i>
+    <i style="--x:-0.147;--y:-0.569;--z:0.809"></i>
+    <i style="--x:-0.423;--y:-0.608;--z:-0.672"></i>
+    <i style="--x:0.735;--y:-0.647;--z:0.202"></i>
+    <i style="--x:-0.647;--y:-0.686;--z:0.332"></i>
+    <i style="--x:0.239;--y:-0.725;--z:-0.645"></i>
+    <i style="--x:0.243;--y:-0.765;--z:0.597"></i>
+    <i style="--x:-0.537;--y:-0.804;--z:-0.255"></i>
+    <i style="--x:0.514;--y:-0.843;--z:-0.158"></i>
+    <i style="--x:-0.238;--y:-0.882;--z:0.406"></i>
+    <i style="--x:-0.082;--y:-0.922;--z:-0.380"></i>
+    <i style="--x:0.226;--y:-0.961;--z:0.161"></i>
+    <i style="--x:-0.000;--y:-1.000;--z:0.000"></i>
+  </span>
+  <span class="orb__shell orb__shell--inner">
+    <i style="--x:0.000;--y:1.000;--z:0.000"></i>
+    <i style="--x:-0.279;--y:0.926;--z:0.255"></i>
+    <i style="--x:0.046;--y:0.852;--z:-0.522"></i>
+    <i style="--x:0.382;--y:0.778;--z:0.499"></i>
+    <i style="--x:-0.700;--y:0.704;--z:-0.124"></i>
+    <i style="--x:0.656;--y:0.630;--z:-0.417"></i>
+    <i style="--x:-0.216;--y:0.556;--z:0.803"></i>
+    <i style="--x:-0.404;--y:0.481;--z:-0.778"></i>
+    <i style="--x:0.858;--y:0.407;--z:0.313"></i>
+    <i style="--x:-0.871;--y:0.333;--z:0.360"></i>
+    <i style="--x:0.409;--y:0.259;--z:-0.875"></i>
+    <i style="--x:0.294;--y:0.185;--z:0.938"></i>
+    <i style="--x:-0.860;--y:0.111;--z:-0.498"></i>
+    <i style="--x:0.976;--y:0.037;--z:-0.215"></i>
+    <i style="--x:-0.575;--y:-0.037;--z:0.818"></i>
+    <i style="--x:-0.128;--y:-0.111;--z:-0.986"></i>
+    <i style="--x:0.751;--y:-0.185;--z:0.633"></i>
+    <i style="--x:-0.965;--y:-0.259;--z:0.040"></i>
+    <i style="--x:0.668;--y:-0.333;--z:-0.665"></i>
+    <i style="--x:-0.042;--y:-0.407;--z:0.912"></i>
+    <i style="--x:-0.562;--y:-0.481;--z:-0.673"></i>
+    <i style="--x:0.824;--y:-0.556;--z:0.111"></i>
+    <i style="--x:-0.638;--y:-0.630;--z:0.444"></i>
+    <i style="--x:0.156;--y:-0.704;--z:-0.693"></i>
+    <i style="--x:0.312;--y:-0.778;--z:0.545"></i>
+    <i style="--x:-0.499;--y:-0.852;--z:-0.159"></i>
+    <i style="--x:0.343;--y:-0.926;--z:-0.158"></i>
+    <i style="--x:-0.000;--y:-1.000;--z:0.000"></i>
+  </span>
+  <span class="orb__core"></span>
+  <span class="orb__scan"></span>
+</div></template>
+  <template id="tpl-lattice-orbit"><div class="orb orb--lattice-orbit" data-state="idle" role="img" aria-label="Lattice family orb" id="stage-orb" style="--orb-size: 260px;">
+  <span class="orb__glow"></span>
+  <span class="orb__shell">
+    <span class="orb__band" style="--band:1">
+      <i style="--x:0.626;--y:-0.780;--z:0.000"></i>
+      <i style="--x:0.542;--y:-0.780;--z:0.313"></i>
+      <i style="--x:0.313;--y:-0.780;--z:0.542"></i>
+      <i style="--x:0.000;--y:-0.780;--z:0.626"></i>
+      <i style="--x:-0.313;--y:-0.780;--z:0.542"></i>
+      <i style="--x:-0.542;--y:-0.780;--z:0.313"></i>
+      <i style="--x:-0.626;--y:-0.780;--z:0.000"></i>
+      <i style="--x:-0.542;--y:-0.780;--z:-0.313"></i>
+      <i style="--x:-0.313;--y:-0.780;--z:-0.542"></i>
+      <i style="--x:-0.000;--y:-0.780;--z:-0.626"></i>
+      <i style="--x:0.313;--y:-0.780;--z:-0.542"></i>
+      <i style="--x:0.542;--y:-0.780;--z:-0.313"></i>
+    </span>
+    <span class="orb__band" style="--band:2">
+      <i style="--x:0.908;--y:-0.420;--z:0.000"></i>
+      <i style="--x:0.853;--y:-0.420;--z:0.310"></i>
+      <i style="--x:0.695;--y:-0.420;--z:0.583"></i>
+      <i style="--x:0.454;--y:-0.420;--z:0.786"></i>
+      <i style="--x:0.158;--y:-0.420;--z:0.894"></i>
+      <i style="--x:-0.158;--y:-0.420;--z:0.894"></i>
+      <i style="--x:-0.454;--y:-0.420;--z:0.786"></i>
+      <i style="--x:-0.695;--y:-0.420;--z:0.583"></i>
+      <i style="--x:-0.853;--y:-0.420;--z:0.310"></i>
+      <i style="--x:-0.908;--y:-0.420;--z:0.000"></i>
+      <i style="--x:-0.853;--y:-0.420;--z:-0.310"></i>
+      <i style="--x:-0.695;--y:-0.420;--z:-0.583"></i>
+      <i style="--x:-0.454;--y:-0.420;--z:-0.786"></i>
+      <i style="--x:-0.158;--y:-0.420;--z:-0.894"></i>
+      <i style="--x:0.158;--y:-0.420;--z:-0.894"></i>
+      <i style="--x:0.454;--y:-0.420;--z:-0.786"></i>
+      <i style="--x:0.695;--y:-0.420;--z:-0.583"></i>
+      <i style="--x:0.853;--y:-0.420;--z:-0.310"></i>
+    </span>
+    <span class="orb__band" style="--band:3">
+      <i style="--x:1.000;--y:0.000;--z:0.000"></i>
+      <i style="--x:0.966;--y:0.000;--z:0.259"></i>
+      <i style="--x:0.866;--y:0.000;--z:0.500"></i>
+      <i style="--x:0.707;--y:0.000;--z:0.707"></i>
+      <i style="--x:0.500;--y:0.000;--z:0.866"></i>
+      <i style="--x:0.259;--y:0.000;--z:0.966"></i>
+      <i style="--x:0.000;--y:0.000;--z:1.000"></i>
+      <i style="--x:-0.259;--y:0.000;--z:0.966"></i>
+      <i style="--x:-0.500;--y:0.000;--z:0.866"></i>
+      <i style="--x:-0.707;--y:0.000;--z:0.707"></i>
+      <i style="--x:-0.866;--y:0.000;--z:0.500"></i>
+      <i style="--x:-0.966;--y:0.000;--z:0.259"></i>
+      <i style="--x:-1.000;--y:0.000;--z:0.000"></i>
+      <i style="--x:-0.966;--y:0.000;--z:-0.259"></i>
+      <i style="--x:-0.866;--y:0.000;--z:-0.500"></i>
+      <i style="--x:-0.707;--y:0.000;--z:-0.707"></i>
+      <i style="--x:-0.500;--y:0.000;--z:-0.866"></i>
+      <i style="--x:-0.259;--y:0.000;--z:-0.966"></i>
+      <i style="--x:-0.000;--y:0.000;--z:-1.000"></i>
+      <i style="--x:0.259;--y:0.000;--z:-0.966"></i>
+      <i style="--x:0.500;--y:0.000;--z:-0.866"></i>
+      <i style="--x:0.707;--y:0.000;--z:-0.707"></i>
+      <i style="--x:0.866;--y:0.000;--z:-0.500"></i>
+      <i style="--x:0.966;--y:0.000;--z:-0.259"></i>
+    </span>
+    <span class="orb__band" style="--band:4">
+      <i style="--x:0.908;--y:0.420;--z:0.000"></i>
+      <i style="--x:0.853;--y:0.420;--z:0.310"></i>
+      <i style="--x:0.695;--y:0.420;--z:0.583"></i>
+      <i style="--x:0.454;--y:0.420;--z:0.786"></i>
+      <i style="--x:0.158;--y:0.420;--z:0.894"></i>
+      <i style="--x:-0.158;--y:0.420;--z:0.894"></i>
+      <i style="--x:-0.454;--y:0.420;--z:0.786"></i>
+      <i style="--x:-0.695;--y:0.420;--z:0.583"></i>
+      <i style="--x:-0.853;--y:0.420;--z:0.310"></i>
+      <i style="--x:-0.908;--y:0.420;--z:0.000"></i>
+      <i style="--x:-0.853;--y:0.420;--z:-0.310"></i>
+      <i style="--x:-0.695;--y:0.420;--z:-0.583"></i>
+      <i style="--x:-0.454;--y:0.420;--z:-0.786"></i>
+      <i style="--x:-0.158;--y:0.420;--z:-0.894"></i>
+      <i style="--x:0.158;--y:0.420;--z:-0.894"></i>
+      <i style="--x:0.454;--y:0.420;--z:-0.786"></i>
+      <i style="--x:0.695;--y:0.420;--z:-0.583"></i>
+      <i style="--x:0.853;--y:0.420;--z:-0.310"></i>
+    </span>
+    <span class="orb__band" style="--band:5">
+      <i style="--x:0.626;--y:0.780;--z:0.000"></i>
+      <i style="--x:0.542;--y:0.780;--z:0.313"></i>
+      <i style="--x:0.313;--y:0.780;--z:0.542"></i>
+      <i style="--x:0.000;--y:0.780;--z:0.626"></i>
+      <i style="--x:-0.313;--y:0.780;--z:0.542"></i>
+      <i style="--x:-0.542;--y:0.780;--z:0.313"></i>
+      <i style="--x:-0.626;--y:0.780;--z:0.000"></i>
+      <i style="--x:-0.542;--y:0.780;--z:-0.313"></i>
+      <i style="--x:-0.313;--y:0.780;--z:-0.542"></i>
+      <i style="--x:-0.000;--y:0.780;--z:-0.626"></i>
+      <i style="--x:0.313;--y:0.780;--z:-0.542"></i>
+      <i style="--x:0.542;--y:0.780;--z:-0.313"></i>
+    </span>
+  </span>
+  <span class="orb__core"></span>
+  <span class="orb__scan"></span>
+</div></template>
+  <template id="tpl-lattice-spiral"><div class="orb orb--lattice-spiral" data-state="idle" role="img" aria-label="Lattice family orb" id="stage-orb" style="--orb-size: 260px;">
+  <span class="orb__glow"></span>
+  <span class="orb__shell">
+    <i style="--x:0.000;--y:1.000;--z:0.000"></i>
+    <i style="--x:0.203;--y:0.968;--z:0.146"></i>
+    <i style="--x:0.112;--y:0.937;--z:0.332"></i>
+    <i style="--x:-0.126;--y:0.905;--z:0.407"></i>
+    <i style="--x:-0.389;--y:0.873;--z:0.294"></i>
+    <i style="--x:-0.540;--y:0.841;--z:0.013"></i>
+    <i style="--x:-0.485;--y:0.810;--z:-0.331"></i>
+    <i style="--x:-0.215;--y:0.778;--z:-0.591"></i>
+    <i style="--x:0.180;--y:0.746;--z:-0.641"></i>
+    <i style="--x:0.547;--y:0.714;--z:-0.436"></i>
+    <i style="--x:0.730;--y:0.683;--z:-0.036"></i>
+    <i style="--x:0.638;--y:0.651;--z:0.412"></i>
+    <i style="--x:0.287;--y:0.619;--z:0.731"></i>
+    <i style="--x:-0.200;--y:0.587;--z:0.784"></i>
+    <i style="--x:-0.637;--y:0.556;--z:0.534"></i>
+    <i style="--x:-0.849;--y:0.524;--z:0.064"></i>
+    <i style="--x:-0.743;--y:0.492;--z:-0.454"></i>
+    <i style="--x:-0.345;--y:0.460;--z:-0.818"></i>
+    <i style="--x:0.201;--y:0.429;--z:-0.881"></i>
+    <i style="--x:0.688;--y:0.397;--z:-0.607"></i>
+    <i style="--x:0.926;--y:0.365;--z:-0.093"></i>
+    <i style="--x:0.816;--y:0.333;--z:0.471"></i>
+    <i style="--x:0.392;--y:0.302;--z:0.869"></i>
+    <i style="--x:-0.191;--y:0.270;--z:0.944"></i>
+    <i style="--x:-0.712;--y:0.238;--z:0.661"></i>
+    <i style="--x:-0.971;--y:0.206;--z:0.122"></i>
+    <i style="--x:-0.865;--y:0.175;--z:-0.471"></i>
+    <i style="--x:-0.429;--y:0.143;--z:-0.892"></i>
+    <i style="--x:0.173;--y:0.111;--z:-0.979"></i>
+    <i style="--x:0.714;--y:0.079;--z:-0.696"></i>
+    <i style="--x:0.988;--y:0.048;--z:-0.149"></i>
+    <i style="--x:0.890;--y:0.016;--z:0.456"></i>
+    <i style="--x:0.456;--y:-0.016;--z:0.890"></i>
+    <i style="--x:-0.149;--y:-0.048;--z:0.988"></i>
+    <i style="--x:-0.696;--y:-0.079;--z:0.714"></i>
+    <i style="--x:-0.979;--y:-0.111;--z:0.173"></i>
+    <i style="--x:-0.892;--y:-0.143;--z:-0.429"></i>
+    <i style="--x:-0.471;--y:-0.175;--z:-0.865"></i>
+    <i style="--x:0.122;--y:-0.206;--z:-0.971"></i>
+    <i style="--x:0.661;--y:-0.238;--z:-0.712"></i>
+    <i style="--x:0.944;--y:-0.270;--z:-0.191"></i>
+    <i style="--x:0.869;--y:-0.302;--z:0.392"></i>
+    <i style="--x:0.471;--y:-0.333;--z:0.816"></i>
+    <i style="--x:-0.093;--y:-0.365;--z:0.926"></i>
+    <i style="--x:-0.607;--y:-0.397;--z:0.688"></i>
+    <i style="--x:-0.881;--y:-0.429;--z:0.201"></i>
+    <i style="--x:-0.818;--y:-0.460;--z:-0.345"></i>
+    <i style="--x:-0.454;--y:-0.492;--z:-0.743"></i>
+    <i style="--x:0.064;--y:-0.524;--z:-0.849"></i>
+    <i style="--x:0.534;--y:-0.556;--z:-0.637"></i>
+    <i style="--x:0.784;--y:-0.587;--z:-0.200"></i>
+    <i style="--x:0.731;--y:-0.619;--z:0.287"></i>
+    <i style="--x:0.412;--y:-0.651;--z:0.638"></i>
+    <i style="--x:-0.036;--y:-0.683;--z:0.730"></i>
+    <i style="--x:-0.436;--y:-0.714;--z:0.547"></i>
+    <i style="--x:-0.641;--y:-0.746;--z:0.180"></i>
+    <i style="--x:-0.591;--y:-0.778;--z:-0.215"></i>
+    <i style="--x:-0.331;--y:-0.810;--z:-0.485"></i>
+    <i style="--x:0.013;--y:-0.841;--z:-0.540"></i>
+    <i style="--x:0.294;--y:-0.873;--z:-0.389"></i>
+    <i style="--x:0.407;--y:-0.905;--z:-0.126"></i>
+    <i style="--x:0.332;--y:-0.937;--z:0.112"></i>
+    <i style="--x:0.146;--y:-0.968;--z:0.203"></i>
+    <i style="--x:-0.000;--y:-1.000;--z:0.000"></i>
+  </span>
+  <span class="orb__core"></span>
+  <span class="orb__scan"></span>
+</div></template>
+
+  <script src="../js/orb.js"></script>
+  <script src="./demo.js"></script>
+  <script src="./lattice-family.js"></script>
+</body>
+</html>

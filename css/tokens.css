@@ -1,0 +1,62 @@
+/**
+ * Shared theming tokens for Matrix Orbs.
+ *
+ * Theme any ancestor (or the orb itself) with:
+ *   --orb-hue: 168;
+ *   --orb-color: #2ee6a6;          /* optional override */
+ *   --orb-color-secondary: #7cf0ff;
+ *   --orb-bg: #070b10;
+ *   --orb-glow: rgba(46, 230, 166, 0.45);
+ *   --orb-size: 160px;
+ *
+ * One-liner: style="--orb-hue: 272" on the orb or a wrapper.
+ * Derived --orb-color / --orb-glow follow --orb-hue unless you set them
+ * on the same element (inline style wins).
+ */
+
+:root {
+  --orb-hue: 168;
+  --orb-sat: 88%;
+  --orb-lit: 56%;
+  --orb-bg: #070b10;
+  --orb-size: 160px;
+}
+
+:root,
+.orb {
+  --orb-color: hsl(var(--orb-hue, 168) var(--orb-sat, 88%) var(--orb-lit, 56%));
+  --orb-color-secondary: hsl(calc(var(--orb-hue, 168) + 42) 82% 66%);
+  --orb-glow: color-mix(in srgb, var(--orb-color) 52%, transparent);
+}
+
+.orb {
+  --orb-period: 4.2s;
+  --orb-spin: 18s;
+  --orb-bright: 1;
+  --orb-scale: 1;
+}
+
+.orb[data-state="idle"] {
+  --orb-period: 4.2s;
+  --orb-spin: 22s;
+  --orb-bright: 1;
+}
+
+.orb[data-state="thinking"] {
+  --orb-period: 1.55s;
+  --orb-spin: 6s;
+  --orb-bright: 1.18;
+}
+
+.orb[data-state="listening"] {
+  --orb-period: 2.35s;
+  --orb-spin: 14s;
+  --orb-bright: 1.06;
+}
+
+.orb[data-state="talking"],
+.orb[data-state="writing"] {
+  --orb-period: 0.72s;
+  --orb-spin: 8s;
+  --orb-bright: 1.28;
+}

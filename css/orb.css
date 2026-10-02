@@ -1,0 +1,125 @@
+/**
+ * Shared orb shell. Pair with a variation class:
+ *   orb--soft | orb--lattice | orb--wire | orb--ripple | orb--crystal
+ *
+ * States: data-state="idle | thinking | listening | talking | writing"
+ *   writing is an alias of talking.
+ */
+
+.orb {
+  --_c: var(--orb-color);
+  --_c2: var(--orb-color-secondary);
+  --_g: var(--orb-glow);
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: var(--orb-size);
+  height: var(--orb-size);
+  flex: 0 0 var(--orb-size);
+  isolation: isolate;
+  color: var(--_c);
+  perspective: 640px;
+  transform-style: preserve-3d;
+  transform-origin: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+.orb__core {
+  filter: brightness(var(--orb-bright));
+}
+
+.orb > * {
+  pointer-events: none;
+}
+
+.orb__glow {
+  position: absolute;
+  inset: -18%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%,
+      color-mix(in srgb, var(--_c) 38%, transparent) 0%,
+      color-mix(in srgb, var(--_c) 14%, transparent) 38%,
+      transparent 68%);
+  filter: blur(10px) brightness(var(--orb-bright));
+  z-index: 0;
+}
+
+.orb__core {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.orb__scan {
+  position: absolute;
+  inset: 6%;
+  border-radius: 50%;
+  z-index: 4;
+  opacity: 0;
+  pointer-events: none;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0 72%,
+    color-mix(in srgb, var(--_c2) 55%, transparent) 82%,
+    transparent 92% 100%
+  );
+  -webkit-mask: radial-gradient(circle, transparent 52%, #000 58%);
+  mask: radial-gradient(circle, transparent 52%, #000 58%);
+}
+
+.orb[data-state="thinking"] .orb__scan {
+  opacity: 0.85;
+  animation: orb-scan-spin var(--orb-spin) linear infinite;
+}
+
+@keyframes orb-scan-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orb-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.92; }
+  50% { transform: scale(1.045); opacity: 1; }
+}
+
+@keyframes orb-listen {
+  0%, 100% { transform: scale(1); }
+  40% { transform: scale(1.07); }
+  55% { transform: scale(1.02); }
+}
+
+@keyframes orb-speak {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  10% { transform: scale(1.055); filter: brightness(1.25); }
+  18% { transform: scale(1.01); filter: brightness(1.05); }
+  30% { transform: scale(1.08); filter: brightness(1.35); }
+  42% { transform: scale(1.015); filter: brightness(1.08); }
+  56% { transform: scale(1.06); filter: brightness(1.22); }
+  70% { transform: scale(1); filter: brightness(1); }
+  84% { transform: scale(1.045); filter: brightness(1.18); }
+}
+
+@keyframes orb-spin-y {
+  to { transform: rotateY(360deg); }
+}
+
+@keyframes orb-spin-z {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orb-pulse-opacity {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.95; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb,
+  .orb *,
+  .orb *::before,
+  .orb *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

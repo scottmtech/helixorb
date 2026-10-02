@@ -1,0 +1,19 @@
+/**
+ * css-matrix-orbs — public stylesheet.
+ *
+ *   <link rel="stylesheet" href="css/orbs.css">
+ *
+ * Then paste a snippet (prefer orb--lattice-orbit or orb--lattice-spiral)
+ * and set data-state="idle|thinking|listening|talking".
+ *
+ * Tree-shake by linking tokens.css + orb.css + one variant file instead.
+ */
+
+@import url("./tokens.css");
+@import url("./orb.css");
+@import url("./orb-soft.css");
+@import url("./orb-lattice.css");
+@import url("./orb-lattice-family.css");
+@import url("./orb-wire.css");
+@import url("./orb-ripple.css");
+@import url("./orb-crystal.css");

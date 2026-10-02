@@ -1,0 +1,298 @@
+/**
+ * Lattice-family siblings. Share particle-shell DNA from orb-lattice.css.
+ *
+ *   orb--lattice-dense   packed Fibonacci cloud
+ *   orb--lattice-air     sparse constellation
+ *   orb--lattice-nested  dual concentric shells
+ *   orb--lattice-orbit   latitude rings of dots
+ *   orb--lattice-spiral  helical / galactic scatter
+ */
+
+/* --- dense ----------------------------------------------------------- */
+
+.orb--lattice-dense .orb__shell i {
+  --r: 0.37;
+  --dot: 3px;
+  box-shadow: 0 0 4px var(--_c);
+}
+
+.orb--lattice-dense[data-state="thinking"] .orb__shell {
+  animation: orb-lattice-search 3.4s linear infinite;
+}
+
+.orb--lattice-dense[data-state="listening"] .orb__shell {
+  animation: orb-lattice-listen-tight var(--orb-period) ease-in-out infinite;
+}
+
+@keyframes orb-lattice-listen-tight {
+  0%, 100% { transform: rotateX(-6deg) rotateY(-8deg) scale3d(0.96, 0.96, 0.96); }
+  50% { transform: rotateX(8deg) rotateY(12deg) scale3d(1.05, 1.05, 1.05); }
+}
+
+/* --- air ------------------------------------------------------------- */
+
+.orb--lattice-air .orb__shell i {
+  --r: 0.44;
+  --dot: 7px;
+  box-shadow: 0 0 11px var(--_c);
+  opacity: calc(0.34 + (var(--z) + 1) * 0.4);
+}
+
+.orb--lattice-air .orb__core {
+  inset: 38%;
+  opacity: 0.78;
+}
+
+.orb--lattice-air[data-state="listening"] .orb__shell {
+  animation: orb-lattice-listen-air var(--orb-period) ease-in-out infinite;
+}
+
+.orb--lattice-air[data-state="talking"] .orb__shell i,
+.orb--lattice-air[data-state="writing"] .orb__shell i {
+  animation: orb-lattice-speak calc(var(--orb-period) + var(--y) * 0.22s) ease-in-out infinite;
+}
+
+@keyframes orb-lattice-listen-air {
+  0%, 100% { transform: rotateX(-10deg) rotateY(-16deg) scale3d(0.9, 0.9, 0.9); }
+  50% { transform: rotateX(12deg) rotateY(20deg) scale3d(1.14, 1.14, 1.14); }
+}
+
+/* --- nested ---------------------------------------------------------- */
+
+.orb--lattice-nested .orb__shell {
+  animation: orb-lattice-tumble var(--orb-spin) linear infinite;
+}
+
+.orb--lattice-nested .orb__shell--inner {
+  animation: orb-lattice-tumble-rev calc(var(--orb-spin) * 0.62) linear infinite;
+}
+
+.orb--lattice-nested .orb__shell--outer i {
+  --r: 0.40;
+  --dot: 4.5px;
+}
+
+.orb--lattice-nested .orb__shell--inner i {
+  --r: 0.22;
+  --dot: 3.5px;
+  opacity: calc(0.42 + (var(--z) + 1) * 0.32);
+}
+
+.orb--lattice-nested[data-state="thinking"] .orb__shell--outer {
+  animation: orb-lattice-search 4.2s linear infinite;
+}
+
+.orb--lattice-nested[data-state="thinking"] .orb__shell--inner {
+  animation: orb-lattice-search-rev 3.1s linear infinite;
+}
+
+.orb--lattice-nested[data-state="listening"] .orb__shell--outer {
+  animation: orb-lattice-listen var(--orb-period) ease-in-out infinite;
+}
+
+.orb--lattice-nested[data-state="listening"] .orb__shell--inner {
+  animation: orb-lattice-listen-inner var(--orb-period) ease-in-out infinite;
+}
+
+.orb--lattice-nested[data-state="talking"] .orb__shell--outer,
+.orb--lattice-nested[data-state="writing"] .orb__shell--outer {
+  animation: orb-lattice-tumble calc(var(--orb-spin) * 0.4) linear infinite;
+}
+
+.orb--lattice-nested[data-state="talking"] .orb__shell--inner,
+.orb--lattice-nested[data-state="writing"] .orb__shell--inner {
+  animation: orb-lattice-tumble-rev calc(var(--orb-spin) * 0.28) linear infinite;
+}
+
+@keyframes orb-lattice-tumble-rev {
+  0% { transform: rotateX(18deg) rotateY(0deg); }
+  100% { transform: rotateX(18deg) rotateY(-360deg); }
+}
+
+@keyframes orb-lattice-search-rev {
+  0% { transform: rotateX(-16deg) rotateY(0deg); }
+  50% { transform: rotateX(24deg) rotateY(-180deg); }
+  100% { transform: rotateX(-16deg) rotateY(-360deg); }
+}
+
+@keyframes orb-lattice-listen-inner {
+  0%, 100% { transform: rotateX(8deg) rotateY(14deg) scale3d(1.06, 1.06, 1.06); }
+  50% { transform: rotateX(-10deg) rotateY(-16deg) scale3d(0.88, 0.88, 0.88); }
+}
+
+/* --- orbit / spiral: shell-first -------------------------------------
+ * Shared lattice DNA paints a solid core + soft halo. These two keep
+ * the particle shell as the read: tiny nucleus, almost no bloom,
+ * sharper dots. States stay distinct via motion, not --orb-bright.
+ * Selectors are extra-specific so they beat orb-lattice.css.
+ */
+
+.orb[class*="orb--lattice"].orb--lattice-orbit,
+.orb[class*="orb--lattice"].orb--lattice-orbit[data-state],
+.orb[class*="orb--lattice"].orb--lattice-spiral,
+.orb[class*="orb--lattice"].orb--lattice-spiral[data-state] {
+  --orb-bright: 1;
+  --_c: var(--orb-color, hsl(168 88% 56%));
+  --_c2: var(--orb-color-secondary, hsl(210 82% 66%));
+  overflow: visible;
+}
+
+.orb[class*="orb--lattice"].orb--lattice-orbit .orb__glow,
+.orb[class*="orb--lattice"].orb--lattice-spiral .orb__glow {
+  inset: 22%;
+  opacity: 0.05;
+  filter: blur(3px);
+  background:
+    radial-gradient(circle at 50% 50%,
+      color-mix(in srgb, var(--_c) 22%, transparent) 0%,
+      transparent 62%);
+}
+
+.orb[class*="orb--lattice"].orb--lattice-orbit .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-orbit[data-state] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-orbit[data-state="idle"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-orbit[data-state="thinking"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-orbit[data-state="listening"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-orbit[data-state="talking"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-orbit[data-state="writing"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-spiral .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-spiral[data-state] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-spiral[data-state="idle"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-spiral[data-state="thinking"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-spiral[data-state="listening"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-spiral[data-state="talking"] .orb__core,
+.orb[class*="orb--lattice"].orb--lattice-spiral[data-state="writing"] .orb__core {
+  inset: 47%;
+  opacity: 0.18;
+  box-shadow: none;
+  filter: none;
+  animation: none;
+  background:
+    radial-gradient(circle at 50% 45%,
+      color-mix(in srgb, var(--_c2) 40%, white),
+      color-mix(in srgb, var(--_c) 35%, transparent) 42%,
+      transparent 70%);
+}
+
+.orb[class*="orb--lattice"].orb--lattice-orbit .orb__scan,
+.orb[class*="orb--lattice"].orb--lattice-orbit[data-state="thinking"] .orb__scan,
+.orb[class*="orb--lattice"].orb--lattice-spiral .orb__scan,
+.orb[class*="orb--lattice"].orb--lattice-spiral[data-state="thinking"] .orb__scan {
+  opacity: 0;
+  animation: none;
+}
+
+.orb[class*="orb--lattice"].orb--lattice-orbit .orb__shell,
+.orb[class*="orb--lattice"].orb--lattice-spiral .orb__shell {
+  overflow: visible;
+  will-change: transform;
+}
+
+.orb[class*="orb--lattice"].orb--lattice-orbit .orb__shell i,
+.orb[class*="orb--lattice"].orb--lattice-orbit .orb__band i,
+.orb[class*="orb--lattice"].orb--lattice-spiral .orb__shell i {
+  --r: 0.43;
+  --dot: 6px;
+  background-color: #c8f8e6;
+  background-color: color-mix(in srgb, var(--_c, #2ee6a6) 42%, #fff);
+  box-shadow: 0 0 2px var(--_c, #2ee6a6);
+  opacity: calc(0.58 + (var(--z) + 1) * 0.38);
+}
+
+/* --- orbit motion ---------------------------------------------------- */
+
+.orb--lattice-orbit .orb__shell {
+  animation: orb-lattice-tumble calc(var(--orb-spin) * 1.35) linear infinite;
+}
+
+.orb--lattice-orbit .orb__band {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  will-change: transform;
+  animation: orb-orbit-spin calc(10s + var(--band) * 2.4s) linear infinite;
+}
+
+.orb--lattice-orbit[data-state="thinking"] .orb__shell {
+  animation: orb-lattice-search 5s linear infinite;
+}
+
+.orb--lattice-orbit[data-state="thinking"] .orb__band {
+  animation: orb-orbit-spin calc(3.2s + var(--band) * 0.55s) linear infinite;
+}
+
+.orb--lattice-orbit[data-state="thinking"] .orb__band:nth-child(even) {
+  animation-direction: reverse;
+}
+
+.orb--lattice-orbit[data-state="listening"] .orb__shell {
+  animation: orb-lattice-listen var(--orb-period) ease-in-out infinite;
+}
+
+.orb--lattice-orbit[data-state="listening"] .orb__band {
+  animation: orb-orbit-breathe calc(var(--orb-period) + var(--band) * 0.18s) ease-in-out infinite;
+}
+
+.orb--lattice-orbit[data-state="talking"] .orb__shell,
+.orb--lattice-orbit[data-state="writing"] .orb__shell {
+  animation: orb-lattice-tumble calc(var(--orb-spin) * 0.5) linear infinite;
+}
+
+.orb--lattice-orbit[data-state="talking"] .orb__band,
+.orb--lattice-orbit[data-state="writing"] .orb__band {
+  animation: orb-orbit-spin calc(2.4s + var(--band) * 0.35s) linear infinite;
+}
+
+.orb--lattice-orbit[data-state="talking"] .orb__shell i,
+.orb--lattice-orbit[data-state="writing"] .orb__shell i {
+  animation: orb-lattice-speak calc(var(--orb-period) + var(--y) * 0.12s) ease-in-out infinite;
+}
+
+@keyframes orb-orbit-spin {
+  to { transform: rotateY(360deg); }
+}
+
+@keyframes orb-orbit-breathe {
+  0%, 100% { transform: rotateY(0deg) scale3d(0.88, 1, 0.88); }
+  50% { transform: rotateY(32deg) scale3d(1.14, 1, 1.14); }
+}
+
+/* --- spiral motion --------------------------------------------------- */
+
+.orb--lattice-spiral .orb__shell {
+  animation: orb-spiral-swirl var(--orb-spin) linear infinite;
+}
+
+.orb--lattice-spiral[data-state="thinking"] .orb__shell {
+  animation: orb-spiral-search 3.6s linear infinite;
+}
+
+.orb--lattice-spiral[data-state="listening"] .orb__shell {
+  animation: orb-spiral-listen var(--orb-period) ease-in-out infinite;
+}
+
+.orb--lattice-spiral[data-state="talking"] .orb__shell,
+.orb--lattice-spiral[data-state="writing"] .orb__shell {
+  animation: orb-spiral-swirl calc(var(--orb-spin) * 0.32) linear infinite;
+}
+
+.orb--lattice-spiral[data-state="talking"] .orb__shell i,
+.orb--lattice-spiral[data-state="writing"] .orb__shell i {
+  animation: orb-lattice-speak calc(var(--orb-period) + var(--y) * 0.12s) ease-in-out infinite;
+}
+
+@keyframes orb-spiral-swirl {
+  0% { transform: rotateX(-22deg) rotateY(0deg) rotateZ(0deg); }
+  100% { transform: rotateX(-22deg) rotateY(360deg) rotateZ(360deg); }
+}
+
+@keyframes orb-spiral-search {
+  0% { transform: rotateX(12deg) rotateY(0deg) rotateZ(0deg); }
+  50% { transform: rotateX(-30deg) rotateY(180deg) rotateZ(180deg); }
+  100% { transform: rotateX(12deg) rotateY(360deg) rotateZ(360deg); }
+}
+
+@keyframes orb-spiral-listen {
+  0%, 100% { transform: rotateX(-18deg) rotateY(-20deg) rotateZ(-12deg) scale3d(0.86, 0.86, 0.86); }
+  50% { transform: rotateX(14deg) rotateY(24deg) rotateZ(16deg) scale3d(1.16, 1.16, 1.16); }
+}
