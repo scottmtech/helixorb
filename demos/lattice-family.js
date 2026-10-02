@@ -20,7 +20,7 @@
     var orb = document.getElementById("stage-orb");
     if (!orb) return;
     orb.style.setProperty("--orb-size", "260px");
-    MatrixOrb.setState(orb, state || "idle");
+    Helixorb.setState(orb, state || "idle");
     if (badge) badge.innerHTML = "<code>orb--" + variant + "</code>";
   }
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Matrix Orb — PHP include example</title>
+  <title>Helixorb — PHP include example</title>
   <link rel="stylesheet" href="../css/orbs.css">
   <style>
     html, body { margin: 0; background: #070b10; color: #d8eee6; font: 15px/1.5 ui-sans-serif, system-ui, sans-serif; }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Matrix Orbs — drop-in sample</title>
+  <title>Helixorb — drop-in sample</title>
   <link rel="stylesheet" href="../css/orbs.css">
   <style>
     html, body {
@@ -79,8 +79,8 @@
 <body>
   <main>
     <p><a href="./index.html">← Gallery</a> · <a href="./lattice-family.html">Lattice family</a> · <a href="../README.md">README</a></p>
-    <h1>Drop-in sample</h1>
-    <p>Public entry is <code>css/orbs.css</code>. These two are the recommended variants — orbit and spiral, shell-first. Markup matches <code>snippets/lattice-orbit.html</code> and <code>snippets/lattice-spiral.html</code>. No build, no CDN, no required JS.</p>
+    <h1>Helixorb drop-in</h1>
+    <p>Public entry is <code>css/orbs.css</code>. These two are the recommended variants — orbit and spiral, shell-first. Markup matches <code>snippets/lattice-orbit.html</code> and <code>snippets/lattice-spiral.html</code>. No build, no CDN, no required JS. MIT licensed.</p>
     <div class="preview">
       <figure>
         <div class="orb orb--lattice-orbit" data-state="idle" style="--orb-size: 200px; --orb-hue: 168;" role="img" aria-label="Orbit lattice orb, idle">
@@ -282,7 +282,7 @@
     <p><code>data-state</code> on the orb: <code>idle</code> · <code>thinking</code> · <code>listening</code> · <code>talking</code>. <code>writing</code> is a talking alias. The buttons above only do <code>orb.dataset.state = '…'</code>.</p>
     <pre>const orb = document.querySelector(".orb");
 orb.dataset.state = "listening";</pre>
-    <p><code>js/orb.js</code> is optional: <code>MatrixOrb.setState(orb, "thinking")</code>.</p>
+    <p><code>js/orb.js</code> is optional: <code>Helixorb.setState(orb, "thinking")</code> (<code>MatrixOrb</code> still works).</p>
 
     <h2>PHP sample (optional)</h2>
     <pre>&lt;link rel="stylesheet" href="/css/orbs.css"&gt;

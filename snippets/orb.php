@@ -1,6 +1,6 @@
 <?php
 /**
- * Drop-in Matrix Orb for PHP templates.
+ * Drop-in Helixorb for PHP templates.
  *
  * Usage:
  *   $orbVariant = 'lattice';   // soft | lattice | lattice-dense | lattice-air |

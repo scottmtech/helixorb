@@ -24,8 +24,8 @@
     if (!orb) return;
     orb.id = "stage-orb";
     orb.style.setProperty("--orb-size", "220px");
-    MatrixOrb.setState(orb, state);
-    orb.setAttribute("aria-label", "Playground orb, " + MatrixOrb.normalize(state));
+    Helixorb.setState(orb, state);
+    orb.setAttribute("aria-label", "Playground orb, " + Helixorb.normalize(state));
   }
 
   document.querySelectorAll(".pills [data-variant]").forEach(function (btn) {
@@ -44,10 +44,10 @@
       document.querySelectorAll(".pills [data-state]").forEach(function (b) {
         b.classList.toggle("is-active", b === btn);
       });
-      MatrixOrb.setState(stageOrb(), currentState);
+      Helixorb.setState(stageOrb(), currentState);
       var orb = stageOrb();
       if (orb) {
-        orb.setAttribute("aria-label", "Playground orb, " + MatrixOrb.normalize(currentState));
+        orb.setAttribute("aria-label", "Playground orb, " + Helixorb.normalize(currentState));
       }
     });
   });

@@ -1,14 +1,16 @@
-# Matrix Orbs
+# Helixorb
 
-Drop-in **pure CSS** presence orbs — particle shells, rings, meridians, ripples, facets. Four motion states, one attribute. No build, no CDN, no frameworks, no images.
+[![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
 
-Inspired by the *idea* of a matrix orb. The CSS and markup are original.
+Open-source **pure CSS** presence orbs — particle shells, rings, meridians, ripples, facets. Four motion states, one attribute. No build, no CDN, no frameworks, no images.
 
 Public entry: **`css/orbs.css`**. Recommended variants: **`orb--lattice-orbit`** and **`orb--lattice-spiral`** (shell-first: sharp dots, minimal core/halo).
 
+Class names (`orb`, `orb--lattice-orbit`, `data-state`, …) stay stable. This repo may still be cloned as `css-matrix-orbs` until the GitHub name is `helixorb`.
+
 ## Install
 
-Copy `css/` into the project (or vendor this repo) and link the bundle:
+Copy `css/` into the project, or clone/vendor this repo, then link the bundle:
 
 ```html
 <link rel="stylesheet" href="css/orbs.css">
@@ -55,9 +57,11 @@ orb.dataset.state = "listening";
 Optional helper (`js/orb.js`):
 
 ```js
-MatrixOrb.setState(orb, "thinking");
-MatrixOrb.setHue(orb, 272);
+Helixorb.setState(orb, "thinking");
+Helixorb.setHue(orb, 272);
 ```
+
+`MatrixOrb` is kept as an alias of `Helixorb` so existing demos keep working.
 
 ## Variants
 
@@ -144,7 +148,7 @@ css/orb-soft.css
 css/orb-wire.css
 css/orb-ripple.css
 css/orb-crystal.css
-js/orb.js                    optional MatrixOrb helper
+js/orb.js                    optional Helixorb helper (MatrixOrb alias)
 snippets/*.html              copy-paste markup
 snippets/orb.php             optional PHP include
 demos/                       samples, not required at runtime
@@ -152,4 +156,8 @@ demos/                       samples, not required at runtime
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+[MIT](LICENSE) — `SPDX-License-Identifier: MIT`.
+
+## Contribute
+
+Issues and PRs are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). Keep the drop-in API unchanged: `.orb` + variant class + `data-state`, and `css/orbs.css` as the public entry. Visual tweaks to orbit/spiral should stay shell-first (minimal core/halo). No new runtime dependencies.
