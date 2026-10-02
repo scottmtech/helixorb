@@ -1,6 +1,8 @@
 /**
- * Optional state helper. Pure CSS orbs work without this —
- * set data-state yourself. writing is accepted as an alias of talking.
+ * Optional helper. Not required — CSS already reads data-state.
+ *   MatrixOrb.setState(orb, "listening");
+ *   MatrixOrb.setHue(orb, 272);
+ * writing is stored as talking.
  */
 (function (root) {
   var VALID = { idle: 1, thinking: 1, listening: 1, talking: 1, writing: 1 };
